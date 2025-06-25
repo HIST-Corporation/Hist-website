@@ -188,7 +188,11 @@ const About = () => {
                         >
                            <div className="flex flex-col md:flex-row">
                               <div className="md:w-1/3 bg-sapphire-50 flex items-center justify-center p-4">
-                                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24 md:w-32 md:h-32" />
+                                 <img
+                                    src={leader.image}
+                                    alt={leader.name}
+                                    className="rounded-xl w-24 h-24 md:w-32 md:h-32 object-cover border"
+                                 />
                               </div>
                               <div className="md:w-2/3">
                                  <CardContent className="p-6">
@@ -221,7 +225,11 @@ const About = () => {
                      {teamMembers.map((member, index) => (
                         <Card key={index} className="border border-gray-200 hover:shadow-lg transition-shadow">
                            <div className="bg-sapphire-50 flex justify-center py-6">
-                              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-24 h-24" />
+                              <img
+                                 src={member.image}
+                                 alt={member.name}
+                                 className="rounded-xl w-24 h-24 object-cover border"
+                              />
                            </div>
                            <CardContent className="p-6 text-center">
                               <h3 className="text-lg font-semibold text-gray-900 mb-1">{member.name}</h3>
