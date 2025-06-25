@@ -198,13 +198,13 @@ const About = () => {
                                  <CardContent className="p-6">
                                     <h3 className="text-xl font-bold text-gray-900 mb-1">{leader.name}</h3>
                                     <p className="text-sapphire-600 font-medium mb-3">{leader.role}</p>
-                                    <p className="text-gray-600 text-sm mb-4">{leader.description}</p>
+                                    <p className="text-gray-600 text-sm mb-1">{leader.description}</p>
                                     <a
                                        href={leader.linkedin}
                                        className="inline-flex items-center text-sapphire-600 hover:text-sapphire-700 transition-colors"
                                     >
-                                       <Linkedin className="w-5 h-5 mr-1" />
-                                       <span>Connect on LinkedIn</span>
+                                       {/* <Linkedin className="w-5 h-5 mr-1" />
+                                       <span>Connect on LinkedIn</span> */}
                                     </a>
                                  </CardContent>
                               </div>
@@ -240,7 +240,7 @@ const About = () => {
                                     href={member.linkedin}
                                     className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sapphire-100 text-sapphire-600 hover:bg-sapphire-200 transition-colors"
                                  >
-                                    <Linkedin className="w-5 h-5" />
+                                    {/* <Linkedin className="w-5 h-5" /> */}
                                  </a>
                               </div>
                            </CardContent>
