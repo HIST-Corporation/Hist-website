@@ -196,8 +196,8 @@ const About = () => {
                               </div>
                               <div className="md:w-2/3 w-full">
                                  <CardContent className="p-6 bg-white shadow-md rounded-2xl">
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{leader.name}</h3>
-                                    <p className="text-sapphire-600 font-medium mb-2">{leader.role}</p>
+                                    <h3 className="text-xl font-semibold text-gray-900 ">{leader.name}</h3>
+                                    <p className="text-sapphire-600 font-medium mb-3">{leader.role}</p>
                                     <p className="text-gray-700 text-sm mb-4">{leader.description}</p>
 
                                     {leader.linkedin && (
