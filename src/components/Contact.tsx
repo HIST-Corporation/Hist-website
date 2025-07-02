@@ -153,7 +153,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Phone & Email</h4>
                     <p className="text-gray-600">
-                      +977-1-XXXXXXX<br />
+                      9860134076<br />
                       info@hist.com.np<br />
                       support@hist.com.np
                     </p>
@@ -173,8 +173,7 @@ const Contact = () => {
                     <h4 className="font-semibold text-gray-900 mb-2">Business Hours</h4>
                     <p className="text-gray-600">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 10:00 AM - 4:00 PM<br />
-                      Sunday: Closed
+                      Saturday - Sunday: Closed
                     </p>
                   </div>
                 </div>

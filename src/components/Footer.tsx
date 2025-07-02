@@ -79,7 +79,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Calendar className="w-5 h-5 text-hist-yellow" />
-                <span className="text-gray-300">hist.corpz@gmail.com</span>
+                <span className="text-gray-300">info@hist.com.np</span>
               </div>
             </div>
           </div>
