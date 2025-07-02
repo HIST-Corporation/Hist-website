@@ -194,18 +194,23 @@ const About = () => {
                                     className="rounded-xl w-24 h-24 md:w-32 md:h-32 object-cover border"
                                  />
                               </div>
-                              <div className="md:w-2/3">
-                                 <CardContent className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-1">{leader.name}</h3>
-                                    <p className="text-sapphire-600 font-medium mb-3">{leader.role}</p>
-                                    <p className="text-gray-600 text-sm mb-1">{leader.description}</p>
-                                    <a
-                                       href={leader.linkedin}
-                                       className="inline-flex items-center text-sapphire-600 hover:text-sapphire-700 transition-colors"
-                                    >
-                                       {/* <Linkedin className="w-5 h-5 mr-1" />
-                                       <span>Connect on LinkedIn</span> */}
-                                    </a>
+                              <div className="md:w-2/3 w-full">
+                                 <CardContent className="p-6 bg-white shadow-md rounded-2xl">
+                                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">{leader.name}</h3>
+                                    <p className="text-sapphire-600 font-medium mb-2">{leader.role}</p>
+                                    <p className="text-gray-700 text-sm mb-4">{leader.description}</p>
+
+                                    {leader.linkedin && (
+                                       <a
+                                          href={leader.linkedin}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="inline-flex items-center text-sapphire-600 hover:text-sapphire-700 transition-colors"
+                                       >
+                                          {/* <Linkedin className="w-5 h-5 mr-2" />
+                                          <span className="text-sm font-medium">Connect on LinkedIn</span> */}
+                                       </a>
+                                    )}
                                  </CardContent>
                               </div>
                            </div>
