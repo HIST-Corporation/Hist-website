@@ -98,7 +98,7 @@ const Header = () => {
                        </a>
                     ))}
                     <Button className="w-full mt-4 bg-hist-blue hover:bg-hist-blue-dark text-white py-3 rounded-lg font-semibold shadow-lg">
-                       Free Consultation
+                       Get in Touch
                     </Button>
                  </nav>
               </div>
