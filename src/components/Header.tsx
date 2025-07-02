@@ -17,7 +17,7 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '#home' },
+   //  { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Solutions', href: '#solutions' },
@@ -36,8 +36,8 @@ const Header = () => {
         <div className="container mx-auto px-4">
            <div className="flex items-center justify-between h-20">
               {/* Logo */}
-              <div className="flex items-center space-x-3">
-                 <div className="w-12 h-12 ">
+              <a href="#home" className="flex items-center space-x-3">
+                 <div className="w-12 h-12">
                     <img src="/hist.png" className="w-12 h-12" alt="HIST Logo" />
                  </div>
                  <div>
@@ -48,7 +48,7 @@ const Header = () => {
                        Science and Technology
                     </p>
                  </div>
-              </div>
+              </a>
 
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center space-x-8">
