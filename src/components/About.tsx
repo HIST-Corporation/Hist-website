@@ -30,7 +30,7 @@ const About = () => {
       {
          name: "Om Prakash Bhushal",
          role: "Chief Executive Officer",
-         description: "Leading HIST with 5+ years of experience in IT strategy and business development.",
+         description: "Leading HIST with 6+ years of experience in IT strategy and business development.",
          image: "/CEO.jpg",
          linkedin: "#",
          category: "Leadership",
