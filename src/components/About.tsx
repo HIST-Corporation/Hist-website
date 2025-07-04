@@ -22,7 +22,7 @@ const About = () => {
       {
          icon: Heart,
          title: "Local Understanding",
-         description: "Deep knowledge of Nepali market and business culture",
+         description: "Deep knowledge of Nepal's market and business culture",
       },
    ];
 
