@@ -18,13 +18,13 @@ const Header = () => {
 
   const navigation = [
    //  { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: 'about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Solutions', href: '/#solutions' },
+    { name: 'Portfolio', href: '/#portfolio' },
+    { name: 'Careers', href: '/#careers' },
+    { name: 'Blog', href: '/#blog' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -109,3 +109,5 @@ const Header = () => {
 };
 
 export default Header;
+
+
