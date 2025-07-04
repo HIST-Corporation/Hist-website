@@ -7,7 +7,7 @@ const About = () => {
       {
          icon: CheckCircle,
          title: "Proven Expertise",
-         description: "7+ years of delivering cutting-edge IT solutions",
+         description: "5+ years of delivering cutting-edge IT solutions",
       },
       {
          icon: Users,
