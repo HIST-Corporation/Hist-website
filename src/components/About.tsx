@@ -22,7 +22,7 @@ const About = () => {
       {
          icon: Heart,
          title: "Local Understanding",
-         description: "Deep knowledge of Nepali market and business culture",
+         description: "Deep knowledge of Nepal's market and business culture",
       },
    ];
 
@@ -38,7 +38,7 @@ const About = () => {
       {
          name: "Kalpana Belbase",
          role: "Chief Financial Officer",
-         description: "Expert in Finencing in  emerging technologies with 7+ years experience.",
+         description: "Expert in Financing in  emerging technologies with 7+ years experience.",
          image: "CFO.jpg",
          linkedin: "#",
          category: "Finance",
