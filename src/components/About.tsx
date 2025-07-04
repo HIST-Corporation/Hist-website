@@ -38,7 +38,7 @@ const About = () => {
       {
          name: "Kalpana Belbase",
          role: "Chief Financial Officer",
-         description: "Expert in Finencing in  emerging technologies with 7+ years experience.",
+         description: "Expert in Financing in  emerging technologies with 7+ years experience.",
          image: "CFO.jpg",
          linkedin: "#",
          category: "Finance",
