@@ -20,7 +20,7 @@ const Header = () => {
    //  { name: 'Home', href: '#home' },
     { name: 'About', href: 'about' },
     { name: 'Services', href: '/#services' },
-    { name: 'Solutions', href: '/#solutions' },
+   //  { name: 'Solutions', href: '/#solutions' },
     { name: 'Portfolio', href: '/#portfolio' },
     { name: 'Careers', href: '/#careers' },
     { name: 'Blog', href: '/#blog' },
@@ -36,7 +36,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
            <div className="flex items-center justify-between h-20">
               {/* Logo */}
-              <a href="#home" className="flex items-center space-x-3">
+              <a href="/" className="flex items-center space-x-3">
                  <div className="w-12 h-12">
                     <img src="/hist.png" className="w-12 h-12" alt="HIST Logo" />
                  </div>
@@ -69,8 +69,9 @@ const Header = () => {
                  <Button
                     size="lg"
                     className="hidden sm:inline-flex bg-hist-blue hover:bg-hist-blue-dark text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    onClick={() => window.location.href = '/login'}
                  >
-                    Free Consultation
+                    Login Portal
                  </Button>
 
                  {/* Mobile menu button */}

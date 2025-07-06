@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import About from "./components/About";
 import Header from "./components/Header";
 import Services from "./components/Services";
+import Login from "./components/Login";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
                <Route element={<Layout />}>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/login" element={<Login />} />
                   <Route path="*" element={<NotFound />} />
                </Route>
             </Routes>
