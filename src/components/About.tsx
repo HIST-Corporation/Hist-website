@@ -7,7 +7,7 @@ const About = () => {
       {
          icon: CheckCircle,
          title: "Proven Expertise",
-         description: "7+ years of delivering cutting-edge IT solutions",
+         description: "5+ years of delivering cutting-edge IT solutions",
       },
       {
          icon: Users,
@@ -22,7 +22,7 @@ const About = () => {
       {
          icon: Heart,
          title: "Local Understanding",
-         description: "Deep knowledge of Nepali market and business culture",
+         description: "Deep knowledge of Nepal's market and business culture",
       },
    ];
 
@@ -38,7 +38,7 @@ const About = () => {
       {
          name: "Kalpana Belbase",
          role: "Chief Financial Officer",
-         description: "Expert in Finencing in  emerging technologies with 7+ years experience.",
+         description: "Expert in Financing in  emerging technologies with 7+ years experience.",
          image: "CFO.jpg",
          linkedin: "#",
          category: "Finance",
@@ -73,7 +73,7 @@ const About = () => {
    ];
 
    return (
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-gray-100">
          <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
                {/* Left Content */}
