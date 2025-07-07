@@ -11,6 +11,8 @@ import Header from "./components/Header";
 import Services from "./components/Services";
 import { LoginForm } from "./components/Login";
 import BlogSection from "./components/Blog";
+import { Car } from "lucide-react";
+import { CareersSection } from "./components/Careers";
 
 
 
@@ -27,6 +29,8 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/blog" element={<BlogSection />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/careers" element={<CareersSection />} />
                   <Route path="/login" element={<LoginForm onLogin={(role) => console.log(role)} />} />
                   <Route path="*" element={<NotFound />} />
                </Route>

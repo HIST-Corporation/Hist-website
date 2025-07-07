@@ -38,7 +38,7 @@ const About = () => {
       {
          name: "Kalpana Belbase",
          role: "Chief Financial Officer",
-         description: "Expert in Financing in  emerging technologies with 7+ years experience.",
+         description: "Expert in Financing in emerging technologies with 7+ years experience.",
          image: "CFO.jpg",
          linkedin: "#",
          category: "Finance",
@@ -46,14 +46,6 @@ const About = () => {
    ];
 
    const teamMembers = [
-      {
-         name: "Dip Ojha",
-         role: "Lead Full Stack Developer",
-         description: "Specialized in React, Node.js, and cloud technologies with passion for clean code.",
-         image: "/LFSD.jpg",
-         linkedin: "#",
-         category: "Development",
-      },
       {
          name: "Madhav Poudel",
          role: "Cybersecurity Specialist",
@@ -69,6 +61,33 @@ const About = () => {
          image: "/GD.jpg",
          linkedin: "#",
          category: "Design",
+      },
+   ];
+
+   const pastFellows = [
+      {
+         name: "Dip Ojha",
+         role: "Full Stack Developer",
+         description: "Specialized in React, Node.js, and cloud technologies with passion for clean code.",
+         image: "/dip.jpg",
+         linkedin: "#",
+         category: "Development",
+      },
+      {
+         name: "Gaurav Raj Bana",
+         role: "Full Stack Developer",
+         description: "Expert in building scalable web applications with modern JavaScript frameworks.",
+         image: "/bana.jpg",
+         linkedin: "#",
+         category: "Development",
+      },
+      {
+         name: "Saiman Katwal",
+         role: "QA Tester",
+         description: "Ensuring software quality through rigorous testing methodologies.",
+         image: "/saiman.jpg",
+         linkedin: "#",
+         category: "Quality Assurance",
       },
    ];
 
@@ -200,17 +219,17 @@ const About = () => {
                                     <p className="text-sapphire-600 font-medium mb-3">{leader.role}</p>
                                     <p className="text-gray-700 text-sm mb-4">{leader.description}</p>
 
-                                    {leader.linkedin && (
+                                    {/* {leader.linkedin && (
                                        <a
                                           href={leader.linkedin}
                                           target="_blank"
                                           rel="noopener noreferrer"
                                           className="inline-flex items-center text-sapphire-600 hover:text-sapphire-700 transition-colors"
                                        >
-                                          {/* <Linkedin className="w-5 h-5 mr-2" />
-                                          <span className="text-sm font-medium">Connect on LinkedIn</span> */}
+                                          <Linkedin className="w-5 h-5 mr-2" />
+                                          <span className="text-sm font-medium">Connect on LinkedIn</span>
                                        </a>
-                                    )}
+                                    )} */}
                                  </CardContent>
                               </div>
                            </div>
@@ -220,13 +239,13 @@ const About = () => {
                </div>
 
                {/* Team Members Section */}
-               <div>
+               <div className="mb-16">
                   <div className="mb-8">
                      <h3 className="text-2xl font-bold text-gray-800 text-center">Our Expert Team</h3>
-                     <div className="w-24 h-1 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
+                     <div className="w-24 h-2 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5">
                      {teamMembers.map((member, index) => (
                         <Card key={index} className="border border-gray-200 hover:shadow-lg transition-shadow">
                            <div className="bg-sapphire-50 flex justify-center py-6">
@@ -241,12 +260,50 @@ const About = () => {
                               <p className="text-sapphire-600 font-medium text-sm mb-3">{member.role}</p>
                               <p className="text-gray-600 text-sm mb-4">{member.description}</p>
                               <div className="flex justify-center">
-                                 <a
+                                 {/* <a
                                     href={member.linkedin}
                                     className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sapphire-100 text-sapphire-600 hover:bg-sapphire-200 transition-colors"
                                  >
-                                    {/* <Linkedin className="w-5 h-5" /> */}
-                                 </a>
+                                    <Linkedin className="w-5 h-5" />
+                                 </a> */}
+                              </div>
+                           </CardContent>
+                        </Card>
+                     ))}
+                  </div>
+               </div>
+
+               {/* Past Fellows Section */}
+               <div>
+                  <div className="mb-8">
+                     <h3 className="text-2xl font-bold text-gray-800 text-center">Past Fellowship Members</h3>
+                     <div className="w-24 h-1 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
+                     <p className="text-gray-600 text-center max-w-3xl mx-auto">
+                        We appreciate the contributions of our past team members who have been part of HIST's journey.
+                     </p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     {pastFellows.map((fellow, index) => (
+                        <Card key={index} className="border border-gray-200 hover:shadow-lg transition-shadow">
+                           <div className="bg-sapphire-50 flex justify-center py-6">
+                              <img
+                                 src={fellow.image}
+                                 alt={fellow.name}
+                                 className="rounded-xl w-24 h-24 object-cover border"
+                              />
+                           </div>
+                           <CardContent className="p-6 text-center">
+                              <h3 className="text-lg font-semibold text-gray-900 mb-1">{fellow.name}</h3>
+                              <p className="text-sapphire-600 font-medium text-sm mb-3">{fellow.role}</p>
+                              <p className="text-gray-600 text-sm mb-4">{fellow.description}</p>
+                              <div className="flex justify-center">
+                                 {/* <a
+                                    href={fellow.linkedin}
+                                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sapphire-100 text-sapphire-600 hover:bg-sapphire-200 transition-colors"
+                                 >
+                                    <Linkedin className="w-5 h-5" />
+                                 </a> */}
                               </div>
                            </CardContent>
                         </Card>
