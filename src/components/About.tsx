@@ -30,7 +30,7 @@ const About = () => {
       {
          name: "Om Prakash Bhushal",
          role: "Chief Executive Officer",
-         description: "Leading HIST with 6+ years of experience in IT strategy and business development.",
+         description: "Leading HIST with 5+ years of experience in IT strategy and business development.",
          image: "/CEO.jpg",
          linkedin: "#",
          category: "Leadership",
@@ -38,7 +38,7 @@ const About = () => {
       {
          name: "Kalpana Belbase",
          role: "Chief Financial Officer",
-         description: "Expert in Financing in emerging technologies with 7+ years experience.",
+         description: "Expert in Financing the emerging technologies and business development.",
          image: "CFO.jpg",
          linkedin: "#",
          category: "Finance",
@@ -192,10 +192,10 @@ const About = () => {
                   </p>
                </div>
 
-               {/* Leadership Section */}
+               {/* Board Of Directors Section */}
                <div className="mb-16">
                   <div className="mb-8">
-                     <h3 className="text-2xl font-bold text-gray-800 text-center">Leadership Team</h3>
+                     <h3 className="text-2xl font-bold text-gray-800 text-center">Our Board Of Directors</h3>
                      <div className="w-24 h-1 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
                   </div>
 
