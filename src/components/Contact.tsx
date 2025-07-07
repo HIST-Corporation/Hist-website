@@ -40,7 +40,7 @@ const Contact = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your business with cutting-edge technology? 
+            Ready to transform your Business with cutting-edge technology? 
             Contact us today for a free consultation and let's discuss your project.
           </p>
         </div>
