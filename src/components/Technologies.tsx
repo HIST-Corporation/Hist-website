@@ -1,98 +1,113 @@
 import React, { useState } from "react";
 
+
 const Technologies = () => {
    const technologies = [
-      {
-         name: "React",
-         category: "Frontend",
-         color: "#61DAFB",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      },
-      {
-         name: "Node.js",
-         category: "Backend",
-         color: "#8CC84B",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      },
-      {
-         name: "Python",
-         category: "Backend",
-         color: "#3776AB",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      },
-      {
-         name: "Django",
-         category: "Framework",
-         color: "#092E20",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-      },
-      {
-         name: "Flutter",
-         category: "Mobile",
-         color: "#02569B",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
-      },
-      {
-         name: "AWS",
-         category: "Cloud",
-         color: "#FF9900",
-         logo: "https://static.cdnlogo.com/logos/a/19/aws.svg",
-      },
-      {
-         name: "Azure",
-         category: "Cloud",
-         color: "#0089D6",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-      },
-      {
-         name: "MongoDB",
-         category: "Database",
-         color: "#47A248",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      },
-      {
-         name: "PostgreSQL",
-         category: "Database",
-         color: "#336791",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-      },
-      {
-         name: "Docker",
-         category: "DevOps",
-         color: "#2496ED",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-      },
-      {
-         name: "Kubernetes",
-         category: "DevOps",
-         color: "#326CE5",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
-      },
-      {
-         name: "TensorFlow",
-         category: "AI/ML",
-         color: "#FF6F00",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-      },
-      {
-         name: "Next.js",
-         category: "Framework",
-         color: "#000000",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-      },
-      {
-         name: "Vue.js",
-         category: "Frontend",
-         color: "#4FC08D",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-      },
-      {
-         name: "GraphQL",
-         category: "API",
-         color: "#E10098",
-         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
-      },
-
+         {
+      name: "React",
+      category: "Frontend",
+      color: "#61DAFB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      animation: "hover:animate-spin",
+   },
+   {
+      name: "Node.js",
+      category: "Backend",
+      color: "#8CC84B",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      animation: "hover:animate-bounce",
+   },
+   {
+      name: "Python",
+      category: "Backend",
+      color: "#3776AB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      animation: "hover:animate-ping",
+   },
+   {
+      name: "Django",
+      category: "Framework",
+      color: "#092E20",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+      animation: "hover:animate-spin",
+   },
+   {
+      name: "Flutter",
+      category: "Mobile",
+      color: "#02569B",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+      animation: "hover:animate-bounce",
+   },
+   {
+      name: "AWS",
+      category: "Cloud",
+      color: "#FF9900",
+      logo: "https://static.cdnlogo.com/logos/a/19/aws.svg",
+      animation: "hover:animate-ping",
+   },
+   {
+      name: "Azure",
+      category: "Cloud",
+      color: "#0089D6",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+      animation: "hover:animate-spin",
+   },
+   {
+      name: "MongoDB",
+      category: "Database",
+      color: "#47A248",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      animation: "hover:animate-bounce",
+   },
+   {
+      name: "PostgreSQL",
+      category: "Database",
+      color: "#336791",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      animation: "hover:animate-ping",
+   },
+   {
+      name: "Docker",
+      category: "DevOps",
+      color: "#2496ED",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      animation: "hover:animate-spin",
+   },
+   {
+      name: "Kubernetes",
+      category: "DevOps",
+      color: "#326CE5",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+      animation: "hover:animate-bounce",
+   },
+   {
+      name: "TensorFlow",
+      category: "AI/ML",
+      color: "#FF6F00",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+      animation: "hover:animate-ping",
+   },
+   {
+      name: "Next.js",
+      category: "Framework",
+      color: "#000000",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      animation: "hover:animate-spin",
+   },
+   {
+      name: "Vue.js",
+      category: "Frontend",
+      color: "#4FC08D",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+      animation: "hover:animate-bounce",
+   },
+   {
+      name: "GraphQL",
+      category: "API",
+      color: "#E10098",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+      animation: "hover:animate-ping",
+   },
    ];
 
    const categories = [...new Set(technologies.map((tech) => tech.category))];
@@ -113,11 +128,6 @@ const Technologies = () => {
          <div className="container mx-auto px-4 max-w-6xl relative z-10">
             {/* Header */}
             <div className="text-center mb-16">
-               {/* <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-6 animate-pulse">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                  Technologies We Use
-               </div> */}
-
                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   Cutting-Edge{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -171,7 +181,7 @@ const Technologies = () => {
                      }}
                   >
                      <div
-                        className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
+                        className={`w-16 h-16 rounded-xl flex items-center justify-center mb-4 ${tech.animation}`}
                         style={{ backgroundColor: `${tech.color}20` }}
                      >
                         <img src={tech.logo} alt={tech.name} className="w-10 h-10 object-contain" />
@@ -201,29 +211,6 @@ const Technologies = () => {
                </div>
             </div>
          </div>
-
-         {/* Inline CSS for animations */}
-         <style>{`
-            @keyframes fadeIn {
-               from {
-                  opacity: 0;
-                  transform: translateY(20px);
-               }
-               to {
-                  opacity: 1;
-                  transform: translateY(0);
-               }
-            }
-
-            .tech-card {
-               transition: all 0.3s ease;
-            }
-
-            .tech-card:hover {
-               transform: translateY(-5px);
-               box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            }
-         `}</style>
       </section>
    );
 };
