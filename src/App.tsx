@@ -10,6 +10,7 @@ import About from "./components/About";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import { LoginForm } from "./components/Login";
+import BlogSection from "./components/Blog";
 
 
 
@@ -25,6 +26,7 @@ const App = () => (
                <Route element={<Layout />}>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/blog" element={<BlogSection />} />
                   <Route path="/login" element={<LoginForm onLogin={(role) => console.log(role)} />} />
                   <Route path="*" element={<NotFound />} />
                </Route>
