@@ -1,3 +1,4 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import About from "./components/About";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import Login from "./components/Login";
+
 
 const queryClient = new QueryClient();
 
