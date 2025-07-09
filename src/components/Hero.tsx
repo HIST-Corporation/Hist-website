@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 
 const Hero = () => {
    return (
@@ -38,7 +38,7 @@ const Hero = () => {
                         size="lg"
                         className="w-full sm:w-auto border-2 border-hist-blue text-hist-blue hover:bg-hist-blue hover:text-white px-6 py-4 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300"
                      >
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                         Let's Get Started
                      </Button>
                   </div>
