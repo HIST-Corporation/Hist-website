@@ -121,11 +121,11 @@ const Industries = () => {
                style={{ animationDelay: "0.9s" }}
             >
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">20+</div>
                   <div className="text-gray-600">Total Projects</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">6</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">3</div>
                   <div className="text-gray-600">Industries Served</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
@@ -133,7 +133,7 @@ const Industries = () => {
                   <div className="text-gray-600">Success Rate</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-yellow-600 mb-2">5+</div>
+                  <div className="text-3xl font-bold text-yellow-600 mb-2">3+</div>
                   <div className="text-gray-600">Years Experience</div>
                </div>
             </div>
