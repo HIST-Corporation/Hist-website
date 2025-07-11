@@ -7,7 +7,7 @@ const About = () => {
       {
          icon: CheckCircle,
          title: "Proven Expertise",
-         description: "5+ years of delivering cutting-edge IT solutions",
+         description: "3+ years of delivering cutting-edge IT solutions",
       },
       {
          icon: Users,
@@ -195,7 +195,7 @@ const About = () => {
                {/* Board Of Directors Section */}
                <div className="mb-16">
                   <div className="mb-8">
-                     <h3 className="text-2xl font-bold text-gray-800 text-center">Our Board Of Directors</h3>
+                     <h3 className="text-2xl font-bold text-gray-800 text-center">Board Of Directors</h3>
                      <div className="w-24 h-1 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
                   </div>
 
