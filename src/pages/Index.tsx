@@ -24,7 +24,6 @@ const Index = () => {
       <Testimonials />
       <Technologies />
       <Contact />
-      <Footer />
     </div>
   );
 };

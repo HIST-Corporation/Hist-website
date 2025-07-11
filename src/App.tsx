@@ -13,6 +13,7 @@ import { LoginForm } from "./components/Login";
 import BlogSection from "./components/Blog";
 import { Car } from "lucide-react";
 import { CareersSection } from "./components/Careers";
+import Footer from "./components/Footer";
 
 
 
@@ -45,6 +46,7 @@ const Layout = () => (
    <div className="min-h-screen">
       <Header />
       <Outlet /> {/* This renders nested routes */}
+      <Footer />
    </div>
 );
 
