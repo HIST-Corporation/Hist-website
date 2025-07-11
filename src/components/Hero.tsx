@@ -22,7 +22,7 @@ const Hero = () => {
                   </h1>
 
                   <p className="text-base sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                     Smart IT solutions and SaaS products that drive business growth and digital transformation in Nepal and beyond.
+                     Get custom IT solutions, SaaS products, and digital services designed to grow your business in Nepal and worldwide. We help companies succeed with innovative, future-ready technology.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-10 lg:mb-12">
