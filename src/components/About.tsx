@@ -103,9 +103,8 @@ const About = () => {
                   </h2>
 
                   <p className="text-lg text-gray-600 mb-8">
-                     Located in the heart of Kritipur, Kathmandu, HIST (House of Information Science and Technology) is
-                     Nepal's premier IT solutions provider. We specialize in creating custom software solutions, SaaS
-                     products, and providing comprehensive IT consulting services that drive digital transformation.
+                     Located in the heart of Kirtipur, Kathmandu, HIST is a dynamic IT company shaping Nepal’s digital future. We specialize in building tailor-made software solutions, cutting-edge SaaS products, and delivering end-to-end IT consulting services that drive digital transformation. Whether you're a startup or an enterprise, HIST transforms your ideas into innovative, scalable technology.
+
                   </p>
 
                   {/* Mission, Vision */}
