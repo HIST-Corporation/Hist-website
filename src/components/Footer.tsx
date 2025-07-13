@@ -64,8 +64,7 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 mb-6 max-w-md">
-              Empowering businesses in Nepal and beyond with innovative technology solutions. 
-              From custom software to AI-powered systems, we're your trusted IT partner.
+             We help businesses grow in Nepal and around the world by offering modern tech solutions. From custom software to smart AI tools, we’re a trusted partner in your digital journey.
             </p>
             
             <div className="space-y-3">
