@@ -186,7 +186,7 @@ const About = () => {
                      Meet Our <span className="text-sapphire-600">Expert Team</span>
                   </h2>
                   <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                     Our passionate team of professionals brings together diverse expertise and innovative thinking to
+                     Our Hard working team of professionals brings together diverse expertise and innovative thinking to
                      deliver exceptional results for our clients.
                   </p>
                </div>
