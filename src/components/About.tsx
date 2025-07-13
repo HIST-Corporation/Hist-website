@@ -240,7 +240,7 @@ const About = () => {
                {/* Team Members Section */}
                <div className="mb-16">
                   <div className="mb-8">
-                     <h3 className="text-2xl font-bold text-gray-800 text-center">Our Expert Team</h3>
+                     <h3 className="text-2xl font-bold text-gray-800 text-center">Our Expertw Team</h3>
                      <div className="w-24 h-2 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
                   </div>
 
