@@ -58,7 +58,7 @@ const Industries = () => {
          icon: MapPin,
          title: "Logistics",
          description: "Supply chain management, tracking systems, and delivery optimization.",
-         projects: "3+ Projects",
+         projects: "2+ Projects",
          animation: "group-hover:animate-float",
          iconColor: "text-indigo-600 group-hover:text-indigo-700",
          bgColor: "bg-indigo-100 group-hover:bg-indigo-200",

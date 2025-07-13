@@ -17,7 +17,7 @@ const Services = () => {
   const services = [
     {
       icon: Code,
-      title: 'SaaS Development',
+      title: 'SaaS Product Development',
       description: 'End-to-end SaaS solutions with scalable architecture, user management, and modern UI/UX design.',
       features: ['Multi-tenant Architecture', 'API Development', 'Cloud Integration']
     },
