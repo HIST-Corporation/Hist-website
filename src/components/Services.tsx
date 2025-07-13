@@ -80,7 +80,7 @@ const Services = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Accelerate your digital transformation with our end -to-end IT services——from custom software development to cutting-edge 
+            Accelerate your digital transformation with our end-to-end IT services—from custom software development to cutting-edge 
             AI solutions, we deliver tailored technologies to drive innovation and growth for your business.
           </p>
         </div>
