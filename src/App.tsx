@@ -16,6 +16,7 @@ import { CareersSection } from "./components/Careers";
 import Footer from "./components/Footer";
 import ServiceDetail from "./components/ServiceDetail";
 import Contact from "./components/Contact";
+import Industries from "./components/Industries";
 
 
 
@@ -35,6 +36,7 @@ const App = () => (
                   <Route path="/services/:serviceId" element={<ServiceDetail />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/industries" element={<Industries />} />
                   <Route path="/careers" element={<CareersSection />} />
                   <Route path="/login" element={<LoginForm onLogin={(role) => console.log(role)} />} />
                   <Route path="*" element={<NotFound />} />
