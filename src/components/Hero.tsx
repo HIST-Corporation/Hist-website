@@ -6,10 +6,10 @@ const Hero = () => {
    return (
       <section
          id="home"
-         className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-white pt-16 md:pt-20"
+         className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-white"
       >
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                {/* Left Content */}
                <div className="order-2 lg:order-1 text-center lg:text-left">
                   <div className="inline-flex items-center px-4 py-2 bg-hist-blue-50 border border-hist-blue-200 rounded-full text-hist-blue-700 text-sm font-semibold mb-6 lg:mb-8">
