@@ -1,6 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Code, BarChart, LayoutDashboard, Smartphone, Cloud, PenTool, Users } from "lucide-react";
+import {
+   Menu,
+   X,
+   ChevronDown,
+   Code,
+   Briefcase,
+   Settings,
+   Star,
+   Grid2x2,
+   Image as ImageIcon,
+   Calendar,
+   Heart,
+} from "lucide-react";
+import { services as allServices } from "@/data/services"; // Import your services data
 
 const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,34 +56,32 @@ const Header = () => {
       setIsMenuOpen(false);
    };
 
-   const services = [
+   // Services dropdown data based on your actual services
+   const servicesCategories = [
       {
          category: "Development",
          icon: <Code size={18} className="text-hist-blue" />,
          items: [
-            { name: "Web Development", href: "/services/web" },
-            { name: "Mobile Apps", href: "/services/mobile" },
-            { name: "Cloud Solutions", href: "/services/cloud" },
-            { name: "DevOps", href: "/services/devops" },
+            { name: "SaaS Development", href: "/services/saas-product-development" },
+            { name: "Web & App Development", href: "/services/website-app-development" },
+            { name: "Custom Software", href: "/services/custom-software" },
          ],
       },
       {
-         category: "Marketing",
-         icon: <BarChart size={18} className="text-hist-blue" />,
+         category: "Technology",
+         icon: <Settings size={18} className="text-hist-blue" />,
          items: [
-            { name: "Digital Marketing", href: "/services/marketing" },
-            { name: "SEO Optimization", href: "/services/seo" },
-            { name: "Social Media", href: "/services/social" },
-            { name: "Content Strategy", href: "/services/content" },
+            { name: "AI/ML Development", href: "/services/ai-ml-development" },
+            { name: "Cloud Services", href: "/services/cloud-services" },
+            { name: "IT Consulting", href: "/services/it-consulting" },
          ],
       },
       {
-         category: "Consulting",
-         icon: <Users size={18} className="text-hist-blue" />,
+         category: "Design & Support",
+         icon: <ImageIcon size={18} className="text-hist-blue" />,
          items: [
-            { name: "IT Strategy", href: "/services/strategy" },
-            { name: "Digital Transformation", href: "/services/transformation" },
-            { name: "UX/UI Design", href: "/services/design" },
+            { name: "UI/UX Design", href: "/services/ui-ux-design" },
+            { name: "Maintenance & Support", href: "/services/maintenance-support" },
          ],
       },
    ];
@@ -83,13 +94,13 @@ const Header = () => {
          mega: true,
       },
       {
-         name: "Solutions",
-         href: "/solutions",
+         name: "Industries",
+         href: "/industries",
          dropdown: [
-            { name: "Finance", href: "/solutions/finance" },
-            { name: "Healthcare", href: "/solutions/healthcare" },
-            { name: "Education", href: "/solutions/education" },
-            { name: "Retail", href: "/solutions/retail" },
+            { name: "Healthcare", href: "/industries/healthcare" },
+            { name: "Finance", href: "/industries/finance" },
+            { name: "Education", href: "/industries/education" },
+            { name: "Retail", href: "/industries/retail" },
          ],
       },
       {
@@ -97,8 +108,8 @@ const Header = () => {
          href: "/careers",
          dropdown: [
             { name: "Open Positions", href: "/careers#positions" },
-            { name: "Internships", href: "/careers#internships" },
             { name: "Our Culture", href: "/careers#culture" },
+            { name: "Benefits", href: "/careers#benefits" },
          ],
       },
       { name: "Blog", href: "/blog" },
@@ -122,7 +133,7 @@ const Header = () => {
                   <div>
                      <h1 className="text-xl font-bold text-hist-blue">HIST</h1>
                      <p className="text-xs text-gray-600 leading-none">
-                        House of Information 
+                        House of Information
                         <span className="block">Science & Technology</span>
                      </p>
                   </div>
@@ -160,7 +171,7 @@ const Header = () => {
                               onMouseLeave={() => setActiveDropdown(null)}
                            >
                               <div className="p-6 grid grid-cols-3 gap-6">
-                                 {services.map((service, index) => (
+                                 {servicesCategories.map((service, index) => (
                                     <div key={index} className={`${index < 2 ? "border-r border-gray-100 pr-6" : ""}`}>
                                        <div className="flex items-center mb-4">
                                           <div className="p-2 bg-hist-blue/10 rounded-md mr-3">{service.icon}</div>
@@ -172,6 +183,7 @@ const Header = () => {
                                                 <a
                                                    href={subItem.href}
                                                    className="flex items-center py-2 px-3 text-gray-600 hover:text-hist-blue hover:bg-gray-50 rounded transition-colors text-sm"
+                                                   onClick={closeAllDropdowns}
                                                 >
                                                    {subItem.name}
                                                 </a>
@@ -267,7 +279,7 @@ const Header = () => {
                                     <div className="pl-4 pb-3">
                                        {item.name === "Services" ? (
                                           <div className="space-y-4">
-                                             {services.map((service, index) => (
+                                             {servicesCategories.map((service, index) => (
                                                 <div key={index}>
                                                    <div className="flex items-center py-2">
                                                       {service.icon}

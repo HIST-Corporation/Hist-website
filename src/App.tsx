@@ -14,6 +14,8 @@ import BlogSection from "./components/Blog";
 import { Car } from "lucide-react";
 import { CareersSection } from "./components/Careers";
 import Footer from "./components/Footer";
+import ServiceDetail from "./components/ServiceDetail";
+import Contact from "./components/Contact";
 
 
 
@@ -30,7 +32,9 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/blog" element={<BlogSection />} />
+                  <Route path="/services/:serviceId" element={<ServiceDetail />} />
                   <Route path="/services" element={<Services />} />
+                  <Route path="/contact" element={<Contact />} />
                   <Route path="/careers" element={<CareersSection />} />
                   <Route path="/login" element={<LoginForm onLogin={(role) => console.log(role)} />} />
                   <Route path="*" element={<NotFound />} />
