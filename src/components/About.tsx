@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Target, Eye, Heart, Users, MapPin, Mail, Linkedin } from "lucide-react";
+import { CheckCircle, Target, Eye, Heart, Users } from "lucide-react";
 
 const About = () => {
    const features = [
@@ -47,6 +47,14 @@ const About = () => {
 
    const teamMembers = [
       {
+         name: "Dip Ojha",
+         role: "Full Stack Developer",
+         description: "Specialized in React, Node.js, and cloud technologies with passion for clean code.",
+         image: "/dip.jpg",
+         linkedin: "#",
+         category: "Development",
+      },
+      {
          name: "Madhav Poudel",
          role: "Cybersecurity Specialist",
          description: "Creating secure and resilient systems to protect against cyber threats.",
@@ -62,17 +70,17 @@ const About = () => {
          linkedin: "#",
          category: "Design",
       },
+      {
+         name: "Bikram Subedi",
+         role: "Graphic Designer",
+         description: "Creating visually stunning designs that effectively communicate brand messages.",
+         image: "/GD2.jpg",
+         linkedin: "#",
+         category: "Design",
+      },
    ];
 
    const pastFellows = [
-      {
-         name: "Dip Ojha",
-         role: "Full Stack Developer",
-         description: "Specialized in React, Node.js, and cloud technologies with passion for clean code.",
-         image: "/dip.jpg",
-         linkedin: "#",
-         category: "Development",
-      },
       {
          name: "Gaurav Raj Bana",
          role: "Full Stack Developer",
@@ -152,17 +160,17 @@ const About = () => {
                </div>
 
                {/* Right Content - Image & Stats */}
-               <div>
-                  <div className="relative">
+               <div className="flex flex-col items-center">
+                  <div className="relative w-full max-w-xl">
                      <img
                         src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
                         alt="HIST Team Working"
-                        className="rounded-lg shadow-xl"
+                        className="rounded-lg shadow-xl w-full"
                      />
                   </div>
 
                   {/* Stats Cards */}
-                  <div className="grid grid-cols-2 gap-4 mt-8">
+                  <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-md">
                      <Card className="border border-gray-200 hover:shadow-md transition-shadow">
                         <CardContent className="p-6 text-center">
                            <div className="text-2xl font-bold text-sapphire-600 mb-2">100%</div>
@@ -199,37 +207,25 @@ const About = () => {
                      <div className="w-24 h-1 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                  <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
                      {teamLeaders.map((leader, index) => (
                         <Card
                            key={index}
-                           className="border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden"
+                           className="border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden w-full max-w-md"
                         >
                            <div className="flex flex-col md:flex-row">
                               <div className="md:w-1/3 bg-sapphire-50 flex items-center justify-center p-4">
                                  <img
                                     src={leader.image}
                                     alt={leader.name}
-                                    className="rounded-xl w-24 h-24 md:w-32 md:h-32 object-cover border"
+                                    className="rounded-xl w-24 h-24 md:w-32 md:h-32 object-cover"
                                  />
                               </div>
                               <div className="md:w-2/3 w-full">
-                                 <CardContent className="p-6 bg-white shadow-md rounded-2xl">
-                                    <h3 className="text-xl font-semibold text-gray-900 ">{leader.name}</h3>
+                                 <CardContent className="p-6 bg-white">
+                                    <h3 className="text-xl font-semibold text-gray-900">{leader.name}</h3>
                                     <p className="text-sapphire-600 font-medium mb-3">{leader.role}</p>
                                     <p className="text-gray-700 text-sm mb-4">{leader.description}</p>
-
-                                    {/* {leader.linkedin && (
-                                       <a
-                                          href={leader.linkedin}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="inline-flex items-center text-sapphire-600 hover:text-sapphire-700 transition-colors"
-                                       >
-                                          <Linkedin className="w-5 h-5 mr-2" />
-                                          <span className="text-sm font-medium">Connect on LinkedIn</span>
-                                       </a>
-                                    )} */}
                                  </CardContent>
                               </div>
                            </div>
@@ -242,31 +238,26 @@ const About = () => {
                <div className="mb-16">
                   <div className="mb-8">
                      <h3 className="text-2xl font-bold text-gray-800 text-center">Our Expert Team</h3>
-                     <div className="w-24 h-2 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
+                     <div className="w-24 h-1 bg-sapphire-500 mx-auto mt-2 mb-8 rounded-full"></div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5">
+                  <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
                      {teamMembers.map((member, index) => (
-                        <Card key={index} className="border border-gray-200 hover:shadow-lg transition-shadow">
+                        <Card
+                           key={index}
+                           className="border border-gray-200 hover:shadow-lg transition-shadow w-full max-w-xs"
+                        >
                            <div className="bg-sapphire-50 flex justify-center py-6">
                               <img
-                                 src={member.image}
-                                 alt={member.name}
-                                 className="rounded-xl w-24 h-24 object-cover border"
+                                 src={member.image} // or leader.image, fellow.image depending on context
+                                 alt={member.name} // same here: use leader.name or fellow.name accordingly
+                                 className="rounded-xl w-24 h-24 object-cover"
                               />
                            </div>
                            <CardContent className="p-6 text-center">
                               <h3 className="text-lg font-semibold text-gray-900 mb-1">{member.name}</h3>
                               <p className="text-sapphire-600 font-medium text-sm mb-3">{member.role}</p>
                               <p className="text-gray-600 text-sm mb-4">{member.description}</p>
-                              <div className="flex justify-center">
-                                 {/* <a
-                                    href={member.linkedin}
-                                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sapphire-100 text-sapphire-600 hover:bg-sapphire-200 transition-colors"
-                                 >
-                                    <Linkedin className="w-5 h-5" />
-                                 </a> */}
-                              </div>
                            </CardContent>
                         </Card>
                      ))}
@@ -283,28 +274,20 @@ const About = () => {
                      </p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
                      {pastFellows.map((fellow, index) => (
-                        <Card key={index} className="border border-gray-200 hover:shadow-lg transition-shadow">
+                        <Card
+                           key={index}
+                           className="border border-gray-200 hover:shadow-lg transition-shadow w-full max-w-xs"
+                        >
                            <div className="bg-sapphire-50 flex justify-center py-6">
-                              <img
-                                 src={fellow.image}
-                                 alt={fellow.name}
-                                 className="rounded-xl w-24 h-24 object-cover border"
-                              />
+                              <img src={fellow.image} alt={fellow.name} className="rounded-xl w-24 h-24 object-cover" />
                            </div>
+
                            <CardContent className="p-6 text-center">
                               <h3 className="text-lg font-semibold text-gray-900 mb-1">{fellow.name}</h3>
                               <p className="text-sapphire-600 font-medium text-sm mb-3">{fellow.role}</p>
                               <p className="text-gray-600 text-sm mb-4">{fellow.description}</p>
-                              <div className="flex justify-center">
-                                 {/* <a
-                                    href={fellow.linkedin}
-                                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sapphire-100 text-sapphire-600 hover:bg-sapphire-200 transition-colors"
-                                 >
-                                    <Linkedin className="w-5 h-5" />
-                                 </a> */}
-                              </div>
                            </CardContent>
                         </Card>
                      ))}
