@@ -29,7 +29,7 @@ const Footer = () => {
       <div className="border-b border-gray-800">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 font-allstar">
+            <h3 className="text-2xl  mb-4 font-allstar">
               Stay Updated with HIST
             </h3>
             <p className="text-gray-300 mb-8">
@@ -59,7 +59,7 @@ const Footer = () => {
                 <img src="/hist.png" alt="HIST Logo" className="w-12 h-12"/>
               </div>
               <div>
-                <h1 className="text-xl font-bold font-allstar">HIST</h1>
+                <h1 className="text-xl font-bold font-allstar">H I S T</h1>
                 <p className="text-xs text-gray-400 leading-none">House of Information Science and Technology</p>
               </div>
             </div>
