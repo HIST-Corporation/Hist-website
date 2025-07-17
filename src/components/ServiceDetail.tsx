@@ -32,10 +32,10 @@ const ServiceDetail = () => {
    return (
       <div className="bg-gradient-to-b from-hist-blue-50 to-white min-h-screen py-16">
          <div className="container mx-auto px-4 max-w-8xl">
-            {/* Back Button */}
+  
             <div className="mb-8">
                <Button asChild variant="link" className="px-0 text-hist-blue hover:no-underline">
-                  <Link to="/#services" className="flex items-center">
+                  <Link to="/services" className="flex items-center">
                      <ChevronLeft className="mr-2 h-4 w-4" />
                      All Services
                   </Link>

@@ -96,41 +96,38 @@ const Services = () => {
 
             {/* Services Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-               {services.map((service, index) => (
-                  <Card
-                     key={index}
-                     className="group hover:shadow-xl transition-all duration-300 border-0 hist-shadow hover:hist-glow cursor-pointer"
+               {services.map((service) => (
+                  <Link
+                     to={`/services/${service.id}`}
+                     key={service.id}
+                     className="block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hist-blue focus-visible:ring-offset-2 rounded-lg transition-all"
                   >
-                     <CardContent className="p-6">
-                        <div className="w-12 h-12 bg-hist-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-hist-yellow transition-colors">
-                           <service.icon className="w-6 h-6 text-hist-blue group-hover:text-hist-blue-dark" />
-                        </div>
+                     <Card className="group hover:shadow-xl transition-all duration-300 border-0 hist-shadow hover:hist-glow h-full">
+                        <CardContent className="p-6">
+                           <div className="w-12 h-12 bg-hist-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-hist-yellow transition-colors">
+                              <service.icon className="w-6 h-6 text-hist-blue group-hover:text-hist-blue-dark" />
+                           </div>
 
-                        <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
+                           <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
 
-                        <p className="text-gray-600 mb-4 text-sm leading-relaxed">{service.shortDescription}</p>
+                           <p className="text-gray-600 mb-4 text-sm leading-relaxed">{service.shortDescription}</p>
 
-                        <ul className="space-y-1 mb-4">
-                           {service.features.map((feature, idx) => (
-                              <li key={idx} className="text-xs text-hist-blue flex items-center">
-                                 <div className="w-1 h-1 bg-hist-yellow rounded-full mr-2"></div>
-                                 {feature}
-                              </li>
-                           ))}
-                        </ul>
+                           <ul className="space-y-1 mb-4">
+                              {service.features.map((feature, idx) => (
+                                 <li key={idx} className="text-xs text-hist-blue flex items-center">
+                                    <div className="w-1 h-1 bg-hist-yellow rounded-full mr-2"></div>
+                                    {feature}
+                                 </li>
+                              ))}
+                           </ul>
 
-                        <Button
-                           asChild
-                           variant="link"
-                           className="text-hist-blue px-0 hover:no-underline group-hover:text-hist-blue-dark text-sm"
-                        >
-                           <Link to={`/services/${service.id}`} className="flex items-center">
+                           <div className="text-hist-blue px-0 hover:no-underline group-hover:text-hist-blue-dark text-sm flex items-center">
                               Learn more
                               <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-                           </Link>
-                        </Button>
-                     </CardContent>
-                  </Card>
+                           </div>
+                        </CardContent>
+                     </Card>
+                  </Link>
                ))}
             </div>
 
