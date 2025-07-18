@@ -67,7 +67,7 @@ const services = [
    {
       id: "cloud-services",
       icon: Calendar,
-      title: "☁️ Cloud Services",
+      title: "Cloud Services",
       shortDescription: "Cloud migration, deployment, and management services for modern infrastructure.",
       features: ["AWS/Azure Setup", "DevOps", "Cloud Security"],
    },
