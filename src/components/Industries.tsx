@@ -9,7 +9,7 @@ const Industries = () => {
          title: "Education",
          description: "Learning management systems, student portals, and educational technology solutions.",
          projects: "+ Projects",
-         animation: "group-hover:animate-wiggle",
+         animation: "group-hover:animate-bounce",
          iconColor: "text-purple-600 group-hover:text-purple-700",
          bgColor: "bg-purple-100 group-hover:bg-purple-200",
          ringColor: "ring-purple-500",
@@ -39,7 +39,7 @@ const Industries = () => {
          title: "Retail & E-commerce",
          description: "Online stores, inventory management, and customer relationship systems.",
          projects: "5+ Projects",
-         animation: "group-hover:animate-spin-slow",
+         animation: "group-hover:animate-bounce",
          iconColor: "text-green-600 group-hover:text-green-700",
          bgColor: "bg-green-100 group-hover:bg-green-200",
          ringColor: "ring-green-500",
@@ -49,7 +49,7 @@ const Industries = () => {
          title: "Government",
          description: "Digital governance solutions, citizen services, and administrative systems.",
          projects: "2+ Projects",
-         animation: "group-hover:animate-ping-slow",
+         animation: "group-hover:animate-bounce",
          iconColor: "text-yellow-600 group-hover:text-yellow-700",
          bgColor: "bg-yellow-100 group-hover:bg-yellow-200",
          ringColor: "ring-yellow-500",
@@ -59,7 +59,7 @@ const Industries = () => {
          title: "Logistics",
          description: "Supply chain management, tracking systems, and delivery optimization.",
          projects: "2+ Projects",
-         animation: "group-hover:animate-float",
+         animation: "group-hover:animate-bounce",
          iconColor: "text-indigo-600 group-hover:text-indigo-700",
          bgColor: "bg-indigo-100 group-hover:bg-indigo-200",
          ringColor: "ring-indigo-500",
@@ -121,11 +121,11 @@ const Industries = () => {
                style={{ animationDelay: "0.9s" }}
             >
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">20+</div>
                   <div className="text-gray-600">Total Projects</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">6</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">3</div>
                   <div className="text-gray-600">Industries Served</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
@@ -133,7 +133,7 @@ const Industries = () => {
                   <div className="text-gray-600">Success Rate</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-yellow-600 mb-2">5+</div>
+                  <div className="text-3xl font-bold text-yellow-600 mb-2">3+</div>
                   <div className="text-gray-600">Years Experience</div>
                </div>
             </div>

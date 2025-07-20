@@ -1,114 +1,352 @@
-
-import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import {
+   Menu,
+   X,
+   ChevronDown,
+   Code,
+   Briefcase,
+   Settings,
+   Star,
+   Grid2x2,
+   Image as ImageIcon,
+   Calendar,
+   Heart,
+} from "lucide-react";
+import { services as allServices } from "@/data/services"; // Import your services data
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [isScrolled, setIsScrolled] = useState(false);
+   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+   useEffect(() => {
+      const handleScroll = () => {
+         setIsScrolled(window.scrollY > 20);
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      const handleClickOutside = (event: MouseEvent) => {
+         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            setActiveDropdown(null);
+         }
+      };
 
-  const navigation = [
-   //  { name: 'Home', href: '#home' },
-    { name: 'About', href: 'about' },
-    { name: 'Services', href: '/#services' },
-   //  { name: 'Solutions', href: '/#solutions' },
-   //  { name: 'Portfolio', href: '/#portfolio' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/#contact' },
-  ];
+      window.addEventListener("scroll", handleScroll);
+      document.addEventListener("mousedown", handleClickOutside);
 
-  return (
-     <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-           isScrolled ? "bg-white shadow-lg border-b border-gray-100" : "bg-white/95 backdrop-blur-sm"
-        }`}
-     >
-        <div className="container mx-auto px-4">
-           <div className="flex items-center justify-between h-20">
-              {/* Logo */}
-              <a href="/" className="flex items-center space-x-3">
-                 <div className="w-12 h-12">
-                    <img src="/hist.png" className="w-12 h-12" alt="HIST Logo" />
-                 </div>
-                 <div>
-                    <h1 className="text-2xl font-bold text-hist-blue font-allstar">HIST</h1>
-                    <p className="text-xs text-gray-600 leading-none font-medium">
-                       House of Information
-                       <br />
-                       Science and Technology
-                    </p>
-                 </div>
-              </a>
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+         document.removeEventListener("mousedown", handleClickOutside);
+      };
+   }, []);
 
-              {/* Desktop Navigation */}
-              <nav className="hidden lg:flex items-center space-x-8">
-                 {navigation.map((item) => (
-                    <a
-                       key={item.name}
-                       href={item.href}
-                       className="text-gray-700 hover:text-hist-blue font-medium text-sm transition-colors duration-200 relative group"
-                    >
-                       {item.name}
-                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hist-yellow group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                 ))}
-              </nav>
+   const handleMouseEnter = (name: string) => {
+      setActiveDropdown(name);
+   };
 
-              {/* CTA Button & Mobile Menu Toggle */}
-              <div className="flex items-center space-x-4">
-                 <Button
-                    size="lg"
-                    className="hidden sm:inline-flex bg-hist-blue hover:bg-hist-blue-dark text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                    onClick={() => window.location.href = '/login'}
-                 >
-                    Login Portal
-                 </Button>
+   const toggleMobileDropdown = (name: string) => {
+      setMobileDropdown(mobileDropdown === name ? null : name);
+   };
 
-                 {/* Mobile menu button */}
-                 <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="lg:hidden p-3 rounded-lg text-gray-700 hover:text-hist-blue hover:bg-gray-50 transition-colors"
-                 >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                 </button>
-              </div>
-           </div>
+   const closeAllDropdowns = () => {
+      setActiveDropdown(null);
+      setMobileDropdown(null);
+      setIsMenuOpen(false);
+   };
 
-           {/* Mobile Navigation */}
-           {isMenuOpen && (
-              <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100">
-                 <nav className="container mx-auto px-4 py-6">
-                    {navigation.map((item) => (
-                       <a
-                          key={item.name}
-                          href={item.href}
-                          className="block py-3 text-gray-700 hover:text-hist-blue font-medium transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-                          onClick={() => setIsMenuOpen(false)}
-                       >
-                          {item.name}
-                       </a>
-                    ))}
-                    <Button className="w-full mt-4 bg-hist-blue hover:bg-hist-blue-dark text-white py-3 rounded-lg font-semibold shadow-lg">
-                       Get in Touch
-                    </Button>
-                 </nav>
-              </div>
-           )}
-        </div>
-     </header>
-  );
+   // Services dropdown data based on your actual services
+   const servicesCategories = [
+      {
+         category: "Development",
+         icon: <Code size={18} className="text-hist-blue" />,
+         items: [
+            { name: "SaaS Development", href: "/services/saas-product-development" },
+            { name: "Web & App Development", href: "/services/website-app-development" },
+            { name: "Custom Software", href: "/services/custom-software" },
+         ],
+      },
+      {
+         category: "Technology",
+         icon: <Settings size={18} className="text-hist-blue" />,
+         items: [
+            { name: "AI/ML Development", href: "/services/ai-ml-development" },
+            { name: "Cloud Services", href: "/services/cloud-services" },
+            { name: "IT Consulting", href: "/services/it-consulting" },
+         ],
+      },
+      {
+         category: "Design & Support",
+         icon: <ImageIcon size={18} className="text-hist-blue" />,
+         items: [
+            { name: "UI/UX Design", href: "/services/ui-ux-design" },
+            { name: "Maintenance & Support", href: "/services/maintenance-support" },
+         ],
+      },
+   ];
+
+   const navigation = [
+      { name: "About", href: "/about" },
+      {
+         name: "Services",
+         href: "/services",
+         mega: true,
+      },
+      {
+         name: "Industries",
+         href: "/industries",
+         dropdown: [
+            { name: "Healthcare", href: "/industries/healthcare" },
+            { name: "Finance", href: "/industries/finance" },
+            { name: "Education", href: "/industries/education" },
+            { name: "Retail", href: "/industries/retail" },
+         ],
+      },
+      {
+         name: "Careers",
+         href: "/careers",
+         dropdown: [
+            { name: "Open Positions", href: "/careers#positions" },
+            { name: "Our Culture", href: "/careers#culture" },
+            { name: "Benefits", href: "/careers#benefits" },
+         ],
+      },
+      { name: "Blog", href: "/blog" },
+      { name: "Contact", href: "/contact" },
+   ];
+
+   return (
+      <header
+         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+            isScrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
+         }`}
+         ref={dropdownRef}
+      >
+         <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+               {/* Logo */}
+               <a href="/" className="flex items-center space-x-2" onClick={closeAllDropdowns}>
+                  <div className="w-10 h-10">
+                     <img src="/hist.png" className="w-10 h-10" alt="HIST Logo" />
+                  </div>
+                  <div>
+                     <h1 className="text-xl font-bold text-hist-blue">H I S T</h1>
+                     <p className="text-xs text-gray-600 leading-none">
+                        House of Information
+                        <span className="block">Science & Technology</span>
+                     </p>
+                  </div>
+               </a>
+
+               {/* Desktop Navigation */}
+               <nav className="hidden lg:flex items-center space-x-1">
+                  {navigation.map((item) => (
+                     <div
+                        key={item.name}
+                        className="relative py-4"
+                        onMouseEnter={() => (item.mega || item.dropdown) && handleMouseEnter(item.name)}
+                     >
+                        <a
+                           href={item.href}
+                           className={`flex items-center px-3 py-1 font-medium text-sm ${
+                              activeDropdown === item.name ? "text-hist-blue" : "text-gray-700 hover:text-hist-blue"
+                           }`}
+                        >
+                           {item.name}
+                           {(item.mega || item.dropdown) && (
+                              <ChevronDown
+                                 size={16}
+                                 className={`ml-1 transition-transform ${
+                                    activeDropdown === item.name ? "rotate-180" : ""
+                                 }`}
+                              />
+                           )}
+                        </a>
+
+                        {/* Services Mega Dropdown */}
+                        {item.name === "Services" && activeDropdown === "Services" && (
+                           <div
+                              className="absolute left-1/2 transform -translate-x-1/2 top-full mt-0 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 z-50"
+                              onMouseLeave={() => setActiveDropdown(null)}
+                           >
+                              <div className="p-6 grid grid-cols-3 gap-6">
+                                 {servicesCategories.map((service, index) => (
+                                    <div key={index} className={`${index < 2 ? "border-r border-gray-100 pr-6" : ""}`}>
+                                       <div className="flex items-center mb-4">
+                                          <div className="p-2 bg-hist-blue/10 rounded-md mr-3">{service.icon}</div>
+                                          <h3 className="font-semibold text-gray-800">{service.category}</h3>
+                                       </div>
+                                       <ul className="space-y-2">
+                                          {service.items.map((subItem) => (
+                                             <li key={subItem.name}>
+                                                <a
+                                                   href={subItem.href}
+                                                   className="flex items-center py-2 px-3 text-gray-600 hover:text-hist-blue hover:bg-gray-50 rounded transition-colors text-sm"
+                                                   onClick={closeAllDropdowns}
+                                                >
+                                                   {subItem.name}
+                                                </a>
+                                             </li>
+                                          ))}
+                                       </ul>
+                                    </div>
+                                 ))}
+                              </div>
+                              <div className="border-t border-gray-100 bg-gray-50 px-6 py-4 rounded-b-lg">
+                                 <div className="flex justify-between items-center">
+                                    <p className="text-sm text-gray-600">Need custom solutions?</p>
+                                    <Button
+                                       size="sm"
+                                       className="bg-hist-blue hover:bg-hist-blue-dark text-white"
+                                       onClick={closeAllDropdowns}
+                                    >
+                                       Contact Us
+                                    </Button>
+                                 </div>
+                              </div>
+                           </div>
+                        )}
+
+                        {/* Regular Dropdown */}
+                        {item.dropdown && activeDropdown === item.name && (
+                           <div
+                              className="absolute left-0 top-full mt-1 w-48 bg-white rounded-lg shadow-md border border-gray-200 z-50 py-2"
+                              onMouseLeave={() => setActiveDropdown(null)}
+                           >
+                              {item.dropdown.map((subItem) => (
+                                 <a
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:text-hist-blue hover:bg-gray-50"
+                                    onClick={closeAllDropdowns}
+                                 >
+                                    {subItem.name}
+                                 </a>
+                              ))}
+                           </div>
+                        )}
+                     </div>
+                  ))}
+               </nav>
+
+               {/* CTA Button & Mobile Menu Toggle */}
+               <div className="flex items-center space-x-3">
+                  <Button
+                     size="sm"
+                     className="hidden sm:inline-flex bg-hist-blue hover:bg-hist-blue-dark text-white px-4 py-2 text-sm"
+                     onClick={() => {
+                        closeAllDropdowns();
+                        window.location.href = "/login";
+                     }}
+                  >
+                     Client Portal
+                  </Button>
+
+                  <button
+                     onClick={() => {
+                        closeAllDropdowns();
+                        setIsMenuOpen(!isMenuOpen);
+                     }}
+                     className="lg:hidden p-2 rounded-md text-gray-700 hover:text-hist-blue hover:bg-gray-100"
+                  >
+                     {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                  </button>
+               </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+               <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+                  <nav className="container mx-auto px-4 py-4">
+                     {navigation.map((item) => (
+                        <div key={item.name} className="mb-1">
+                           {item.mega || item.dropdown ? (
+                              <div className="border-b border-gray-100">
+                                 <button
+                                    onClick={() => toggleMobileDropdown(item.name)}
+                                    className="flex items-center justify-between w-full py-3 text-gray-700 font-medium"
+                                 >
+                                    <span>{item.name}</span>
+                                    <ChevronDown
+                                       size={16}
+                                       className={`transition-transform ${
+                                          mobileDropdown === item.name ? "rotate-180" : ""
+                                       }`}
+                                    />
+                                 </button>
+                                 {mobileDropdown === item.name && (
+                                    <div className="pl-4 pb-3">
+                                       {item.name === "Services" ? (
+                                          <div className="space-y-4">
+                                             {servicesCategories.map((service, index) => (
+                                                <div key={index}>
+                                                   <div className="flex items-center py-2">
+                                                      {service.icon}
+                                                      <h4 className="ml-2 font-medium text-gray-800">
+                                                         {service.category}
+                                                      </h4>
+                                                   </div>
+                                                   <ul className="pl-6 space-y-1">
+                                                      {service.items.map((subItem) => (
+                                                         <li key={subItem.name}>
+                                                            <a
+                                                               href={subItem.href}
+                                                               className="block py-1.5 text-gray-600 hover:text-hist-blue text-sm"
+                                                               onClick={closeAllDropdowns}
+                                                            >
+                                                               {subItem.name}
+                                                            </a>
+                                                         </li>
+                                                      ))}
+                                                   </ul>
+                                                </div>
+                                             ))}
+                                          </div>
+                                       ) : (
+                                          <ul className="space-y-1">
+                                             {item.dropdown?.map((subItem) => (
+                                                <li key={subItem.name}>
+                                                   <a
+                                                      href={subItem.href}
+                                                      className="block py-2 text-gray-600 hover:text-hist-blue text-sm"
+                                                      onClick={closeAllDropdowns}
+                                                   >
+                                                      {subItem.name}
+                                                   </a>
+                                                </li>
+                                             ))}
+                                          </ul>
+                                       )}
+                                    </div>
+                                 )}
+                              </div>
+                           ) : (
+                              <a
+                                 href={item.href}
+                                 className="block py-3 text-gray-700 hover:text-hist-blue font-medium border-b border-gray-100"
+                                 onClick={closeAllDropdowns}
+                              >
+                                 {item.name}
+                              </a>
+                           )}
+                        </div>
+                     ))}
+                     <Button
+                        className="w-full mt-3 bg-hist-blue hover:bg-hist-blue-dark text-white py-2.5 text-sm"
+                        onClick={() => {
+                           closeAllDropdowns();
+                           window.location.href = "/login";
+                        }}
+                     >
+                        Client Portal
+                     </Button>
+                  </nav>
+               </div>
+            )}
+         </div>
+      </header>
+   );
 };
 
 export default Header;
-
-
