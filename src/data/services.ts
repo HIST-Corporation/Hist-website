@@ -5,7 +5,8 @@ export interface Service {
    id: string;
    icon: React.ComponentType<any>;
    title: string;
-   shortDescription: string;
+   headerImage: string;
+   strengthsImage: string;
    longDescription: string;
    features: string[];
    detailedFeatures: {
@@ -25,10 +26,17 @@ export const services: Service[] = [
       id: "saas-product-development",
       icon: Code,
       title: "SaaS Product Development",
-      shortDescription: "End-to-end SaaS solutions with scalable architecture and modern UI/UX design.",
+      headerImage: "/images/services/saas-product.jpg",
+      strengthsImage: "/images/services/saas-strengths.jpg",
       longDescription:
-         "We build comprehensive SaaS products from concept to deployment, focusing on scalability, security, and user experience. Our solutions include multi-tenant architecture, subscription management, and seamless third-party integrations. We ensure your SaaS product is built with the latest technologies for maximum performance and reliability.",
-      features: ["Multi-tenant Architecture", "API Development", "Cloud Integration"],
+         "We build comprehensive SaaS products from concept to deployment, focusing on scalability, security, and user experience. Our solutions include multi-tenant architecture, subscription management, and seamless third-party integrations to ensure your product stands out in the competitive market.",
+      features: [
+         "Multi-tenant Architecture",
+         "Subscription Billing",
+         "API Ecosystem",
+         "Cloud Integration",
+         "User Management",
+      ],
       detailedFeatures: [
          {
             title: "Scalable Infrastructure",
@@ -39,284 +47,273 @@ export const services: Service[] = [
             description: "Flexible billing systems supporting multiple pricing models and payment gateways",
          },
          {
-            title: "API Ecosystem",
-            description: "Comprehensive API development with documentation and developer portals",
+            title: "Security First",
+            description: "Enterprise-grade security with SOC 2 compliance and data encryption",
          },
       ],
       benefits: [
-         "Work from anywhere – All you need is an internet connection",
-         "No big setup costs – You don't have to buy expensive hardware or servers",
-         "Always updated – Your software stays current with the latest features",
-         "Grows with you – Add more users or features as your business expands",
-         "Easy to use – Simple designs and user-friendly systems for everyone",
+         "Reduce time-to-market with our proven development framework",
+         "Scale effortlessly with cloud-native architecture",
+         "Increase revenue with flexible subscription models",
+         "Enhance security with enterprise-grade protections",
+         "Improve user experience with intuitive interfaces",
       ],
       strengths: [
          {
-            title: "Scalable Architecture",
-            description:
-               "We build SaaS products with robust, scalable multi-tenant architecture. This means a single software instance efficiently serves multiple customers, ensuring data isolation, security, and cost efficiency while allowing seamless growth.",
+            title: "Proven Methodology",
+            description: "We follow our established SaaS development framework honed over 50+ successful projects",
          },
          {
-            title: "User Management",
-            description:
-               "Advanced user management features, including authentication and role-based access control (RBAC), ensure that only authorized users can access specific resources.",
+            title: "Vertical Expertise",
+            description: "Deep experience in healthcare, fintech, e-commerce, and enterprise SaaS solutions",
          },
          {
-            title: "Modern UI/UX Design",
-            description:
-               "We prioritize user experience, implementing the latest trends in UI/UX such as AI-powered personalization that tailors the interface to each user's needs.",
-         },
-         {
-            title: "API Development",
-            description:
-               "Our SaaS products are built with robust APIs at their core, enabling seamless integration with other applications and cloud services.",
-         },
-         {
-            title: "Cloud Integration",
-            description:
-               "We leverage leading cloud platforms, ensuring your SaaS product benefits from real-time data processing, workflow automation, and unified functionality.",
+            title: "Full Lifecycle Support",
+            description: "From MVP to enterprise-scale deployment with continuous optimization",
          },
       ],
       partnerDescription:
-         "When you work with HIST, you're not just getting a development team — you're getting a full tech partner. We help you every step of the way, including planning your idea, designing the software, developing and testing the product, launching it to the public, and providing ongoing support and updates. We make sure your SaaS product works perfectly for your business today — and can grow with you tomorrow.",
+         "As your SaaS development partner, we become an extension of your team, providing not just technical expertise but strategic guidance to ensure your product achieves market success. Our end-to-end approach covers everything from initial concept validation to post-launch optimization and scaling.",
    },
    {
       id: "website-app-development",
       icon: Grid2x2,
       title: "Website & App Development",
-      shortDescription: "Responsive websites and mobile applications built with cutting-edge technologies.",
+      headerImage: "/images/services/web-development.jpg",
+      strengthsImage: "/images/services/web-strengths.jpg",
       longDescription:
-         "We create responsive, high-performance websites and mobile applications using modern frameworks. Our development process focuses on user-centric design, cross-platform compatibility, and optimal performance across all devices. From simple landing pages to complex web applications, we deliver solutions that drive engagement and conversions.",
-      features: ["React/Next.js", "Flutter Apps", "PWA Development"],
+         "We create high-performance, responsive websites and cross-platform mobile applications using modern technologies like React, Next.js, and Flutter. Our solutions are optimized for speed, accessibility, and conversion across all devices and platforms.",
+      features: [
+         "Responsive Design",
+         "Progressive Web Apps",
+         "Cross-Platform Mobile",
+         "Performance Optimization",
+         "Accessibility Compliance",
+      ],
       detailedFeatures: [
          {
-            title: "Progressive Web Apps",
-            description: "Offline-capable web applications with native-like experience and push notifications",
+            title: "Lightning Fast",
+            description: "90+ Lighthouse scores with optimized assets and efficient code",
          },
          {
-            title: "Cross-Platform Mobile",
-            description: "Single codebase solutions for iOS and Android with Flutter for cost efficiency",
+            title: "Future-Proof",
+            description: "Built with modern frameworks that are maintainable and extensible",
          },
          {
-            title: "Performance Optimization",
-            description: "Lighthouse scores of 90+ for all core web vitals and fast loading times",
+            title: "Conversion Focused",
+            description: "UX designed to maximize user engagement and conversions",
          },
       ],
       benefits: [
-         "Reach customers on any device with responsive designs",
-         "Native-like experiences with Progressive Web App technology",
-         "Faster time-to-market with modern development frameworks",
-         "Seamless updates without app store approvals",
-         "Reduced development costs with cross-platform solutions",
+         "Single codebase for iOS, Android and web with Flutter",
+         "Offline-capable PWAs with native app features",
+         "SEO-optimized for maximum visibility",
+         "ADA/WCAG compliant accessibility",
+         "Continuous performance monitoring",
       ],
       strengths: [
          {
-            title: "Modern Frameworks",
-            description:
-               "We use React, Next.js, and Flutter to build performant applications with excellent developer experience",
+            title: "Cross-Platform Experts",
+            description: "Specialists in building unified experiences across web and mobile platforms",
          },
          {
-            title: "Performance Focused",
-            description: "Every application is optimized for speed, accessibility, and SEO from the ground up",
+            title: "Performance Obsessed",
+            description: "Rigorous performance testing and optimization at every stage",
          },
          {
-            title: "Cross-Platform",
-            description: "Single codebase solutions that work seamlessly across web, iOS, and Android platforms",
-         },
-         {
-            title: "User-Centric Design",
-            description: "Applications designed around user needs with intuitive navigation and workflows",
-         },
-         {
-            title: "Agile Development",
-            description: "Iterative development process with continuous feedback and improvement cycles",
+            title: "Design-Dev Alignment",
+            description: "Seamless collaboration between our design and development teams",
          },
       ],
       partnerDescription:
-         "As your digital development partner, HIST ensures your website or app not only looks great but performs exceptionally. We handle everything from initial concept to post-launch optimization, providing continuous support and updates. Our team becomes an extension of yours, dedicated to creating digital experiences that drive business results.",
+         "Our web and app development team combines technical excellence with creative design to build digital experiences that users love and that drive real business results. We handle everything from initial concepts to post-launch optimizations.",
    },
    {
       id: "custom-software",
       icon: Settings,
       title: "Custom Software Solutions",
-      shortDescription: "Tailored software applications designed to solve specific business challenges.",
+      headerImage: "/images/services/custom-software.jpg",
+      strengthsImage: "/images/services/custom-strengths.jpg",
       longDescription:
-         "We develop custom software solutions that address your unique business requirements, from workflow automation to specialized enterprise systems. Our team works closely with you to understand your processes and build software that enhances productivity, reduces costs, and gives you a competitive edge.",
-      features: ["Business Automation", "Custom CRM/ERP", "Integration Solutions"],
+         "Tailored software solutions designed specifically for your unique business requirements. We analyze your workflows and build systems that enhance productivity, reduce costs, and provide competitive advantages.",
+      features: [
+         "Process Automation",
+         "Custom Business Logic",
+         "Legacy System Integration",
+         "Workflow Optimization",
+         "Data Visualization",
+      ],
       detailedFeatures: [
          {
-            title: "Process Automation",
-            description: "Streamline operations by automating repetitive tasks and workflows",
+            title: "Business Process Analysis",
+            description: "Deep dive into your operations to identify optimization opportunities",
          },
          {
-            title: "Custom Business Logic",
-            description: "Tailored solutions that match your exact operational requirements",
+            title: "Tailored Solutions",
+            description: "Software designed specifically for your business needs",
          },
          {
-            title: "Legacy System Integration",
-            description: "Seamless connection between new and existing systems",
+            title: "Seamless Integration",
+            description: "Connect with your existing systems and databases",
          },
       ],
       benefits: [
-         "Solutions designed specifically for your business needs",
-         "Automation of repetitive tasks to boost productivity",
-         "Seamless integration with existing systems",
-         "Competitive advantage through proprietary technology",
-         "Scalable solutions that grow with your business",
+         "Eliminate manual processes with automation",
+         "Get exactly the features you need",
+         "Integrate with your existing tools",
+         "Real-time data and reporting",
+         "Scalable as your business grows",
       ],
       strengths: [
          {
-            title: "Business Analysis",
-            description: "Deep understanding of your workflows to identify optimization opportunities",
+            title: "Domain Expertise",
+            description: "Experience across healthcare, manufacturing, logistics and more",
          },
          {
-            title: "Custom Development",
-            description: "Tailor-made solutions that precisely fit your operational requirements",
+            title: "Full-Cycle Development",
+            description: "From requirements gathering to deployment and training",
          },
          {
-            title: "Integration Expertise",
-            description: "Seamless connection between new solutions and existing infrastructure",
-         },
-         {
-            title: "Workflow Automation",
-            description: "Automation of repetitive tasks to increase efficiency and reduce errors",
-         },
-         {
-            title: "Long-term Support",
-            description: "Ongoing maintenance and evolution of your custom solutions",
+            title: "Ongoing Evolution",
+            description: "Continuous improvement based on user feedback",
          },
       ],
       partnerDescription:
-         "HIST becomes your technology partner, developing custom solutions that transform how you work. We don't just deliver software - we deliver competitive advantages. From initial consultation through development and ongoing support, we ensure your custom solution evolves with your business needs.",
+         "We don't just build software - we solve business problems. Our team becomes your partner, working closely to understand your challenges and deliver solutions that transform how you work.",
    },
    {
       id: "it-consulting",
       icon: Briefcase,
       title: "IT Consulting",
-      shortDescription: "Strategic technology consulting to optimize your IT infrastructure and processes.",
+      headerImage: "/images/services/it-consulting.jpg",
+      strengthsImage: "/images/services/consulting-strengths.jpg",
       longDescription:
-         "Our IT consulting services help you make informed technology decisions, optimize your infrastructure, and align IT strategy with business goals. We provide expertise in digital transformation, cloud adoption, security assessments, and technology roadmapping.",
-      features: ["Digital Strategy", "System Architecture", "Technology Audit"],
+         "Strategic technology consulting to align your IT infrastructure with business goals. We provide expert guidance on digital transformation, cloud adoption, security, and technology roadmapping to optimize your operations.",
+      features: [
+         "Digital Strategy",
+         "Cloud Adoption",
+         "Security Assessment",
+         "Technology Roadmap",
+         "Cost Optimization",
+      ],
       detailedFeatures: [
          {
-            title: "Technology Roadmap",
-            description: "3-5 year strategic planning for your digital transformation journey",
+            title: "Strategic Planning",
+            description: "3-5 year technology roadmap aligned with business objectives",
          },
          {
-            title: "Cost Optimization",
-            description: "Identify savings in your IT operations without compromising quality",
+            title: "Cost Analysis",
+            description: "Identify inefficiencies and optimize IT spending",
          },
          {
-            title: "Security Assessment",
-            description: "Comprehensive evaluation of your security posture and vulnerabilities",
+            title: "Security Hardening",
+            description: "Comprehensive security assessments and remediation plans",
          },
       ],
       benefits: [
          "Expert guidance on technology investments",
          "Optimized IT infrastructure costs",
          "Enhanced security and compliance",
-         "Strategic roadmap for digital transformation",
-         "Improved alignment between IT and business goals",
+         "Clear roadmap for digital transformation",
+         "Improved operational efficiency",
       ],
       strengths: [
          {
-            title: "Strategic Planning",
-            description: "Technology roadmaps aligned with your business objectives",
+            title: "Holistic Approach",
+            description: "We consider people, processes and technology in our recommendations",
          },
          {
-            title: "Cost Optimization",
-            description: "Identifying savings opportunities without compromising performance",
+            title: "Vendor Neutral",
+            description: "Objective advice not tied to any specific technology provider",
          },
          {
-            title: "Security Expertise",
-            description: "Comprehensive security assessments and hardening strategies",
-         },
-         {
-            title: "Cloud Strategy",
-            description: "Migration planning and optimization for cloud environments",
-         },
-         {
-            title: "Digital Transformation",
-            description: "Guidance through your organization's digital evolution",
+            title: "Practical Implementation",
+            description: "Recommendations that consider your team's capabilities and constraints",
          },
       ],
       partnerDescription:
-         "As your strategic IT partner, HIST provides the expertise and guidance to navigate complex technology decisions. We work closely with your leadership team to develop and execute technology strategies that drive business growth, reduce costs, and mitigate risks.",
+         "As your trusted IT consultants, we provide unbiased, strategic advice to help you navigate complex technology decisions. We work closely with your leadership team to develop and execute technology strategies that drive business growth while managing risk and cost.",
    },
    {
       id: "ai-ml-development",
       icon: Star,
       title: "AI/ML Development",
-      shortDescription: "Intelligent solutions powered by artificial intelligence and machine learning.",
+      headerImage: "/images/services/ai-development.jpg",
+      strengthsImage: "/images/services/ai-strengths.jpg",
       longDescription:
-         "We build AI-powered solutions that transform your business operations and customer experiences. From predictive analytics to computer vision and natural language processing, we implement machine learning models that deliver real business value.",
-      features: ["Predictive Analytics", "Chatbots", "Data Processing"],
+         "Transform your business with intelligent solutions powered by artificial intelligence and machine learning. From predictive analytics to computer vision, we implement AI that delivers measurable business value.",
+      features: [
+         "Predictive Analytics",
+         "Natural Language Processing",
+         "Computer Vision",
+         "Recommendation Engines",
+         "Process Automation",
+      ],
       detailedFeatures: [
          {
-            title: "Predictive Modeling",
-            description: "Forecast trends and behaviors using historical data patterns",
+            title: "Custom AI Models",
+            description: "Tailored machine learning models for your specific use cases",
          },
          {
-            title: "Natural Language Processing",
-            description: "Implement chatbots and text analysis for customer interactions",
+            title: "Data Pipeline",
+            description: "End-to-end data collection, processing and model training",
          },
          {
-            title: "Computer Vision",
-            description: "Image and video analysis for quality control and automation",
+            title: "Ethical AI",
+            description: "Responsible AI development with fairness and transparency",
          },
       ],
       benefits: [
-         "Automated decision-making processes",
-         "Enhanced customer experiences through personalization",
-         "Improved operational efficiency with predictive maintenance",
-         "Data-driven insights for strategic decisions",
-         "Competitive advantage through innovative AI applications",
+         "Automate complex decision-making processes",
+         "Enhance customer experiences through personalization",
+         "Improve operational efficiency with predictive maintenance",
+         "Gain competitive advantage through data insights",
+         "Reduce costs through intelligent automation",
       ],
       strengths: [
          {
-            title: "Data Science Expertise",
-            description: "Experienced team with deep knowledge in machine learning algorithms",
+            title: "Applied AI",
+            description: "Focus on practical business applications rather than theoretical models",
          },
          {
-            title: "Custom AI Solutions",
-            description: "Tailored AI models that address your specific business challenges",
-         },
-         {
-            title: "Ethical AI Practices",
-            description: "Responsible AI development with fairness and transparency",
-         },
-         {
-            title: "End-to-End Implementation",
-            description: "From data preparation to model deployment and monitoring",
+            title: "Full Stack AI",
+            description: "From data engineering to model deployment and monitoring",
          },
          {
             title: "Industry Specialization",
-            description: "Domain-specific AI solutions for your industry vertical",
+            description: "Domain-specific solutions for healthcare, retail, manufacturing etc.",
          },
       ],
       partnerDescription:
-         "HIST guides you through the AI journey, from identifying opportunities to implementing and maintaining solutions. We become your AI innovation partner, helping you leverage cutting-edge technologies to solve complex problems and create new business value.",
+         "We guide you through the complete AI journey - from identifying high-value use cases to implementing production-ready solutions. Our team combines deep technical expertise with business acumen to deliver AI solutions that create real impact.",
    },
    {
       id: "ui-ux-design",
       icon: ImageIcon,
       title: "UI/UX Design",
-      shortDescription: "User-centered design creating intuitive and engaging digital experiences.",
+      headerImage: "/images/services/ui-ux-design.jpg",
+      strengthsImage: "/images/services/design-strengths.jpg",
       longDescription:
-         "Our design team creates beautiful, functional interfaces that delight users and drive conversions. We follow a user-centered design process that includes research, prototyping, testing, and iteration to ensure your digital products provide exceptional experiences.",
-      features: ["User Research", "Prototyping", "Design Systems"],
+         "Beautiful, intuitive interfaces designed to delight users and drive business results. Our user-centered design process combines research, prototyping, and testing to create exceptional digital experiences.",
+      features: [
+         "User Research",
+         "Interactive Prototypes",
+         "Design Systems",
+         "Usability Testing",
+         "Accessibility Audits",
+      ],
       detailedFeatures: [
          {
-            title: "User Research",
-            description: "In-depth analysis of user needs, behaviors, and pain points",
+            title: "User-Centered",
+            description: "Designs grounded in real user needs and behaviors",
          },
          {
-            title: "Interactive Prototypes",
-            description: "High-fidelity prototypes for testing and stakeholder approval",
+            title: "Conversion Optimized",
+            description: "Data-driven designs that improve key metrics",
          },
          {
             title: "Design Systems",
-            description: "Consistent component libraries for unified brand experiences",
+            description: "Scalable component libraries for consistent experiences",
          },
       ],
       benefits: [
@@ -328,53 +325,52 @@ export const services: Service[] = [
       ],
       strengths: [
          {
-            title: "User-Centered Approach",
-            description: "Designs grounded in research and user testing",
+            title: "Research-Driven",
+            description: "Deep user understanding through interviews, surveys and analytics",
          },
          {
-            title: "Conversion Optimization",
-            description: "Data-driven designs that improve key business metrics",
+            title: "Business-Aligned",
+            description: "Designs that balance user needs with business objectives",
          },
          {
-            title: "Design Systems",
-            description: "Scalable component libraries for consistent experiences",
-         },
-         {
-            title: "Accessibility Focus",
-            description: "Inclusive designs that work for all users",
-         },
-         {
-            title: "Collaborative Process",
-            description: "Close partnership throughout the design journey",
+            title: "Technical Feasibility",
+            description: "Practical designs that developers can efficiently implement",
          },
       ],
       partnerDescription:
-         "HIST becomes your design partner, creating experiences that users love and that drive business results. We collaborate closely with your team to understand your users and business goals, delivering designs that are both beautiful and effective.",
+         "We don't just make things look good - we create experiences that work. Our design team becomes your partner, collaborating closely to understand your users and business goals, then delivering designs that are both beautiful and effective.",
    },
    {
       id: "maintenance-support",
       icon: Heart,
       title: "Maintenance & Support",
-      shortDescription: "24/7 technical support and maintenance services for your digital assets.",
+      headerImage: "/images/services/support.jpg",
+      strengthsImage: "/images/services/support-strengths.jpg",
       longDescription:
-         "We provide comprehensive maintenance and support services to keep your digital products running smoothly. Our team handles everything from bug fixes and security updates to performance optimization and feature enhancements.",
-      features: ["Bug Fixes", "Performance Optimization", "Security Updates"],
+         "Comprehensive maintenance and support services to keep your digital products running smoothly. We handle everything from bug fixes and security updates to performance optimization and feature enhancements.",
+      features: [
+         "Proactive Monitoring",
+         "Scheduled Maintenance",
+         "Emergency Support",
+         "Performance Optimization",
+         "Security Updates",
+      ],
       detailedFeatures: [
          {
-            title: "Proactive Monitoring",
-            description: "24/7 system monitoring with immediate alerting for issues",
+            title: "24/7 Monitoring",
+            description: "Real-time monitoring with immediate alerting for issues",
          },
          {
-            title: "Scheduled Maintenance",
+            title: "Preventive Maintenance",
             description: "Regular updates and optimizations to prevent problems",
          },
          {
-            title: "Emergency Support",
-            description: "Rapid response team for critical system issues",
+            title: "Rapid Response",
+            description: "Quick resolution of critical issues with SLAs",
          },
       ],
       benefits: [
-         "Reduced downtime with proactive monitoring",
+         "Minimize downtime with proactive monitoring",
          "Enhanced security through regular updates",
          "Improved performance with ongoing optimization",
          "Extended product lifespan with continuous improvements",
@@ -382,81 +378,72 @@ export const services: Service[] = [
       ],
       strengths: [
          {
-            title: "Proactive Maintenance",
-            description: "Prevent issues before they impact your business",
+            title: "Proactive Approach",
+            description: "We prevent issues before they impact your business",
          },
          {
-            title: "Rapid Response",
-            description: "Quick resolution of critical issues with SLAs",
+            title: "Technical Depth",
+            description: "Deep understanding of complex systems for effective troubleshooting",
          },
          {
-            title: "Performance Optimization",
-            description: "Continuous improvements to keep systems running smoothly",
-         },
-         {
-            title: "Security Vigilance",
-            description: "Timely updates and patches to protect against vulnerabilities",
-         },
-         {
-            title: "Evolutionary Development",
-            description: "Gradual improvements and feature additions over time",
+            title: "Business Awareness",
+            description: "Support that considers your operational needs and priorities",
          },
       ],
       partnerDescription:
-         "As your long-term technology partner, HIST ensures your digital products remain secure, performant, and valuable. We provide peace of mind through reliable support and continuous improvement, allowing you to focus on your core business.",
+         "As your long-term technology partner, we ensure your digital products remain secure, performant, and valuable. We provide peace of mind through reliable support and continuous improvement, allowing you to focus on your core business.",
    },
    {
       id: "cloud-services",
       icon: Calendar,
       title: "Cloud Services",
-      shortDescription: "Cloud migration, deployment, and management services for modern infrastructure.",
+      headerImage: "/images/services/cloud.jpg",
+      strengthsImage: "/images/services/cloud-strengths.jpg",
       longDescription:
-         "We help businesses leverage cloud computing to improve scalability, reduce costs, and enhance security. Our cloud services include migration strategy, implementation, and ongoing management across AWS, Azure, and Google Cloud platforms.",
-      features: ["AWS/Azure Setup", "DevOps", "Cloud Security"],
+         "End-to-end cloud solutions including migration, deployment, and management across AWS, Azure, and Google Cloud. We help you leverage cloud computing to improve scalability, reduce costs, and enhance security.",
+      features: [
+         "Cloud Migration",
+         "Infrastructure as Code",
+         "Cost Optimization",
+         "DevOps Automation",
+         "Security & Compliance",
+      ],
       detailedFeatures: [
          {
-            title: "Cloud Migration",
-            description: "Seamless transition of applications and data to the cloud",
-         },
-         {
-            title: "Infrastructure as Code",
-            description: "Automated, reproducible cloud environments using Terraform",
-         },
-         {
-            title: "Cost Management",
-            description: "Monitoring and optimization of cloud spending",
-         },
-      ],
-      benefits: [
-         "Reduced infrastructure costs with pay-as-you-go models",
-         "Improved scalability to handle traffic fluctuations",
-         "Enhanced reliability with geographically distributed systems",
-         "Faster deployment of new services and features",
-         "Enterprise-grade security with cloud provider capabilities",
-      ],
-      strengths: [
-         {
-            title: "Multi-Cloud Expertise",
-            description: "Experience across AWS, Azure, and Google Cloud platforms",
+            title: "Multi-Cloud",
+            description: "Expertise across AWS, Azure and Google Cloud platforms",
          },
          {
             title: "Migration Strategy",
             description: "Risk-minimized cloud transitions with proven methodologies",
          },
          {
-            title: "Cost Optimization",
+            title: "Cost Management",
             description: "Continuous monitoring and optimization of cloud spending",
          },
+      ],
+      benefits: [
+         "Reduce infrastructure costs with pay-as-you-go models",
+         "Improve scalability to handle traffic fluctuations",
+         "Enhance reliability with geographically distributed systems",
+         "Faster deployment of new services and features",
+         "Enterprise-grade security with cloud provider capabilities",
+      ],
+      strengths: [
          {
-            title: "Security & Compliance",
-            description: "Secure configurations meeting industry compliance standards",
+            title: "Certified Experts",
+            description: "AWS, Azure and Google Cloud certified professionals",
          },
          {
-            title: "DevOps Automation",
-            description: "CI/CD pipelines and infrastructure as code implementations",
+            title: "FinOps Practice",
+            description: "Cloud financial management to optimize spending",
+         },
+         {
+            title: "Security Focus",
+            description: "Secure configurations meeting industry compliance standards",
          },
       ],
       partnerDescription:
-         "HIST becomes your cloud partner, guiding you through migration and managing your cloud environment for optimal performance, security, and cost efficiency. We provide end-to-end cloud services that transform how you deploy and manage your infrastructure.",
+         "We become your cloud partner, guiding you through migration and managing your cloud environment for optimal performance, security, and cost efficiency. Our team provides end-to-end cloud services that transform how you deploy and manage your infrastructure.",
    },
 ];
