@@ -9,7 +9,6 @@ const ServiceDetail = () => {
    const { serviceId } = useParams();
    const service = services.find((s) => s.id === serviceId);
 
-   // Scroll to top when service changes
    useEffect(() => {
       window.scrollTo(0, 0);
    }, [serviceId]);
@@ -32,7 +31,6 @@ const ServiceDetail = () => {
    return (
       <div className="bg-gradient-to-b from-hist-blue-50 to-white min-h-screen py-16">
          <div className="container mx-auto px-4 max-w-8xl">
-  
             <div className="mb-8">
                <Button asChild variant="link" className="px-0 text-hist-blue hover:no-underline">
                   <Link to="/services" className="flex items-center">
@@ -42,7 +40,7 @@ const ServiceDetail = () => {
                </Button>
             </div>
 
-            {/* Service Header */}
+            {/* Service Header with Image */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
                <div>
                   <div className="inline-flex items-center px-4 py-2 bg-hist-yellow rounded-full text-hist-blue text-sm font-semibold mb-6">
@@ -58,12 +56,13 @@ const ServiceDetail = () => {
                   </Button>
                </div>
 
-               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-r from-hist-blue to-hist-blue-dark flex items-center justify-center">
-                  <div className="text-white text-center p-8">
-                     <service.icon className="h-20 w-20 mx-auto mb-6" />
-                     <div className="text-3xl font-bold mb-4">{service.title}</div>
-                     <div className="text-xl opacity-90">{service.shortDescription}</div>
-                  </div>
+               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+                  <img
+                     src={service.headerImage}
+                     alt={service.title}
+                     className="w-full h-full object-cover"
+                     loading="lazy"
+                  />
                </div>
             </div>
 
@@ -101,13 +100,15 @@ const ServiceDetail = () => {
                </div>
             </div>
 
-            {/* Why Choose HIST Section */}
+            {/* Why Choose HIST Section with Image */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-hist-blue to-hist-blue-dark flex items-center justify-center">
-                  <div className="text-white text-center p-8">
-                     <div className="text-3xl font-bold mb-4">Why Choose HIST?</div>
-                     <div className="text-xl opacity-90">Expertise you can trust for your digital transformation</div>
-                  </div>
+               <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+                  <img
+                     src={service.strengthsImage}
+                     alt={`Why choose HIST for ${service.title}`}
+                     className="w-full h-full object-cover"
+                     loading="lazy"
+                  />
                </div>
 
                <div>
