@@ -131,7 +131,7 @@ const Header = () => {
                      <img src="/hist.png" className="w-10 h-10" alt="HIST Logo" />
                   </div>
                   <div>
-                     <h1 className="text-xl font-bold text-hist-blue">H I S T</h1>
+                     <h1 className="text-xl font-bold text-hist-blue">HIST</h1>
                      <p className="text-xs text-gray-600 leading-none">
                         House of Information
                         <span className="block">Science & Technology</span>

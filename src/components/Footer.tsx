@@ -59,7 +59,7 @@ const Footer = () => {
                 <img src="/hist.png" alt="HIST Logo" className="w-12 h-12"/>
               </div>
               <div>
-                <h1 className="text-xl font-bold font-allstar">H I S T</h1>
+                <h1 className="text-xl font-bold font-allstar">HIST</h1>
                 <p className="text-xs text-gray-400 leading-none">House of Information Science and Technology</p>
               </div>
             </div>
