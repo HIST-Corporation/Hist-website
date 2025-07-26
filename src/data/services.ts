@@ -86,7 +86,7 @@ export const services: Service[] = [
       title: "Website & App Development",
       shortDescription: "Responsive websites and mobile applications built with cutting-edge technologies.",
       longDescription:
-         "We create responsive, high-performance websites and mobile applications using modern frameworks. Our development process focuses on user-centric design, cross-platform compatibility, and optimal performance across all devices. From simple landing pages to complex web applications, we deliver solutions that drive engagement and conversions.",
+         "Nowadays, the digital environment demands that businesses possess responsive, quick, and device-friendly web sites and apps. At HIST – House of Information Science and Technology, we create advanced web and mobile apps that save you time and money by doing all the technical work behind the scenes. Whether launching or expanding, our solutions allow you to engage customers anytime and anywhere. We don't just create websites or apps — we offer secure, reliable digital solutions that grow with you and ensure a seamless user experience.",
       features: ["React/Next.js", "Flutter Apps", "PWA Development"],
       detailedFeatures: [
          {
@@ -103,37 +103,37 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Reach customers on any device with responsive designs",
-         "Native-like experiences with Progressive Web App technology",
-         "Faster time-to-market with modern development frameworks",
-         "Seamless updates without app store approvals",
-         "Reduced development costs with cross-platform solutions",
+         "Reach more customers – Your site and app look great on phones, tablets, and computers.",
+         "No big setup costs – No need to buy expensive hardware or worry about technical details.",
+         "Always current – Your site and app stay updated with the latest features.",
+         "Grows with you – Easily add new features as your business gets bigger.",
+         "Simple and friendly – Clean designs and easy navigation for everyone.",
       ],
       strengths: [
          {
-            title: "Modern Frameworks",
+            title: "Cutting-Edge Technologies",
             description:
-               "We use React, Next.js, and Flutter to build performant applications with excellent developer experience",
+               "We use the latest and best tools like React, Next.js, Flutter, and Progressive Web App (PWA) development. This means your website or app is fast, secure, and packed with modern features.",
          },
          {
-            title: "Performance Focused",
-            description: "Every application is optimized for speed, accessibility, and SEO from the ground up",
+            title: "Responsive Design",
+            description: "We make sure your website and app look and work perfectly on any device, so your users always have a great experience.",
          },
          {
-            title: "Cross-Platform",
-            description: "Single codebase solutions that work seamlessly across web, iOS, and Android platforms",
+            title: "Easy to Update and Manage",
+            description: "Our solutions are easy to manage, so you can make changes, add new features, or update information with little effort.",
          },
          {
-            title: "User-Centric Design",
-            description: "Applications designed around user needs with intuitive navigation and workflows",
+            title: "Secure and Scalable",
+            description: "We build your website and app to be safe and ready to grow as your business grows, so you don’t have to worry about security or slowdowns.",
          },
          {
-            title: "Agile Development",
-            description: "Iterative development process with continuous feedback and improvement cycles",
+            title: "User-focused",
+            description: "We focus on simple, friendly designs that are easy for both you and your customers to use.",
          },
       ],
       partnerDescription:
-         "As your digital development partner, HIST ensures your website or app not only looks great but performs exceptionally. We handle everything from initial concept to post-launch optimization, providing continuous support and updates. Our team becomes an extension of yours, dedicated to creating digital experiences that drive business results.",
+         "When you choose HIST, you get more than a development team — you gain a full digital partner. We support your journey from concept to launch and beyond, from Planning your website or app idea. Designing intuitive and user-friendly interfaces, Building and testing with cutting-edge technologies like React/Next.js, Flutter, and PWAs, Launching your site or app to the public, to Providing ongoing support and updates . We ensure your digital solutions are future-ready, secure, and built to grow with your business.",
    },
    {
       id: "custom-software",
