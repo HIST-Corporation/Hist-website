@@ -399,7 +399,7 @@ export const services: Service[] = [
          },
          {
             title: "Personalized Support",
-            description: "Our team is always available to answer questions, offer advice, and help with anything you need.".
+            description: "Our team is always available to answer questions, offer advice, and help with anything you need.",
          },
       ],
       partnerDescription:
