@@ -249,7 +249,7 @@ export const services: Service[] = [
       title: "AI/ML Development",
       shortDescription: "Intelligent solutions powered by artificial intelligence and machine learning.",
       longDescription:
-         "We build AI-powered solutions that transform your business operations and customer experiences. From predictive analytics to computer vision and natural language processing, we implement machine learning models that deliver real business value.",
+         "At HIST – House of Information Science and Technology, we create end-to-end AI and ML solutions to help companies grow, save time, and get intelligent at work. Artificial Intelligence and Machine Learning turn your data into smart insights, simplify processes, and enhance customer service with easy-to-use solutions. You don't need to be an IT specialist — our smart systems keep you ahead in today's world of competition. With HIST, you get successful digital tactics for attaining effectiveness and wiser decision-making.",
       features: ["Predictive Analytics", "Chatbots", "Data Processing"],
       detailedFeatures: [
          {
@@ -266,36 +266,36 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Automated decision-making processes",
-         "Enhanced customer experiences through personalization",
-         "Improved operational efficiency with predictive maintenance",
-         "Data-driven insights for strategic decisions",
-         "Competitive advantage through innovative AI applications",
+         "Make better decisions – Use predictive analytics to see trends before they happen.",
+         "Save time with automation – Chatbots and smart systems handle routine tasks for you.",
+         "Work faster – Process a lot of data in seconds, not hours.",
+         "Stay ahead of the curve – Use advanced technology that grows with your business.",
+         "Easy to use – Our AI tools are made for everyone, not just engineers.",
       ],
       strengths: [
          {
-            title: "Data Science Expertise",
-            description: "Experienced team with deep knowledge in machine learning algorithms",
+            title: "Powerful Analytics",
+            description: "Our AI solutions can look at past data, spot patterns, and help you predict what’s next for your business. That means you can plan better and make smarter choices.",
          },
          {
-            title: "Custom AI Solutions",
-            description: "Tailored AI models that address your specific business challenges",
+            title: "Smart Chatbots",
+            description: "We build chatbots that can answer customer questions, process requests, and work 24/7. Your customers get quick help — and your team saves time for important work.",
          },
          {
-            title: "Ethical AI Practices",
-            description: "Responsible AI development with fairness and transparency",
+            title: "Fast Data Processing",
+            description: "Our systems sort and analyze large sets of data in real time, giving you clear insights when you need them most.",
          },
          {
-            title: "End-to-End Implementation",
-            description: "From data preparation to model deployment and monitoring",
+            title: "flexible and Secure",
+            description: "We use secure, scalable technology so your solution works for any size business and keeps your data safe as you grow.",
          },
          {
-            title: "Industry Specialization",
-            description: "Domain-specific AI solutions for your industry vertical",
+            title: "User-friendly Experience",
+            description: "We make sure all our AI/ML solutions are easy to use, no matter your background or company size.",
          },
       ],
       partnerDescription:
-         "HIST guides you through the AI journey, from identifying opportunities to implementing and maintaining solutions. We become your AI innovation partner, helping you leverage cutting-edge technologies to solve complex problems and create new business value.",
+         "When you choose HIST, you're not only investing in intelligent technology — you're aligning with a dedicated team dedicated to your success. We're there for you every step of the way such as Planning your objectives with care and clarity, Designing and constructing solutions particularly to your requirements, Testing to ensure flawless performance, Launching your product and offering ongoing support. We make certain your smart solution is built to tackle today's challenges — and ready to scale with you tomorrow.",
    },
    {
       id: "ui-ux-design",
