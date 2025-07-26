@@ -27,7 +27,7 @@ export const services: Service[] = [
       title: "SaaS Product Development",
       shortDescription: "End-to-end SaaS solutions with scalable architecture and modern UI/UX design.",
       longDescription:
-         "We build comprehensive SaaS products from concept to deployment, focusing on scalability, security, and user experience. Our solutions include multi-tenant architecture, subscription management, and seamless third-party integrations. We ensure your SaaS product is built with the latest technologies for maximum performance and reliability.",
+         "Software as a Service (SaaS) is a smarter way to use software — fast, flexible, and cloud-based. It removes the need for installations, updates, and storage worries. SaaS empowers startups and growing businesses to work efficiently from anywhere. At HIST – House of Information Science and Technology, we craft complete SaaS solutions that scale with your growth, safeguard data, and deliver a seamless user experience — helping you move forward in today’s digital world.",
       features: ["Multi-tenant Architecture", "API Development", "Cloud Integration"],
       detailedFeatures: [
          {
