@@ -141,7 +141,7 @@ export const services: Service[] = [
       title: "Custom Software Solutions",
       shortDescription: "Tailored software applications designed to solve specific business challenges.",
       longDescription:
-         "We develop custom software solutions that address your unique business requirements, from workflow automation to specialized enterprise systems. Our team works closely with you to understand your processes and build software that enhances productivity, reduces costs, and gives you a competitive edge.",
+         "Custom software provides organisations with the precise tools they require in the current fast-paced digital environment, suited to their own workflow rather than that of other companies.  We at HIST, the House of Information Science and Technology, develop unique software solutions that address pressing problems, optimise processes, and expand with the company.  We create intelligent, safe tools that align with your objectives, whether they are team or customer management or operational efficiency.  We create dependable digital products that support the success of your company, not just software.",
       features: ["Business Automation", "Custom CRM/ERP", "Integration Solutions"],
       detailedFeatures: [
          {
@@ -158,36 +158,36 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Solutions designed specifically for your business needs",
-         "Automation of repetitive tasks to boost productivity",
-         "Seamless integration with existing systems",
-         "Competitive advantage through proprietary technology",
-         "Scalable solutions that grow with your business",
+         "Solves your real problems – Get software that matches your exact needs.",
+         "Improves workflow – Automates manual tasks to save you time and money.",
+         "Easy to use – Simple designs and tools built around how your business works.",
+         "Grows with you – Easily add features or users as your business expands.",
+         "Connects everything – Integrates with other systems you already use.",
       ],
       strengths: [
          {
-            title: "Business Analysis",
-            description: "Deep understanding of your workflows to identify optimization opportunities",
+            title: "Tailored Design",
+            description: "We create software specifically for your processes, industry, and business challenges. Every feature is chosen and built for you.",
          },
          {
-            title: "Custom Development",
-            description: "Tailor-made solutions that precisely fit your operational requirements",
+            title: "Business Automation",
+            description: "We help you automate regular tasks so you can focus on what matters most. From sales to inventory, we streamline the way you work.",
          },
          {
-            title: "Integration Expertise",
-            description: "Seamless connection between new solutions and existing infrastructure",
+            title: "Custom CRM/ERP",
+            description: "If you need to handle customers, sales, inventory, or accounting, we build custom CRM and ERP systems that are simple, powerful, and do exactly what you want.",
          },
          {
-            title: "Workflow Automation",
-            description: "Automation of repetitive tasks to increase efficiency and reduce errors",
+            title: "Integration Solutions",
+            description: "Our software connects smoothly with your other tools and platforms. This means information moves easily between your systems, reducing errors and double work.",
          },
          {
-            title: "Long-term Support",
-            description: "Ongoing maintenance and evolution of your custom solutions",
+            title: "Data Security & Scalability",
+            description: "We use strong security practices to protect your information. Plus, your custom software can grow easily as your business gets bigger.",
          },
       ],
       partnerDescription:
-         "HIST becomes your technology partner, developing custom solutions that transform how you work. We don't just deliver software - we deliver competitive advantages. From initial consultation through development and ongoing support, we ensure your custom solution evolves with your business needs.",
+         "With HIST, you get more than a software developer — you get a full partner in technology. We support you every step of the way, including; Planning your idea, Designing a user-friendly system, Building and testing your solution,Launching it for you and your team, Offering support and updates as you grow. We make sure your custom software fits perfectly for your business today and can easily adapt for tomorrow.",
    },
    {
       id: "it-consulting",
