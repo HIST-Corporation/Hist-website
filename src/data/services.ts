@@ -303,7 +303,7 @@ export const services: Service[] = [
       title: "UI/UX Design",
       shortDescription: "User-centered design creating intuitive and engaging digital experiences.",
       longDescription:
-         "Our design team creates beautiful, functional interfaces that delight users and drive conversions. We follow a user-centered design process that includes research, prototyping, testing, and iteration to ensure your digital products provide exceptional experiences.",
+         "With today's fast-paced digital era, businesses need to deliver sites and apps that are not only visually appealing but also intuitive and easy to use. That is where UI (User Interface) and UX (User Experience) Design enters the picture. They simplify your digital products to be delightful to engage with and built with the end purpose of the user in mind. With intelligent design and seamless usability, UI/UX lets users accomplish their tasks efficiently—boosting satisfaction, engagement, and long-term success for your brand.",
       features: ["User Research", "Prototyping", "Design Systems"],
       detailedFeatures: [
          {
@@ -320,36 +320,36 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Increased user engagement and satisfaction",
-         "Higher conversion rates through optimized flows",
-         "Reduced development costs with clear specifications",
-         "Consistent brand experience across all touchpoints",
-         "Accessibility compliance for all users",
+         "Easy for everyone – Simple designs help users find what they need, fast.",
+         "Keeps users happy – A smooth, friendly experience means customers come back.",
+         "Builds trust – Good design makes your business look professional and reliable.",
+         "Quick to use – Users can complete tasks easily, with less training or support.",
+         "Grows with you – Design systems make it easy to add new features as your business expands.",
       ],
       strengths: [
          {
-            title: "User-Centered Approach",
-            description: "Designs grounded in research and user testing",
+            title: "User-Centered Design",
+            description: "We start by understanding your users’ needs and goals. Our design puts users first, making sure every part of your product is clear and easy to use.",
          },
          {
-            title: "Conversion Optimization",
-            description: "Data-driven designs that improve key business metrics",
+            title: "User Research",
+            description: "We talk to real users and study how they work. This helps us find out what they like, what problems they have, and what will make their experience better.",
+         },
+         {
+            title: "Prototyping",
+            description: "Before we build, we show you simple models (prototypes) of your product. You can see, click, and test it early to make sure it’s just right — saving time and avoiding costly changes.",
          },
          {
             title: "Design Systems",
-            description: "Scalable component libraries for consistent experiences",
+            description: "We create a set of design rules and elements (like colors, buttons, and fonts) to keep your brand and product consistent everywhere, now and as you grow.",
          },
          {
-            title: "Accessibility Focus",
-            description: "Inclusive designs that work for all users",
-         },
-         {
-            title: "Collaborative Process",
-            description: "Close partnership throughout the design journey",
+            title: "Modern Engaging Experience",
+            description: "We use the latest trends and technology to make beautiful, interactive designs that work on any device.",
          },
       ],
       partnerDescription:
-         "HIST becomes your design partner, creating experiences that users love and that drive business results. We collaborate closely with your team to understand your users and business goals, delivering designs that are both beautiful and effective.",
+         "With HIST, you don’t just get a design team — you get a full tech partner who helps you at every steps like; Learning about your users, Planning and sketching ideas, Designing and testing your product, Making your design real, Offering ongoing support and updates, We make sure your UI/UX keeps your business strong today — and ready for tomorrow’s success.",
    },
    {
       id: "maintenance-support",
