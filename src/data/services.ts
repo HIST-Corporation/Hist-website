@@ -357,7 +357,7 @@ export const services: Service[] = [
       title: "Maintenance & Support",
       shortDescription: "24/7 technical support and maintenance services for your digital assets.",
       longDescription:
-         "We provide comprehensive maintenance and support services to keep your digital products running smoothly. Our team handles everything from bug fixes and security updates to performance optimization and feature enhancements.",
+         "Maintaining the functionality of software and systems is crucial for corporate success in the current digital era.  Professional maintenance and support is crucial because it guarantees that your digital tools remain safe, current, and error-free at all times.  We at HIST, the House of Information Science and Technology, offer professional care so you may concentrate on your development while we take care of the technology.  Our staff maintains the dependability of your systems, from resolving problems to adding new features, so your company can run smoothly.",
       features: ["Bug Fixes", "Performance Optimization", "Security Updates"],
       detailedFeatures: [
          {
@@ -374,36 +374,36 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Reduced downtime with proactive monitoring",
-         "Enhanced security through regular updates",
-         "Improved performance with ongoing optimization",
-         "Extended product lifespan with continuous improvements",
-         "Peace of mind with expert support",
+         "24/7 help – Get support any time you need it, day or night.",
+         "Fixes right away – We handle bugs and errors fast so your business never stops.",
+         "Better performance – We optimize your systems so they run quicker and smoother.",
+         "Stronger security – Regular updates protect your software from new threats.",
+         "Peace of mind – Focus on your business, while we take care of the technical side.",
       ],
       strengths: [
          {
-            title: "Proactive Maintenance",
-            description: "Prevent issues before they impact your business",
-         },
-         {
-            title: "Rapid Response",
-            description: "Quick resolution of critical issues with SLAs",
+            title: "bug Fixes",
+            description: "We quickly find and fix any bugs or errors in your software, making sure your business runs without problems.",
          },
          {
             title: "Performance Optimization",
-            description: "Continuous improvements to keep systems running smoothly",
+            description: "We tune and upgrade your digital tools so they work faster and use less resources, giving you the best possible speed and efficiency.",
          },
          {
-            title: "Security Vigilance",
-            description: "Timely updates and patches to protect against vulnerabilities",
+            title: "Security Updates",
+            description: "We keep your software safe by installing the latest security patches, stopping hackers and protecting your data.",
          },
          {
-            title: "Evolutionary Development",
-            description: "Gradual improvements and feature additions over time",
+            title: "Ongoing Maintenance",
+            description: "We regularly check and update your systems to keep them up-to-date and reliable, preventing issues before they happen.",
+         },
+         {
+            title: "Personalized Support",
+            description: "Our team is always available to answer questions, offer advice, and help with anything you need.".
          },
       ],
       partnerDescription:
-         "As your long-term technology partner, HIST ensures your digital products remain secure, performant, and valuable. We provide peace of mind through reliable support and continuous improvement, allowing you to focus on your core business.",
+         "When you team up with HIST, you get more than just support — you get a tech partner for the long run. We help with; Setting up your maintenance plan, Regular check-ups and updates, Fast response when something goes wrong, Constant improvements and advice, Support whenever you need it. With HIST by your side, your digital systems will always be safe, strong, and ready for success.",
    },
    {
       id: "cloud-services",
