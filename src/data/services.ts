@@ -195,7 +195,7 @@ export const services: Service[] = [
       title: "IT Consulting",
       shortDescription: "Strategic technology consulting to optimize your IT infrastructure and processes.",
       longDescription:
-         "Our IT consulting services help you make informed technology decisions, optimize your infrastructure, and align IT strategy with business goals. We provide expertise in digital transformation, cloud adoption, security assessments, and technology roadmapping.",
+         "In the rapidly evolving digital world of today, astute IT consulting enables companies to maximise technology.  At the House of Information Science and Technology (HIST), we offer professional advice on how to select the best technologies, resolve problems, and create scalable digital strategy.  We assist you in maintaining your competitiveness, reducing expenses, and creating a safe digital foundation, whether you're updating systems or tackling difficult problems.  We provide customised solutions to improve the speed, security, and future-readiness of your technology rather than only offering advice.",
       features: ["Digital Strategy", "System Architecture", "Technology Audit"],
       detailedFeatures: [
          {
@@ -212,36 +212,36 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Expert guidance on technology investments",
-         "Optimized IT infrastructure costs",
-         "Enhanced security and compliance",
-         "Strategic roadmap for digital transformation",
-         "Improved alignment between IT and business goals",
+         "Work smarter – Get expert help to choose the right technology.",
+         "Save money – Avoid costly mistakes and only pay for what you really need.",
+         "Stay secure – Make sure your systems are safe and protected.",
+         "Plan for growth – Build a digital plan that can grow with your business.",
+         "Easy to understand – Simple, clear advice with no confusing jargon.",
       ],
       strengths: [
          {
-            title: "Strategic Planning",
-            description: "Technology roadmaps aligned with your business objectives",
+            title: "Digital Strategy",
+            description: "We help you create a smart plan to use digital tools and technology that support your business goals and make work easier.",
          },
          {
-            title: "Cost Optimization",
-            description: "Identifying savings opportunities without compromising performance",
+            title: "System Architecture",
+            description: "Our experts design the best structure for your systems, helping everything run smoothly and work together with no trouble.",
          },
          {
-            title: "Security Expertise",
-            description: "Comprehensive security assessments and hardening strategies",
+            title: "Technology Audit",
+            description: "We review your current technology—looking for risks, weak spots, and areas for improvement—so you know exactly where to focus your efforts.",
          },
          {
-            title: "Cloud Strategy",
-            description: "Migration planning and optimization for cloud environments",
+            title: "Custom Solutions",
+            description: "Every business is different. That’s why our advice and plans are made just for you, based on your needs and size.",
          },
          {
-            title: "Digital Transformation",
-            description: "Guidance through your organization's digital evolution",
+            title: "Security and Efficency",
+            description: "We always keep your data safe and help you get more done with less time and effort.",
          },
       ],
       partnerDescription:
-         "As your strategic IT partner, HIST provides the expertise and guidance to navigate complex technology decisions. We work closely with your leadership team to develop and execute technology strategies that drive business growth, reduce costs, and mitigate risks.",
+         "With HIST, you’re getting more than just recommendations — you get a partner who supports you at every step, including; Understanding your business and goals, Planning the right digital strategy, Designing and improving IT systems, Reviewing and upgrading your technology. Giving ongoing guidance and updates. We make sure your IT setup works perfectly today and is ready for tomorrow’s challenges.",
    },
    {
       id: "ai-ml-development",
