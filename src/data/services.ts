@@ -411,7 +411,7 @@ export const services: Service[] = [
       title: "Cloud Services",
       shortDescription: "Cloud migration, deployment, and management services for modern infrastructure.",
       longDescription:
-         "We help businesses leverage cloud computing to improve scalability, reduce costs, and enhance security. Our cloud services include migration strategy, implementation, and ongoing management across AWS, Azure, and Google Cloud platforms.",
+         "In today’s fast-evolving digital landscape, businesses need reliable, scalable technology that grows with them. Cloud Services make this possible by shifting systems to the internet, eliminating the need for physical servers and complex infrastructure. This modern approach boosts flexibility, reduces upfront costs, and enhances security and performance. With expert cloud migration, deployment, and management, your systems stay resilient and up-to-date. No matter where you or your customers are, cloud-powered solutions ensure smooth operations and continuous access, helping you stay competitive and ready for tomorrow.",
       features: ["AWS/Azure Setup", "DevOps", "Cloud Security"],
       detailedFeatures: [
          {
@@ -428,35 +428,35 @@ export const services: Service[] = [
          },
       ],
       benefits: [
-         "Reduced infrastructure costs with pay-as-you-go models",
-         "Improved scalability to handle traffic fluctuations",
-         "Enhanced reliability with geographically distributed systems",
-         "Faster deployment of new services and features",
-         "Enterprise-grade security with cloud provider capabilities",
+         "Move to the cloud easily – We help you move your data and apps safely.",
+         "Set up and run smoothly – We handle cloud setup and daily management.",
+         "Work faster and smarter – Use tools that improve speed and efficiency.",
+         "Keep data safe – Strong cloud security protects your important information.",
+         "Scale with your business – Add resources as your business grows without hassle.",
       ],
       strengths: [
          {
-            title: "Multi-Cloud Expertise",
-            description: "Experience across AWS, Azure, and Google Cloud platforms",
+            title: "AWS/Asure Setup",
+            description: "We set up your cloud infrastructure on leading platforms like Amazon Web Services (AWS) and Microsoft Azure, giving you powerful and reliable cloud solutions.",
          },
          {
-            title: "Migration Strategy",
-            description: "Risk-minimized cloud transitions with proven methodologies",
+            title: "DevOps",
+            description: "Our DevOps experts automate deployment and management so your apps update quickly, work well, and stay available 24/7.",
          },
          {
-            title: "Cost Optimization",
-            description: "Continuous monitoring and optimization of cloud spending",
+            title: "Cloud Security",
+            description: "We use the latest security methods to protect your cloud systems from threats, keeping your data safe and your business secure.",
          },
          {
-            title: "Security & Compliance",
-            description: "Secure configurations meeting industry compliance standards",
+            title: "Migration and Management",
+            description: "We help you move your existing systems to the cloud smoothly and manage them efficiently so you can focus on your work.",
          },
          {
-            title: "DevOps Automation",
-            description: "CI/CD pipelines and infrastructure as code implementations",
+            title: "Reliable and Scalable",
+            description: "Our cloud solutions grow with you, so you only pay for what you need and can easily expand when ready.",
          },
       ],
       partnerDescription:
-         "HIST becomes your cloud partner, guiding you through migration and managing your cloud environment for optimal performance, security, and cost efficiency. We provide end-to-end cloud services that transform how you deploy and manage your infrastructure.",
+         "When you work with HIST, you get more than technical service — you get a full cloud partner who supports you through; Planning your cloud move, Setting up your cloud platform, Managing and securing your cloud systems, Maintaining and updating services as needed, We make sure your cloud solution fits your business today and supports your goals for tomorrow.",
    },
 ];
