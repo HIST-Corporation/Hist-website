@@ -84,6 +84,14 @@ const Header = () => {
             { name: "Maintenance & Support", href: "/services/maintenance-support" },
          ],
       },
+      {
+         category: "SEO & Marketing",
+         icon: <ImageIcon size={18} className="text-hist-blue" />,
+         items: [
+            { name: "UI/UX Design", href: "/services/ui-ux-design" },
+            { name: "Maintenance & Support", href: "/services/maintenance-support" },
+         ],
+      },
    ];
 
    const navigation = [
