@@ -17,6 +17,9 @@ import Footer from "./components/Footer";
 import ServiceDetail from "./components/ServiceDetail";
 import Contact from "./components/Contact";
 import Industries from "./components/Industries";
+import BlogDetail from "./components/BlogDetails";
+import Blog from "./components/Blog";
+import BlogDetails from "./components/BlogDetails";
 
 
 
@@ -32,7 +35,8 @@ const App = () => (
                <Route element={<Layout />}>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/blog" element={<BlogSection />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:id" element={<BlogDetails />} />
                   <Route path="/services/:serviceId" element={<ServiceDetail />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/contact" element={<Contact />} />
