@@ -21,8 +21,8 @@ const Hero = () => {
                      <span className="text-hist-blue block sm:inline-block">Smart Technology</span>
                   </h1>
 
-                  <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                     Custom IT Solutions, SaaS Products, and Future-Ready Services that transform businesses and drive
+                  <p className="text-base sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                      Custom IT Solutions, SaaS Products, and Future-Ready Services that transform businesses and drive
                      digital growth in Nepal and beyond.
                   </p>
 
@@ -39,8 +39,8 @@ const Hero = () => {
                         size="lg"
                         className="w-full sm:w-auto border-2 border-hist-blue text-hist-blue hover:bg-hist-blue hover:text-white px-5 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
                      >
-                        <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                        Watch Demo
+                        Let's Get Started
+                       {/* <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />*/}
                      </Button>
                   </div>
 
