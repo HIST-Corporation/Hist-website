@@ -1,5 +1,5 @@
 // services.ts
-import { Code, Briefcase, Settings, Star, Grid2x2, Image as ImageIcon, Calendar, Heart } from "lucide-react";
+import { Code, Briefcase, Settings, Star, Grid2x2, Image as ImageIcon, Calendar, Heart, BarChart2, Search } from "lucide-react";
 
 export interface Service {
    id: string;
@@ -20,7 +20,111 @@ export interface Service {
    partnerDescription: string;
 }
 
+
 export const services: Service[] = [
+   {
+      id: "seo",
+      icon: Search,
+      title: "SEO",
+      shortDescription: "Improve your online visibility and organic search rankings.",
+      longDescription:
+         "Search Engine Optimization (SEO) enhances your website's visibility in organic search results, driving targeted traffic and increasing conversions.",
+      features: ["Keyword Research", "On-Page SEO", "Technical SEO"],
+      detailedFeatures: [
+         {
+            title: "Keyword Research",
+            description: "Identify high-value keywords that your target audience is searching for.",
+         },
+         {
+            title: "On-Page Optimization",
+            description: "Optimize content, meta tags, and structure for both users and search engines.",
+         },
+         {
+            title: "Technical SEO",
+            description: "Improve site speed, mobile-friendliness, and indexability for better crawling.",
+         },
+      ],
+      benefits: [
+         "Increase organic traffic",
+         "Build brand credibility",
+         "Achieve higher ROI compared to paid ads",
+         "Long-term sustainable results",
+         "Target users at the moment of intent",
+      ],
+      strengths: [
+         {
+            title: "Comprehensive Audits",
+            description: "We conduct in-depth technical and content audits to identify opportunities.",
+         },
+         {
+            title: "White-Hat Techniques",
+            description: "Ethical, sustainable strategies that comply with search engine guidelines.",
+         },
+         {
+            title: "Performance Tracking",
+            description: "Transparent reporting with actionable insights and clear KPIs.",
+         },
+         { title: "Holistic Approach", description: "Integration of SEO with content strategy and user experience." },
+         {
+            title: "Customized Strategies",
+            description: "Tailored plans based on your industry, competition, and goals.",
+         },
+      ],
+      partnerDescription:
+         "Partner with us for SEO that drives real business growth. Our data-driven approach combines technical expertise with creative content strategy to position your brand at the top of search results.",
+   },
+   {
+      id: "digital-marketing",
+      icon: BarChart2,
+      title: "Digital Marketing",
+      shortDescription: "Reach your audience across digital channels with targeted campaigns.",
+      longDescription:
+         "Digital marketing encompasses strategies to connect with your audience through online channels, driving brand awareness, engagement, and conversions.",
+      features: ["PPC Advertising", "Social Media Marketing", "Content Marketing"],
+      detailedFeatures: [
+         {
+            title: "Paid Advertising",
+            description: "Precise targeting across Google, social media, and programmatic platforms.",
+         },
+         {
+            title: "Social Media Strategy",
+            description: "Engage audiences and build communities on relevant platforms.",
+         },
+         {
+            title: "Content Strategy",
+            description: "Create valuable content that attracts and converts your target audience.",
+         },
+      ],
+      benefits: [
+         "Targeted reach to specific audiences",
+         "Measurable campaign performance",
+         "Flexible budget allocation",
+         "Real-time optimization",
+         "Integrated multi-channel approach",
+      ],
+      strengths: [
+         {
+            title: "Data-Driven Campaigns",
+            description: "Leverage analytics to optimize every aspect of your marketing.",
+         },
+         {
+            title: "Creative Excellence",
+            description: "Compelling ad creatives and content that resonates with your audience.",
+         },
+         { title: "Conversion Optimization", description: "Focus on turning traffic into leads and customers." },
+         {
+            title: "Omnichannel Integration",
+            description: "Seamless experience across email, social, search, and display.",
+         },
+         {
+            title: "ROI Focused",
+            description: "Maximize return on ad spend through continuous testing and refinement.",
+         },
+      ],
+      partnerDescription:
+         "We become your strategic marketing partner, combining creative storytelling with analytical rigor to deliver campaigns that generate leads and revenue. We manage the complexity so you can focus on growth.",
+   },
+
    {
       id: "saas-product-development",
       icon: Code,
@@ -117,15 +221,18 @@ export const services: Service[] = [
          },
          {
             title: "Responsive Design",
-            description: "We make sure your website and app look and work perfectly on any device, so your users always have a great experience.",
+            description:
+               "We make sure your website and app look and work perfectly on any device, so your users always have a great experience.",
          },
          {
             title: "Easy to Update and Manage",
-            description: "Our solutions are easy to manage, so you can make changes, add new features, or update information with little effort.",
+            description:
+               "Our solutions are easy to manage, so you can make changes, add new features, or update information with little effort.",
          },
          {
             title: "Secure and Scalable",
-            description: "We build your website and app to be safe and ready to grow as your business grows, so you don’t have to worry about security or slowdowns.",
+            description:
+               "We build your website and app to be safe and ready to grow as your business grows, so you don’t have to worry about security or slowdowns.",
          },
          {
             title: "User-focused",
@@ -167,23 +274,28 @@ export const services: Service[] = [
       strengths: [
          {
             title: "Tailored Design",
-            description: "We create software specifically for your processes, industry, and business challenges. Every feature is chosen and built for you.",
+            description:
+               "We create software specifically for your processes, industry, and business challenges. Every feature is chosen and built for you.",
          },
          {
             title: "Business Automation",
-            description: "We help you automate regular tasks so you can focus on what matters most. From sales to inventory, we streamline the way you work.",
+            description:
+               "We help you automate regular tasks so you can focus on what matters most. From sales to inventory, we streamline the way you work.",
          },
          {
             title: "Custom CRM/ERP",
-            description: "If you need to handle customers, sales, inventory, or accounting, we build custom CRM and ERP systems that are simple, powerful, and do exactly what you want.",
+            description:
+               "If you need to handle customers, sales, inventory, or accounting, we build custom CRM and ERP systems that are simple, powerful, and do exactly what you want.",
          },
          {
             title: "Integration Solutions",
-            description: "Our software connects smoothly with your other tools and platforms. This means information moves easily between your systems, reducing errors and double work.",
+            description:
+               "Our software connects smoothly with your other tools and platforms. This means information moves easily between your systems, reducing errors and double work.",
          },
          {
             title: "Data Security & Scalability",
-            description: "We use strong security practices to protect your information. Plus, your custom software can grow easily as your business gets bigger.",
+            description:
+               "We use strong security practices to protect your information. Plus, your custom software can grow easily as your business gets bigger.",
          },
       ],
       partnerDescription:
@@ -221,19 +333,23 @@ export const services: Service[] = [
       strengths: [
          {
             title: "Digital Strategy",
-            description: "We help you create a smart plan to use digital tools and technology that support your business goals and make work easier.",
+            description:
+               "We help you create a smart plan to use digital tools and technology that support your business goals and make work easier.",
          },
          {
             title: "System Architecture",
-            description: "Our experts design the best structure for your systems, helping everything run smoothly and work together with no trouble.",
+            description:
+               "Our experts design the best structure for your systems, helping everything run smoothly and work together with no trouble.",
          },
          {
             title: "Technology Audit",
-            description: "We review your current technology—looking for risks, weak spots, and areas for improvement—so you know exactly where to focus your efforts.",
+            description:
+               "We review your current technology—looking for risks, weak spots, and areas for improvement—so you know exactly where to focus your efforts.",
          },
          {
             title: "Custom Solutions",
-            description: "Every business is different. That’s why our advice and plans are made just for you, based on your needs and size.",
+            description:
+               "Every business is different. That’s why our advice and plans are made just for you, based on your needs and size.",
          },
          {
             title: "Security and Efficency",
@@ -275,23 +391,28 @@ export const services: Service[] = [
       strengths: [
          {
             title: "Powerful Analytics",
-            description: "Our AI solutions can look at past data, spot patterns, and help you predict what’s next for your business. That means you can plan better and make smarter choices.",
+            description:
+               "Our AI solutions can look at past data, spot patterns, and help you predict what’s next for your business. That means you can plan better and make smarter choices.",
          },
          {
             title: "Smart Chatbots",
-            description: "We build chatbots that can answer customer questions, process requests, and work 24/7. Your customers get quick help — and your team saves time for important work.",
+            description:
+               "We build chatbots that can answer customer questions, process requests, and work 24/7. Your customers get quick help — and your team saves time for important work.",
          },
          {
             title: "Fast Data Processing",
-            description: "Our systems sort and analyze large sets of data in real time, giving you clear insights when you need them most.",
+            description:
+               "Our systems sort and analyze large sets of data in real time, giving you clear insights when you need them most.",
          },
          {
             title: "flexible and Secure",
-            description: "We use secure, scalable technology so your solution works for any size business and keeps your data safe as you grow.",
+            description:
+               "We use secure, scalable technology so your solution works for any size business and keeps your data safe as you grow.",
          },
          {
             title: "User-friendly Experience",
-            description: "We make sure all our AI/ML solutions are easy to use, no matter your background or company size.",
+            description:
+               "We make sure all our AI/ML solutions are easy to use, no matter your background or company size.",
          },
       ],
       partnerDescription:
@@ -329,23 +450,28 @@ export const services: Service[] = [
       strengths: [
          {
             title: "User-Centered Design",
-            description: "We start by understanding your users’ needs and goals. Our design puts users first, making sure every part of your product is clear and easy to use.",
+            description:
+               "We start by understanding your users’ needs and goals. Our design puts users first, making sure every part of your product is clear and easy to use.",
          },
          {
             title: "User Research",
-            description: "We talk to real users and study how they work. This helps us find out what they like, what problems they have, and what will make their experience better.",
+            description:
+               "We talk to real users and study how they work. This helps us find out what they like, what problems they have, and what will make their experience better.",
          },
          {
             title: "Prototyping",
-            description: "Before we build, we show you simple models (prototypes) of your product. You can see, click, and test it early to make sure it’s just right — saving time and avoiding costly changes.",
+            description:
+               "Before we build, we show you simple models (prototypes) of your product. You can see, click, and test it early to make sure it’s just right — saving time and avoiding costly changes.",
          },
          {
             title: "Design Systems",
-            description: "We create a set of design rules and elements (like colors, buttons, and fonts) to keep your brand and product consistent everywhere, now and as you grow.",
+            description:
+               "We create a set of design rules and elements (like colors, buttons, and fonts) to keep your brand and product consistent everywhere, now and as you grow.",
          },
          {
             title: "Modern Engaging Experience",
-            description: "We use the latest trends and technology to make beautiful, interactive designs that work on any device.",
+            description:
+               "We use the latest trends and technology to make beautiful, interactive designs that work on any device.",
          },
       ],
       partnerDescription:
@@ -383,23 +509,28 @@ export const services: Service[] = [
       strengths: [
          {
             title: "bug Fixes",
-            description: "We quickly find and fix any bugs or errors in your software, making sure your business runs without problems.",
+            description:
+               "We quickly find and fix any bugs or errors in your software, making sure your business runs without problems.",
          },
          {
             title: "Performance Optimization",
-            description: "We tune and upgrade your digital tools so they work faster and use less resources, giving you the best possible speed and efficiency.",
+            description:
+               "We tune and upgrade your digital tools so they work faster and use less resources, giving you the best possible speed and efficiency.",
          },
          {
             title: "Security Updates",
-            description: "We keep your software safe by installing the latest security patches, stopping hackers and protecting your data.",
+            description:
+               "We keep your software safe by installing the latest security patches, stopping hackers and protecting your data.",
          },
          {
             title: "Ongoing Maintenance",
-            description: "We regularly check and update your systems to keep them up-to-date and reliable, preventing issues before they happen.",
+            description:
+               "We regularly check and update your systems to keep them up-to-date and reliable, preventing issues before they happen.",
          },
          {
             title: "Personalized Support",
-            description: "Our team is always available to answer questions, offer advice, and help with anything you need.",
+            description:
+               "Our team is always available to answer questions, offer advice, and help with anything you need.",
          },
       ],
       partnerDescription:
@@ -437,23 +568,28 @@ export const services: Service[] = [
       strengths: [
          {
             title: "AWS/Asure Setup",
-            description: "We set up your cloud infrastructure on leading platforms like Amazon Web Services (AWS) and Microsoft Azure, giving you powerful and reliable cloud solutions.",
+            description:
+               "We set up your cloud infrastructure on leading platforms like Amazon Web Services (AWS) and Microsoft Azure, giving you powerful and reliable cloud solutions.",
          },
          {
             title: "DevOps",
-            description: "Our DevOps experts automate deployment and management so your apps update quickly, work well, and stay available 24/7.",
+            description:
+               "Our DevOps experts automate deployment and management so your apps update quickly, work well, and stay available 24/7.",
          },
          {
             title: "Cloud Security",
-            description: "We use the latest security methods to protect your cloud systems from threats, keeping your data safe and your business secure.",
+            description:
+               "We use the latest security methods to protect your cloud systems from threats, keeping your data safe and your business secure.",
          },
          {
             title: "Migration and Management",
-            description: "We help you move your existing systems to the cloud smoothly and manage them efficiently so you can focus on your work.",
+            description:
+               "We help you move your existing systems to the cloud smoothly and manage them efficiently so you can focus on your work.",
          },
          {
             title: "Reliable and Scalable",
-            description: "Our cloud solutions grow with you, so you only pay for what you need and can easily expand when ready.",
+            description:
+               "Our cloud solutions grow with you, so you only pay for what you need and can easily expand when ready.",
          },
       ],
       partnerDescription:
