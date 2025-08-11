@@ -9,7 +9,6 @@ const Industries = () => {
          title: "Education",
          description: "Learning management systems, student portals, and educational technology solutions.",
          projects: "+ Projects",
-         animation: "group-hover:animate-bounce",
          iconColor: "text-purple-600 group-hover:text-purple-700",
          bgColor: "bg-purple-100 group-hover:bg-purple-200",
          ringColor: "ring-purple-500",
@@ -19,7 +18,6 @@ const Industries = () => {
          title: "Healthcare",
          description: "Hospital management systems, patient portals, and telemedicine solutions.",
          projects: "3+ Projects",
-         animation: "group-hover:animate-pulse",
          iconColor: "text-red-600 group-hover:text-red-700",
          bgColor: "bg-red-100 group-hover:bg-red-200",
          ringColor: "ring-red-500",
@@ -29,7 +27,7 @@ const Industries = () => {
          title: "Finance",
          description: "Banking software, fintech solutions, and financial management systems.",
          projects: "5+ Projects",
-         animation: "group-hover:animate-bounce",
+
          iconColor: "text-blue-600 group-hover:text-blue-700",
          bgColor: "bg-blue-100 group-hover:bg-blue-200",
          ringColor: "ring-blue-500",
@@ -39,7 +37,7 @@ const Industries = () => {
          title: "Retail & E-commerce",
          description: "Online stores, inventory management, and customer relationship systems.",
          projects: "5+ Projects",
-         animation: "group-hover:animate-bounce",
+
          iconColor: "text-green-600 group-hover:text-green-700",
          bgColor: "bg-green-100 group-hover:bg-green-200",
          ringColor: "ring-green-500",
@@ -49,7 +47,7 @@ const Industries = () => {
          title: "Government",
          description: "Digital governance solutions, citizen services, and administrative systems.",
          projects: "2+ Projects",
-         animation: "group-hover:animate-bounce",
+
          iconColor: "text-yellow-600 group-hover:text-yellow-700",
          bgColor: "bg-yellow-100 group-hover:bg-yellow-200",
          ringColor: "ring-yellow-500",
@@ -59,7 +57,7 @@ const Industries = () => {
          title: "Logistics",
          description: "Supply chain management, tracking systems, and delivery optimization.",
          projects: "2+ Projects",
-         animation: "group-hover:animate-bounce",
+
          iconColor: "text-indigo-600 group-hover:text-indigo-700",
          bgColor: "bg-indigo-100 group-hover:bg-indigo-200",
          ringColor: "ring-indigo-500",
@@ -92,7 +90,7 @@ const Industries = () => {
                   >
                      <CardContent className="p-8 text-center bg-slate-50 hover:bg-white transition-colors duration-300">
                         <div
-                           className={`w-16 h-16 ${industry.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-md group-hover:shadow-lg ${industry.animation}`}
+                           className={`w-16 h-16 ${industry.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-md group-hover:shadow-lg`}
                         >
                            <industry.icon className={`w-8 h-8 ${industry.iconColor} transition-colors duration-300`} />
                         </div>
