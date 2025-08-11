@@ -20,6 +20,7 @@ import Industries from "./components/Industries";
 import BlogDetail from "./components/BlogDetails";
 import Blog from "./components/Blog";
 import BlogDetails from "./components/BlogDetails";
+import IndustryDetails from "./components/IndustryDetails";
 
 
 
@@ -41,6 +42,7 @@ const App = () => (
                   <Route path="/services" element={<Services />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/industries" element={<Industries />} />
+                  <Route path="/industries/:industryId" element={<IndustryDetails />} />
                   <Route path="/careers" element={<CareersSection />} />
                   <Route path="/login" element={<LoginForm onLogin={(role) => console.log(role)} />} />
                   <Route path="*" element={<NotFound />} />
