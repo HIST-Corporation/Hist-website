@@ -114,11 +114,11 @@ const Header = () => {
       {
          name: "Careers",
          href: "/careers",
-         dropdown: [
-            { name: "Open Positions", href: "/careers#positions" },
-            { name: "Our Culture", href: "/careers#culture" },
-            { name: "Benefits", href: "/careers#benefits" },
-         ],
+         // dropdown: [
+         //    { name: "Open Positions", href: "/careers#positions" },
+         //    { name: "Our Culture", href: "/careers#culture" },
+         //    { name: "Benefits", href: "/careers#benefits" },
+         // ],
       },
       { name: "Blog", href: "/blog" },
       { name: "Contact", href: "/contact" },
