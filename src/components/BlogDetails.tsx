@@ -20,6 +20,7 @@ import {
    Reply,
 } from "lucide-react";
 import { blogArticles } from "@/data/blog";
+import { useEffect } from "react";
 
 interface AuthorCardProps {
    author: {
@@ -216,6 +217,9 @@ const CommentSection = ({ comments }: CommentSectionProps) => {
 const BlogDetails = () => {
    const { id } = useParams<{ id: string }>();
    const article = blogArticles.find((article) => article.id === id);
+   useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+   }, [id]);
 
    if (!article) {
       return (
