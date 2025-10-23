@@ -17,7 +17,7 @@ const Hero = () => {
                   </div>
 
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight font-allstar">
-                     Empowering Innovation with{" "}
+                     Empowering Innovationnnnnnnnnnnnnnnnnnnnnnn with{" "}
                      <span className="text-hist-blue block sm:inline-block">Smart Technology</span>
                   </h1>
 
