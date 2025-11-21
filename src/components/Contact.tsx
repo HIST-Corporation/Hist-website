@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Calendar } from "lucide-react";
@@ -11,31 +11,12 @@ const Contact = () => {
       message: "",
    });
 
-   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-
-   useEffect(() => {
-      const loadCaptcha = () => {
-         const script = document.createElement("script");
-         script.src = "https://js.hcaptcha.com/1/api.js";
-         script.async = true;
-         document.body.appendChild(script);
-      };
-
-      loadCaptcha();
-   }, []);
-
    const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
 
-      if (!captchaToken) {
-         alert("Please complete the CAPTCHA.");
-         return;
-      }
-
       console.log("Form submitted:", formData);
-      console.log("hCaptcha Token:", captchaToken);
 
-      // Handle form submission logic here, including sending captchaToken to your backend
+      // Handle form submission logic here
    };
 
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -125,15 +106,6 @@ const Contact = () => {
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sapphire-500 focus:border-transparent transition-colors resize-none"
                               required
                            ></textarea>
-                        </div>
-
-                        {/* hCaptcha */}
-                        <div className="mt-6">
-                           <div
-                              className="h-captcha"
-                              data-sitekey="2140e438-bdd2-415a-870a-67de0984985c"
-                              data-callback={(token: string) => setCaptchaToken(token)}
-                           ></div>
                         </div>
 
                         <Button

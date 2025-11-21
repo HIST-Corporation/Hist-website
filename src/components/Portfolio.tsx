@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,30 +28,6 @@ const Portfolio = () => {
       description: 'Cloud-based financial management system for SMEs with real-time analytics.',
       tech: ['Vue.js', 'Python', 'PostgreSQL', 'Docker'],
       results: '40% cost reduction for clients'
-    },
-    {
-      title: 'SmartRetail Hub',
-      category: 'E-commerce',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
-      description: 'Multi-vendor e-commerce platform with integrated inventory and logistics management.',
-      tech: ['Next.js', 'GraphQL', 'Stripe', 'Redis'],
-      results: '200% increase in online sales'
-    },
-    {
-      title: 'GovServe Digital',
-      category: 'Government',
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80',
-      description: 'Digital governance platform streamlining citizen services and administrative processes.',
-      tech: ['Angular', 'Spring Boot', 'Oracle', 'Kubernetes'],
-      results: '70% faster service delivery'
-    },
-    {
-      title: 'LogisticsPro AI',
-      category: 'Logistics',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      description: 'AI-powered supply chain optimization platform with predictive analytics.',
-      tech: ['React', 'TensorFlow', 'FastAPI', 'GCP'],
-      results: '30% reduction in delivery time'
     }
   ];
 

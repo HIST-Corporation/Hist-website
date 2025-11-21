@@ -1,23 +1,24 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
    return (
       <section
          id="home"
-         className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-white py-16 lg:py-0"
+         className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-white py-12 lg:py-12"
       >
          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
                {/* Left Content */}
-               <div className="order-2 lg:order-1 text-center lg:text-left mt-8 lg:mt-0">
-                  <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-hist-blue-50 border border-hist-blue-200 rounded-full text-hist-blue-700 text-xs sm:text-sm font-semibold mb-4 sm:mb-6 lg:mb-8">
+               <div className="order-2 lg:order-1 text-center lg:text-left mt-8 lg:mt-8">
+                  <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-hist-blue-50 border border-hist-blue-200 rounded-full text-hist-blue-700 text-xs sm:text-sm font-semibold mb-4 sm:mb-6 lg:mb-8 mt-4">
                      Leading IT Solutions in Nepal
                   </div>
 
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight font-allstar">
-                     Empowering Innovationnnnnnnnnnnnnnnnnnnnnnn with{" "}
+                     Empowering Innovation with{" "}
                      <span className="text-hist-blue block sm:inline-block">Smart Technology</span>
                   </h1>
 
@@ -30,17 +31,22 @@ const Hero = () => {
                      <Button
                         size="lg"
                         className="w-full sm:w-auto bg-hist-blue hover:bg-hist-blue-dark text-white px-5 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                        asChild
                      >
-                        Explore Services
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        <Link to="/services">
+                          Explore Services
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
                      </Button>
                      <Button
                         variant="outline"
                         size="lg"
                         className="w-full sm:w-auto border-2 border-hist-blue text-hist-blue hover:bg-hist-blue hover:text-white px-5 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300"
+                        asChild
                      >
-                        Let's Get Started
-                       {/* <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />*/}
+                        <Link to="/contact">
+                          Let's Get Started
+                        </Link>
                      </Button>
                   </div>
 

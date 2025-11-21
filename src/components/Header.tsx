@@ -14,6 +14,7 @@ import {
    Heart,
 } from "lucide-react";
 import { services as allServices } from "@/data/services"; // Import your services data
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +22,7 @@ const Header = () => {
    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
    const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
    const dropdownRef = useRef<HTMLDivElement>(null);
+   const location = useLocation();
 
    useEffect(() => {
       const handleScroll = () => {
@@ -240,16 +242,18 @@ const Header = () => {
 
                {/* CTA Button & Mobile Menu Toggle */}
                <div className="flex items-center space-x-3">
-                  <Button
-                     size="sm"
-                     className="hidden sm:inline-flex bg-hist-blue hover:bg-hist-blue-dark text-white px-4 py-2 text-sm"
-                     onClick={() => {
-                        closeAllDropdowns();
-                        window.location.href = "/login";
-                     }}
-                  >
-                     Client Portal
-                  </Button>
+                  {location.pathname !== "/contact" && (
+                     <Button
+                        size="sm"
+                        className="hidden sm:inline-flex bg-hist-blue hover:bg-hist-blue-dark text-white px-4 py-2 text-sm"
+                        onClick={() => {
+                           closeAllDropdowns();
+                           window.location.href = "/contact";
+                        }}
+                     >
+                        Quick Enquiry
+                     </Button>
+                  )}
 
                   <button
                      onClick={() => {
@@ -340,15 +344,17 @@ const Header = () => {
                            )}
                         </div>
                      ))}
-                     <Button
-                        className="w-full mt-3 bg-hist-blue hover:bg-hist-blue-dark text-white py-2.5 text-sm"
-                        onClick={() => {
-                           closeAllDropdowns();
-                           window.location.href = "/login";
-                        }}
-                     >
-                        Client Portal
-                     </Button>
+                     {location.pathname !== "/contact" && (
+                        <Button
+                           className="w-full mt-3 bg-hist-blue hover:bg-hist-blue-dark text-white py-2.5 text-sm"
+                           onClick={() => {
+                              closeAllDropdowns();
+                              window.location.href = "/contact";
+                           }}
+                        >
+                           Quick Enquiry
+                        </Button>
+                     )}
                   </nav>
                </div>
             )}
