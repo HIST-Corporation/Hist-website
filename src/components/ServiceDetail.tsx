@@ -75,14 +75,14 @@ const ServiceDetail = () => {
                   <div>
                      <div
                         className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
-                           serviceId === "seo" ? "bg-green-100 text-green-800" : "bg-purple-100 text-purple-800"
+                           serviceId === "seo" ? "bg-hist-blue-100 text-hist-blue-800" : "bg-hist-blue-100 text-hist-blue-800"
                         }`}
                      >
                         {serviceId === "seo" ? "SEO Service" : "Marketing Service"}
                      </div>
                      <h1
                         className={`text-4xl md:text-5xl font-bold mb-6 ${
-                           serviceId === "seo" ? "text-green-800" : "text-purple-800"
+                           serviceId === "seo" ? "text-hist-blue-800" : "text-hist-blue-800"
                         }`}
                      >
                         {service.title}
@@ -91,7 +91,7 @@ const ServiceDetail = () => {
                      <div className="flex flex-wrap gap-4 mb-8">
                         {service.features.map((feature, idx) => (
                            <div key={idx} className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
-                              <Check className="h-5 w-5 text-green-500 mr-2" />
+                              <Check className="h-5 w-5 text-hist-blue-500 mr-2" />
                               <span className="text-gray-700">{feature}</span>
                            </div>
                         ))}
@@ -99,7 +99,7 @@ const ServiceDetail = () => {
                      <Button
                         asChild
                         className={`px-8 py-6 text-lg transition-all duration-300 transform hover:-translate-y-1 ${
-                           serviceId === "seo" ? "bg-green-600 hover:bg-green-700" : "bg-purple-600 hover:bg-purple-700"
+                           serviceId === "seo" ? "bg-hist-blue-600 hover:bg-hist-blue-700" : "bg-hist-blue-600 hover:bg-hist-blue-700"
                         }`}
                      >
                         <Link to="/contact">Get Started</Link>
@@ -110,42 +110,42 @@ const ServiceDetail = () => {
                      <div
                         className={`absolute inset-0 bg-gradient-to-r ${
                            serviceId === "seo"
-                              ? "from-green-500/20 to-blue-500/20"
-                              : "from-purple-500/20 to-pink-500/20"
+                              ? "from-hist-blue-500/20 to-hist-blue-300/20"
+                              : "from-hist-blue-500/20 to-hist-blue-300/20"
                         } rounded-2xl`}
                      ></div>
                      <div className="absolute inset-0 flex items-center justify-center">
                         {serviceId === "seo" ? (
                            <div className="grid grid-cols-3 gap-4">
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <Search className="h-12 w-12 text-green-600 mx-auto mb-2" />
+                                 <Search className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">Keyword Research</h3>
                               </div>
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <Globe className="h-12 w-12 text-green-600 mx-auto mb-2" />
+                                 <Globe className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">On-Page SEO</h3>
                               </div>
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <BarChart2 className="h-12 w-12 text-green-600 mx-auto mb-2" />
+                                 <BarChart2 className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">Analytics</h3>
                               </div>
                            </div>
                         ) : (
                            <div className="grid grid-cols-2 gap-4">
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <Smartphone className="h-12 w-12 text-purple-600 mx-auto mb-2" />
+                                 <Smartphone className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">Social Media</h3>
                               </div>
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <Mail className="h-12 w-12 text-purple-600 mx-auto mb-2" />
+                                 <Mail className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">Email Marketing</h3>
                               </div>
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <PieChart className="h-12 w-12 text-purple-600 mx-auto mb-2" />
+                                 <PieChart className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">Analytics</h3>
                               </div>
                               <div className="bg-white/80 p-4 rounded-lg shadow-lg">
-                                 <Target className="h-12 w-12 text-purple-600 mx-auto mb-2" />
+                                 <Target className="h-12 w-12 text-hist-blue-600 mx-auto mb-2" />
                                  <h3 className="font-bold text-center">PPC Ads</h3>
                               </div>
                            </div>
@@ -176,9 +176,9 @@ const ServiceDetail = () => {
                         <service.icon
                            className={`h-24 w-24 ${
                               serviceId === "seo"
-                                 ? "text-green-600"
+                                 ? "text-hist-blue-600"
                                  : serviceId === "digital-marketing"
-                                 ? "text-purple-600"
+                                 ? "text-hist-yellow-600"
                                  : "text-hist-blue"
                            }`}
                         />
@@ -193,8 +193,8 @@ const ServiceDetail = () => {
                   className={`text-3xl font-bold mb-12 text-center relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 ${
                      isMarketingService
                         ? serviceId === "seo"
-                           ? "after:bg-green-500 text-green-800"
-                           : "after:bg-purple-500 text-purple-800"
+                           ? "after:bg-hist-blue-500 text-hist-blue-800"
+                           : "after:bg-hist-blue-500 text-hist-blue-800"
                         : "after:bg-hist-yellow text-gray-900"
                   }`}
                >
@@ -211,8 +211,8 @@ const ServiceDetail = () => {
                                  <div
                                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
                                        serviceId === "seo"
-                                          ? "bg-green-100 text-green-600"
-                                          : "bg-purple-100 text-purple-600"
+                                          ? "bg-hist-blue-100 text-hist-blue-600"
+                                          : "bg-hist-blue-100 text-hist-blue-600"
                                     }`}
                                  >
                                     1
@@ -226,8 +226,8 @@ const ServiceDetail = () => {
                                  <div
                                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
                                        serviceId === "seo"
-                                          ? "bg-green-100 text-green-600"
-                                          : "bg-purple-100 text-purple-600"
+                                          ? "bg-hist-blue-100 text-hist-blue-600"
+                                          : "bg-hist-blue-100 text-hist-blue-600"
                                     }`}
                                  >
                                     2
@@ -243,8 +243,8 @@ const ServiceDetail = () => {
                                  <div
                                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
                                        serviceId === "seo"
-                                          ? "bg-green-100 text-green-600"
-                                          : "bg-purple-100 text-purple-600"
+                                          ? "bg-hist-blue-100 text-hist-blue-600"
+                                          : "bg-hist-blue-100 text-hist-blue-600"
                                     }`}
                                  >
                                     3
@@ -258,8 +258,8 @@ const ServiceDetail = () => {
                                  <div
                                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
                                        serviceId === "seo"
-                                          ? "bg-green-100 text-green-600"
-                                          : "bg-purple-100 text-purple-600"
+                                          ? "bg-hist-blue-100 text-hist-blue-600"
+                                          : "bg-hist-blue-100 text-hist-blue-600"
                                     }`}
                                  >
                                     4
@@ -284,7 +284,7 @@ const ServiceDetail = () => {
                                     <div className="flex items-start">
                                        <div
                                           className={`flex-shrink-0 mr-4 ${
-                                             serviceId === "seo" ? "text-green-600" : "text-purple-600"
+                                             serviceId === "seo" ? "text-hist-blue-600" : "text-hist-blue-600"
                                           }`}
                                        >
                                           <Check className="h-6 w-6" />
@@ -327,7 +327,7 @@ const ServiceDetail = () => {
             >
                <h2
                   className={`text-3xl font-bold mb-8 text-center ${
-                     isMarketingService ? (serviceId === "seo" ? "text-green-800" : "text-purple-800") : "text-gray-900"
+                     isMarketingService ? (serviceId === "seo" ? "text-hist-blue-800" : "text-hist-blue-800") : "text-gray-900"
                   }`}
                >
                   Benefits of Our {service.title}
@@ -340,14 +340,28 @@ const ServiceDetail = () => {
                            key={idx}
                            className={`p-6 rounded-xl border ${
                               serviceId === "seo"
-                                 ? "border-green-200 hover:bg-green-50"
-                                 : "border-purple-200 hover:bg-purple-50"
+                                 ? "border-hist-blue-200 hover:bg-hist-blue-50 group"
+                                 : "border-hist-blue-200 hover:bg-hist-blue-50 group"
                            } transition-colors`}
                         >
                            <div
                               className={`w-12 h-12 rounded-lg ${
-                                 serviceId === "seo" ? "bg-green-100 text-green-600" : "bg-purple-100 text-purple-600"
-                              } flex items-center justify-center mb-4`}
+                                 serviceId === "seo" 
+                                    ? (benefit === "Increase organic traffic" || 
+                                       benefit === "Build brand credibility" ||
+                                       benefit === "Achieve higher ROI compared to paid ads" ||
+                                       benefit === "Long-term sustainable results" ||
+                                       benefit === "Target users at the moment of intent"
+                                       ? "bg-hist-blue-100 text-hist-blue-600 group-hover:bg-hist-yellow-100 group-hover:text-hist-blue-600" 
+                                       : "bg-hist-blue-100 text-hist-blue-600 group-hover:bg-hist-blue-200 group-hover:text-hist-blue-700")
+                                    : (benefit === "Targeted reach to specific audiences" || 
+                                       benefit === "Measurable campaign performance" ||
+                                       benefit === "Flexible budget allocation" ||
+                                       benefit === "Real-time optimization" ||
+                                       benefit === "Integrated multi-channel approach"
+                                       ? "bg-hist-blue-100 text-hist-blue-600 group-hover:bg-hist-yellow-100 group-hover:text-hist-blue-600" 
+                                       : "bg-hist-blue-100 text-hist-blue-600 group-hover:bg-hist-blue-200 group-hover:text-hist-blue-700")
+                              } flex items-center justify-center mb-4 transition-all duration-300 shadow-md group-hover:shadow-lg`}
                            >
                               {idx % 4 === 0 ? (
                                  <TrendingUp className="h-6 w-6" />
@@ -359,7 +373,7 @@ const ServiceDetail = () => {
                                  <Layers className="h-6 w-6" />
                               )}
                            </div>
-                           <p className={`${serviceId === "seo" ? "text-green-800" : "text-purple-800"}`}>{benefit}</p>
+                           <p className={`${serviceId === "seo" ? "text-hist-blue-800" : "text-hist-blue-800"}`}>{benefit}</p>
                         </div>
                      ))}
                   </div>
@@ -367,7 +381,7 @@ const ServiceDetail = () => {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                      {service.benefits.map((benefit, idx) => (
                         <div key={idx} className="flex items-start">
-                           <Check className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
+                           <Check className="h-6 w-6 text-hist-blue-500 mt-1 mr-3 flex-shrink-0" />
                            <p className="text-gray-700">{benefit}</p>
                         </div>
                      ))}
@@ -391,8 +405,8 @@ const ServiceDetail = () => {
                      className={`text-3xl font-bold mb-6 ${
                         isMarketingService
                            ? serviceId === "seo"
-                              ? "text-green-800"
-                              : "text-purple-800"
+                              ? "text-hist-blue-800"
+                              : "text-hist-blue-800"
                            : "text-gray-900"
                      }`}
                   >
@@ -400,13 +414,13 @@ const ServiceDetail = () => {
                   </h2>
                   <div className="space-y-6">
                      {service.strengths.map((strength, idx) => (
-                        <div key={idx} className={isMarketingService ? "border-l-4 pl-4 py-2 border-green-500" : ""}>
+                        <div key={idx} className={isMarketingService ? "border-l-4 pl-4 py-2 border-hist-blue-500" : ""}>
                            <h3
                               className={`text-xl font-bold mb-2 ${
                                  isMarketingService
                                     ? serviceId === "seo"
-                                       ? "text-green-700"
-                                       : "text-purple-700"
+                                       ? "text-hist-blue-700"
+                                       : "text-hist-blue-700"
                                     : "text-hist-blue"
                               }`}
                            >
@@ -424,8 +438,8 @@ const ServiceDetail = () => {
                className={`rounded-3xl p-8 text-white mb-16 ${
                   isMarketingService
                      ? serviceId === "seo"
-                        ? "bg-gradient-to-r from-green-600 to-green-800"
-                        : "bg-gradient-to-r from-purple-600 to-purple-800"
+                        ? "bg-gradient-to-r from-hist-blue-600 to-hist-blue-800"
+                        : "bg-gradient-to-r from-hist-blue-600 to-hist-blue-800"
                      : "bg-gradient-to-r from-hist-blue to-hist-blue-dark"
                }`}
             >
@@ -438,8 +452,8 @@ const ServiceDetail = () => {
                      className={`p-6 rounded-xl ${
                         isMarketingService
                            ? serviceId === "seo"
-                              ? "bg-green-500/20"
-                              : "bg-purple-500/20"
+                              ? "bg-hist-blue-500/20"
+                              : "bg-hist-blue-500/20"
                            : "bg-white/20"
                      }`}
                   >
@@ -453,7 +467,9 @@ const ServiceDetail = () => {
                         asChild
                         className={`px-8 py-6 text-lg ${
                            isMarketingService
-                              ? "bg-white text-gray-900 hover:bg-gray-100"
+                              ? serviceId === "seo"
+                                 ? "bg-white text-hist-blue hover:bg-hist-blue-50"
+                                 : "bg-white text-hist-blue hover:bg-hist-blue-50"
                               : "bg-white text-hist-blue hover:bg-gray-100"
                         }`}
                      >
