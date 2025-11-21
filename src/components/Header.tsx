@@ -160,7 +160,12 @@ const Header = () => {
                         <a
                            href={item.href}
                            className={`flex items-center px-3 py-1 font-medium text-sm ${
-                              activeDropdown === item.name ? "text-hist-blue" : "text-gray-700 hover:text-hist-blue"
+                              location.pathname === item.href || 
+                              (item.href === "/services" && location.pathname.startsWith("/services/")) ||
+                              (item.href === "/industries" && location.pathname.startsWith("/industries/")) ||
+                              (item.href === "/blog" && location.pathname.startsWith("/blog/"))
+                                 ? "text-hist-blue" 
+                                 : "text-gray-700 hover:text-hist-blue"
                            }`}
                         >
                            {item.name}
@@ -192,7 +197,11 @@ const Header = () => {
                                              <li key={subItem.name}>
                                                 <a
                                                    href={subItem.href}
-                                                   className="flex items-center py-2 px-3 text-gray-600 hover:text-hist-blue hover:bg-gray-50 rounded transition-colors text-sm"
+                                                   className={`block py-2 px-3 text-sm ${
+                                                      location.pathname === subItem.href
+                                                         ? "text-hist-blue" 
+                                                         : "text-gray-600 hover:text-hist-blue"
+                                                   }`}
                                                    onClick={closeAllDropdowns}
                                                 >
                                                    {subItem.name}
@@ -228,7 +237,11 @@ const Header = () => {
                                  <a
                                     key={subItem.name}
                                     href={subItem.href}
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:text-hist-blue hover:bg-gray-50"
+                                    className={`block px-4 py-2 text-sm ${
+                                       location.pathname === subItem.href
+                                          ? "text-hist-blue bg-gray-50" 
+                                          : "text-gray-700 hover:text-hist-blue hover:bg-gray-50"
+                                    }`}
                                     onClick={closeAllDropdowns}
                                  >
                                     {subItem.name}
@@ -304,7 +317,11 @@ const Header = () => {
                                                          <li key={subItem.name}>
                                                             <a
                                                                href={subItem.href}
-                                                               className="block py-1.5 text-gray-600 hover:text-hist-blue text-sm"
+                                                               className={`block py-1.5 text-sm ${
+                                                                  location.pathname === subItem.href
+                                                                     ? "text-hist-blue" 
+                                                                     : "text-gray-600 hover:text-hist-blue"
+                                                               }`}
                                                                onClick={closeAllDropdowns}
                                                             >
                                                                {subItem.name}
@@ -336,7 +353,14 @@ const Header = () => {
                            ) : (
                               <a
                                  href={item.href}
-                                 className="block py-3 text-gray-700 hover:text-hist-blue font-medium border-b border-gray-100"
+                                 className={`block py-3 font-medium border-b border-gray-100 ${
+                                    location.pathname === item.href || 
+                                    (item.href === "/services" && location.pathname.startsWith("/services/")) ||
+                                    (item.href === "/industries" && location.pathname.startsWith("/industries/")) ||
+                                    (item.href === "/blog" && location.pathname.startsWith("/blog/"))
+                                       ? "text-hist-blue" 
+                                       : "text-gray-700 hover:text-hist-blue"
+                                 }`}
                                  onClick={closeAllDropdowns}
                               >
                                  {item.name}
