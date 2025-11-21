@@ -88,14 +88,14 @@ const Services = () => {
                   <span className="text-gradient"> IT Solutions</span>
                </h2>
 
-               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+               <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
                   From custom software development to AI-powered solutions, we offer a complete suite of IT services
                   designed to accelerate your digital transformation journey.
                </p>
             </div>
 
             {/* Services Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
                {services.map((service) => (
                   <Link
                      to={`/services/${service.id}`}

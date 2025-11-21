@@ -72,18 +72,18 @@ const Industries = () => {
          <div className="container mx-auto px-4">
             {/* Header */}
             <div className="text-center mb-16 animate-fade-in">
-               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                   Delivering Solutions Across
                   <span className="text-gradient"> Multiple Sectors</span>
                </h2>
-               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+               <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
                   Our expertise spans various industries, enabling us to understand unique sector challenges and deliver
                   tailored technology solutions that drive real business value.
                </p>
             </div>
 
             {/* Industries Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                {industries.map((industry, index) => (
                   <Link
                      to={`/industries/${industry.id}`}
@@ -94,7 +94,7 @@ const Industries = () => {
                         className={`group hover:shadow-xl transition-all duration-300 border-0 hist-shadow hover:hist-glow animate-fade-in cursor-pointer hover:scale-105 hover:ring-2 hover:${industry.ringColor}`}
                         style={{ animationDelay: `${index * 0.15}s` }}
                      >
-                        <CardContent className="p-8 text-center bg-slate-50 hover:bg-white transition-colors duration-300">
+                        <CardContent className="p-6 sm:p-8 text-center bg-slate-50 hover:bg-white transition-colors duration-300">
                            <div
                               className={`w-16 h-16 ${industry.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-md group-hover:shadow-lg`}
                            >
@@ -124,24 +124,24 @@ const Industries = () => {
 
             {/* Bottom Stats */}
             <div
-               className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-gray-200 animate-fade-in"
+               className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-16 pt-16 border-t border-gray-200 animate-fade-in"
                style={{ animationDelay: "0.9s" }}
             >
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">20+</div>
-                  <div className="text-gray-600">Total Projects</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-2">20+</div>
+                  <div className="text-gray-600 text-sm sm:text-base">Total Projects</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">3</div>
-                  <div className="text-gray-600">Industries Served</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">3</div>
+                  <div className="text-gray-600 text-sm sm:text-base">Industries Served</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-green-600 mb-2">98%</div>
-                  <div className="text-gray-600">Success Rate</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-2">98%</div>
+                  <div className="text-gray-600 text-sm sm:text-base">Success Rate</div>
                </div>
                <div className="text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl font-bold text-yellow-600 mb-2">3+</div>
-                  <div className="text-gray-600">Years Experience</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-yellow-600 mb-2">3+</div>
+                  <div className="text-gray-600 text-sm sm:text-base">Years Experience</div>
                </div>
             </div>
          </div>

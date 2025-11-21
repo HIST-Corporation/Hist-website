@@ -19,17 +19,17 @@ const Blog = () => {
    });
 
    return (
-      <div className="bg-gray-50 min-h-screen py-16 px-6 sm:px-6 lg:px-8">
+      <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
-               <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Blog</h1>
-               <p className="text-xl text-gray-600 max-w-3xl mx-auto">Insights, stories, and expertise from our team</p>
+               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Blog</h1>
+               <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">Insights, stories, and expertise from our team</p>
             </div>
 
             {/* Search and Filter */}
             <div className="mb-12">
-               <div className="flex flex-col md:flex-row gap-4 mb-6">
+               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                   <input
                      type="text"
                      placeholder="Search articles..."
@@ -57,7 +57,7 @@ const Blog = () => {
 
             {/* Articles Grid */}
             {filteredArticles.length > 0 ? (
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {filteredArticles.map((article) => (
                      <Link to={`/blog/${article.id}`} key={article.id} className="group block">
                         <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">

@@ -140,12 +140,15 @@ const Header = () => {
                   <div className="w-10 h-10">
                      <img src="/hist.png" className="w-10 h-10" alt="HIST Logo" />
                   </div>
-                  <div>
+                  <div className="hidden sm:block">
                      <h1 className="text-xl font-bold text-hist-blue">HIST</h1>
                      <p className="text-xs text-gray-600 leading-none">
                         House of Information
                         <span className="block">Science & Technology</span>
                      </p>
+                  </div>
+                  <div className="sm:hidden">
+                     <h1 className="text-xl font-bold text-hist-blue">HIST</h1>
                   </div>
                </a>
 
@@ -282,7 +285,7 @@ const Header = () => {
 
             {/* Mobile Navigation */}
             {isMenuOpen && (
-               <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+               <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 max-h-[calc(100vh-4rem)] overflow-y-auto">
                   <nav className="container mx-auto px-4 py-4">
                      {navigation.map((item) => (
                         <div key={item.name} className="mb-1">
