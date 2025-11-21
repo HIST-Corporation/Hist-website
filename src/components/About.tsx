@@ -47,14 +47,6 @@ const About = () => {
 
    const teamMembers = [
       {
-         name: "Dip Ojha",
-         role: "Full Stack Developer",
-         description: "Specialized in React, Node.js, and cloud technologies with passion for clean code.",
-         image: "/dip.jpg",
-         linkedin: "#",
-         category: "Development",
-      },
-      {
          name: "Madhav Poudel",
          role: "Cybersecurity Specialist",
          description: "Creating secure and resilient systems to protect against cyber threats.",
@@ -82,20 +74,12 @@ const About = () => {
 
    const pastFellows = [
       {
-         name: "Gaurav Raj Bana",
+         name: "Dip Ojha",
          role: "Full Stack Developer",
-         description: "Expert in building scalable web applications with modern JavaScript frameworks.",
-         image: "/bana.jpg",
+         description: "Specialized in React, Node.js, and cloud technologies with passion for clean code.",
+         image: "/dip.jpg",
          linkedin: "#",
          category: "Development",
-      },
-      {
-         name: "Saiman Katwal",
-         role: "QA Tester",
-         description: "Ensuring software quality through rigorous testing methodologies.",
-         image: "/saiman.jpg",
-         linkedin: "#",
-         category: "Quality Assurance",
       },
    ];
 
@@ -263,7 +247,8 @@ const About = () => {
                   </div>
                </div>
 
-               {/* Past Fellows Section */}
+               {/* Past Fellows Section - Hidden for now */}
+               {/* 
                <div>
                   <div className="mb-8">
                      <h3 className="text-2xl font-bold text-gray-800 text-center">Past Fellowship Members</h3>
@@ -292,6 +277,7 @@ const About = () => {
                      ))}
                   </div>
                </div>
+               */}
             </div>
          </div>
       </section>
