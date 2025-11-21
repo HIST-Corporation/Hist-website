@@ -59,6 +59,9 @@ const Testimonials = () => {
       },
    ];
 
+   // State for screen size
+   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
    // Generate star icons
    const renderStars = (count: number) => {
       return Array.from({ length: count }).map((_, index) => (
@@ -67,6 +70,16 @@ const Testimonials = () => {
          </svg>
       ));
    };
+
+   // Handle window resize
+   useEffect(() => {
+      const handleResize = () => {
+         setIsMobile(window.innerWidth < 768);
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+   }, []);
 
    // Auto-scroll and drag functionality
    const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -77,12 +90,12 @@ const Testimonials = () => {
    const pauseAutoScrollRef = useRef<boolean>(false);
    const scrollSpeedRef = useRef<number>(1);
    
-   // Auto-scroll functionality that stops at the 3rd testimonial
+   // Auto-scroll functionality that stops at every 3rd testimonial
    useEffect(() => {
       let pauseTimeoutRef: NodeJS.Timeout | null = null;
       let testimonialCountRef = 0;
       const cardWidth = 385 + 24; // card width + gap
-      const maxTestimonials = 3; // Stop at 3rd testimonial
+      const maxTestimonials = 3; // Stop at every 3rd testimonial
       
       const autoScroll = () => {
          if (pauseAutoScrollRef.current || isDragging) {
@@ -101,7 +114,7 @@ const Testimonials = () => {
             testimonialCountRef = Math.floor(container.scrollLeft / cardWidth);
             
             // Pause at every 3rd testimonial
-            if (testimonialCountRef % maxTestimonials === 0) {
+            if ((testimonialCountRef + 1) % maxTestimonials === 0) {
                pauseAutoScrollRef.current = true;
                
                if (pauseTimeoutRef) clearTimeout(pauseTimeoutRef);
@@ -112,8 +125,8 @@ const Testimonials = () => {
             }
          }
          
-         // Only scroll if we haven't reached the 3rd testimonial
-         if (testimonialCountRef < maxTestimonials) {
+         // Only scroll if we haven't reached the 3rd testimonial in current cycle
+         if ((testimonialCountRef + 1) % maxTestimonials !== 0 || !pauseAutoScrollRef.current) {
             container.scrollLeft += scrollSpeedRef.current;
          }
          
@@ -244,15 +257,15 @@ const Testimonials = () => {
                               className="w-full h-full object-cover"
                            />
                         </div>
-                        <div className="meta flex-shrink-0">
-                           <h3 className="text-xl font-bold text-gray-800 m-0">{testimonial.name}</h3>
-                           <p className="text-gray-500 text-base mt-1 m-0">{testimonial.role}</p>
+                        <div className="meta flex-shrink-0 min-w-0">
+                           <h3 className={`font-bold text-gray-800 m-0 ${isMobile ? 'text-lg' : 'text-xl'}`}>{testimonial.name}</h3>
+                           <p className={`text-gray-500 mt-1 m-0 ${isMobile ? 'text-sm' : 'text-base'}`}>{testimonial.role}</p>
                         </div>
                      </div>
                      
-                     <div className="quote text-gray-600 leading-relaxed text-base flex-1 overflow-hidden">
+                     <div className="quote text-gray-600 leading-relaxed flex-1 overflow-hidden">
                         <div className="h-full flex flex-col">
-                           <p className="m-0 flex-grow">{testimonial.content}</p>
+                           <p className={`m-0 flex-grow ${isMobile ? 'text-sm' : 'text-base'}`}>{testimonial.content}</p>
                         </div>
                      </div>
 
@@ -260,14 +273,14 @@ const Testimonials = () => {
                         <div className="stars flex gap-1.5 items-center" aria-hidden>
                            {renderStars(testimonial.rating)}
                         </div>
-                        <div className="google flex items-center gap-2 text-gray-500 text-base">
-                           <svg width="18" height="18" viewBox="0 0 533.5 544.3">
+                        <div className={`google flex items-center gap-2 text-gray-500 ${isMobile ? 'text-sm' : 'text-base'}`}>
+                           <svg width={isMobile ? "16" : "18"} height={isMobile ? "16" : "18"} viewBox="0 0 533.5 544.3">
                               <path fill="#4285F4" d="M533.5 278.4c0-17.8-1.6-35.1-4.7-51.8H272v98.1h146.9c-6.3 33.9-25.2 62.6-53.7 81.7v67.8h86.6c50.6-46.6 81.7-115.2 81.7-195.8z"/>
                               <path fill="#34A853" d="M272 544.3c72.6 0 133.6-24.1 178.1-65.4l-86.6-67.8c-24.1 16.2-55 25.6-91.5 25.6-70.4 0-130-47.5-151.4-111.3H34.2v69.8C78.2 487.2 167 544.3 272 544.3z"/>
                               <path fill="#FBBC05" d="M120.6 327.6c-8.9-26.2-8.9-54.4 0-80.6V177.2H34.2c-38.3 76.6-38.3 168.9 0 245.5l86.4-69.8z"/>
                               <path fill="#EA4335" d="M272 109.7c39.5 0 75 13.6 102.9 40.3l77.1-77.1C405.7 24.6 345.7 0 272 0 167 0 78.2 57.1 34.2 143.8l86.4 69.8C142 157.2 201.6 109.7 272 109.7z"/>
                            </svg>
-                           (Google Review)
+                           <span className={isMobile ? 'hidden' : 'inline'}>(Google Review)</span>
                         </div>
                      </div>
                   </div>
