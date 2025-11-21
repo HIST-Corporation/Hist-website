@@ -36,6 +36,9 @@
     --ring: 214 45% 56%;
 
     --radius: 0.5rem;
+    
+    /* Font sizes */
+    --font-size-base: 16px;
   }
 
   .dark {
@@ -75,11 +78,14 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-size-base);
   }
   
   html {
     scroll-behavior: smooth;
+    font-size: var(--font-size-base);
   }
 }
 

@@ -14,8 +14,6 @@ import {
    Github,
    ArrowLeft,
    ArrowRight,
-   Clock,
-   Calendar,
    ThumbsUp,
    Reply,
 } from "lucide-react";
@@ -242,9 +240,9 @@ const BlogDetails = () => {
    const prevArticle = blogArticles[(currentIndex - 1 + blogArticles.length) % blogArticles.length];
 
    return (
-      <div className="bg-white">
+      <div className="bg-white font-poppins text-gray-800">
          {/* Main Content */}
-         <div className="max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+         <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
             {/* Back to blog link */}
             <div className="mb-6">
                <Link to="/blog" className="text-hist-blue hover:underline inline-flex items-center text-sm">
@@ -254,14 +252,14 @@ const BlogDetails = () => {
             </div>
 
             {/* Article Header */}
-            <header className="mb-8">
+            <header className="mb-10">
                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                   <time>{article.date}</time>
                   <Separator orientation="vertical" className="h-4" />
                   <span>{article.readTime}</span>
                </div>
 
-               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+               <h1 className="text-[36px] font-bold text-gray-900 leading-tight mb-6">
                   {article.title}
                </h1>
 
@@ -276,14 +274,14 @@ const BlogDetails = () => {
                      </AvatarFallback>
                   </Avatar>
                   <div>
-                     <p className="font-medium text-gray-900">{article.author.name}</p>
+                     <p className="font-medium text-gray-800">{article.author.name}</p>
                      <p className="text-sm text-gray-500">{article.author.role}</p>
                   </div>
                </div>
             </header>
 
             {/* Featured Image */}
-            <div className="mb-10 rounded-lg overflow-hidden">
+            <div className="mb-12 rounded-lg overflow-hidden">
                <img
                   src={article.image || "/placeholder.svg"}
                   alt={article.title}
@@ -292,12 +290,12 @@ const BlogDetails = () => {
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-hist-blue prose-strong:text-gray-900 mb-12">
+            <div className="prose prose-xl max-w-none prose-headings:text-[38px] prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-hist-blue prose-strong:text-gray-900 mb-14">
                <div dangerouslySetInnerHTML={{ __html: article.content }} />
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-10">
                {article.tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="rounded-full px-3 py-1 text-sm">
                      #{tag}
@@ -306,7 +304,7 @@ const BlogDetails = () => {
             </div>
 
             {/* Article Actions */}
-            <div className="flex items-center justify-between mb-12 pb-8 border-b border-gray-200">
+            <div className="flex items-center justify-between mb-14 pb-8 border-b border-gray-200">
                <div className="flex items-center gap-3">
                   <Button variant="outline" size="sm" className="rounded-full">
                      <Heart className="w-4 h-4 mr-2" />
