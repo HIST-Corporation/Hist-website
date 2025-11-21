@@ -95,6 +95,16 @@
   .hist-glow {
     box-shadow: 0 20px 25px -5px rgba(80, 105, 177, 0.1), 0 10px 10px -5px rgba(80, 105, 177, 0.04);
   }
+  
+  /* Hide scrollbar for testimonial section */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
 
 
