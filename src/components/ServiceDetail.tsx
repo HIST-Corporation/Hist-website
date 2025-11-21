@@ -450,11 +450,7 @@ const ServiceDetail = () => {
                   </div>
                   <div
                      className={`p-6 rounded-xl ${
-                        isMarketingService
-                           ? serviceId === "seo"
-                              ? "bg-hist-blue-500/20"
-                              : "bg-hist-blue-500/20"
-                           : "bg-white/20"
+                        isMarketingService ? "bg-white/20" : "bg-white/20"
                      }`}
                   >
                      <h3 className="text-xl font-bold mb-4">Ready to Transform Your Business?</h3>
