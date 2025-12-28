@@ -25,8 +25,6 @@ interface SearchItem {
 const Search = () => {
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [inputValue, setInputValue] = useState("");
-  const [showHistHint, setShowHistHint] = useState(false);
 
   // Create search data from existing site content
   const searchItems: SearchItem[] = [
@@ -72,62 +70,27 @@ const Search = () => {
   ];
 
   useEffect(() => {
-    let histTimeout: NodeJS.Timeout;
-    
     const handleGlobalKeyDown = (e: KeyboardEvent) => {
       // Open search with Ctrl/Cmd + K
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
         setOpen(true);
-        return;
-      }
-      
-      // Check if user types "hist" or "house of information science and technology" in any input field
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        const target = e.target as HTMLInputElement | HTMLTextAreaElement;
-        const currentValue = target.value + e.key;
-        
-        if (currentValue.toLowerCase().includes('hist') || 
-            currentValue.toLowerCase().includes('house of information science and technology')) {
-          // Show hint that search can be opened
-          setShowHistHint(true);
-          histTimeout = setTimeout(() => {
-            setShowHistHint(false);
-          }, 3000);
-        }
-      }
-    };
-
-    // Special handling when "hist" is typed in the search input
-    const handleInput = (e: Event) => {
-      const target = e.target as HTMLInputElement;
-      if (target === inputRef.current) {
-        const value = target.value;
-        if ((value.toLowerCase().includes('hist') || 
-             value.toLowerCase().includes('house of information science and technology')) && !open) {
-          setOpen(true);
-        }
       }
     };
 
     window.addEventListener("keydown", handleGlobalKeyDown);
-    window.addEventListener("input", handleInput);
     
     return () => {
       window.removeEventListener("keydown", handleGlobalKeyDown);
-      window.removeEventListener("input", handleInput);
-      if (histTimeout) clearTimeout(histTimeout);
     };
-  }, [open]);
+  }, []);
 
   // Filter search items based on query
   const [query, setQuery] = useState("");
   const filteredItems = searchItems.filter(item => 
     item.title.toLowerCase().includes(query.toLowerCase()) ||
     item.description.toLowerCase().includes(query.toLowerCase()) ||
-    item.type.toLowerCase().includes(query.toLowerCase()) ||
-    // Add search for "house of information science and technology" in the site name
-    query.toLowerCase().includes('house of information science and technology')
+    item.type.toLowerCase().includes(query.toLowerCase())
   );
 
   // Group items by type
@@ -163,13 +126,6 @@ const Search = () => {
         >
           <SearchIcon className="h-4 w-4" />
         </Button>
-
-        {/* Hint when user types "hist" or "house of information science and technology" */}
-        {showHistHint && (
-          <div className="absolute top-full left-0 mt-1 w-full bg-blue-50 border border-blue-200 rounded-md p-2 text-xs text-blue-700 z-50 shadow-sm">
-            Press <kbd className="px-1.5 py-0.5 bg-blue-100 rounded text-[10px] font-mono">⌘</kbd> + <kbd className="px-1.5 py-0.5 bg-blue-100 rounded text-[10px] font-mono">K</kbd> to open search
-          </div>
-        )}
       </div>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
