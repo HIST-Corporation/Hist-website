@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { services as allServices } from "@/data/services"; // Import your services data
 import { useLocation } from "react-router-dom";
+import Search from "@/components/Search";
 
 const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -153,108 +154,112 @@ const Header = () => {
                </a>
 
                {/* Desktop Navigation */}
-               <nav className="hidden lg:flex items-center space-x-1">
-                  {navigation.map((item) => (
-                     <div
-                        key={item.name}
-                        className="relative py-4"
-                        onMouseEnter={() => (item.mega || item.dropdown) && handleMouseEnter(item.name)}
-                     >
-                        <a
-                           href={item.href}
-                           className={`flex items-center px-3 py-1 font-medium text-sm ${
-                              location.pathname === item.href || 
-                              (item.href === "/services" && location.pathname.startsWith("/services/")) ||
-                              (item.href === "/industries" && location.pathname.startsWith("/industries/")) ||
-                              (item.href === "/blog" && location.pathname.startsWith("/blog/"))
-                                 ? "text-hist-blue" 
-                                 : "text-gray-700 hover:text-hist-blue"
-                           }`}
+               <div className="hidden lg:flex items-center space-x-1">
+                  <nav className="flex items-center space-x-1">
+                     {navigation.map((item) => (
+                        <div
+                           key={item.name}
+                           className="relative py-4"
+                           onMouseEnter={() => (item.mega || item.dropdown) && handleMouseEnter(item.name)}
                         >
-                           {item.name}
-                           {(item.mega || item.dropdown) && (
-                              <ChevronDown
-                                 size={16}
-                                 className={`ml-1 transition-transform ${
-                                    activeDropdown === item.name ? "rotate-180" : ""
-                                 }`}
-                              />
-                           )}
-                        </a>
-
-                        {/* Services Mega Dropdown */}
-                        {item.name === "Services" && activeDropdown === "Services" && (
-                           <div
-                              className="absolute left-1/2 transform -translate-x-1/2 top-full mt-0 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 z-50"
-                              onMouseLeave={() => setActiveDropdown(null)}
+                           <a
+                              href={item.href}
+                              className={`flex items-center px-3 py-1 font-medium text-sm ${
+                                 location.pathname === item.href || 
+                                 (item.href === "/services" && location.pathname.startsWith("/services/")) ||
+                                 (item.href === "/industries" && location.pathname.startsWith("/industries/")) ||
+                                 (item.href === "/blog" && location.pathname.startsWith("/blog/"))
+                                    ? "text-hist-blue" 
+                                    : "text-gray-700 hover:text-hist-blue"
+                              }`}
                            >
-                              <div className="p-6 grid grid-cols-3 gap-6">
-                                 {servicesCategories.map((service, index) => (
-                                    <div key={index} className={`${index < 2 ? "border-r border-gray-100 pr-6" : ""}`}>
-                                       <div className="flex items-center mb-4">
-                                          <div className="p-2 bg-hist-blue/10 rounded-md mr-3">{service.icon}</div>
-                                          <h3 className="font-semibold text-gray-800">{service.category}</h3>
+                              {item.name}
+                              {(item.mega || item.dropdown) && (
+                                 <ChevronDown
+                                    size={16}
+                                    className={`ml-1 transition-transform ${
+                                       activeDropdown === item.name ? "rotate-180" : ""
+                                    }`}
+                                 />
+                              )}
+                           </a>
+
+                           {/* Services Mega Dropdown */}
+                           {item.name === "Services" && activeDropdown === "Services" && (
+                              <div
+                                 className="absolute left-1/2 transform -translate-x-1/2 top-full mt-0 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 z-50"
+                                 onMouseLeave={() => setActiveDropdown(null)}
+                              >
+                                 <div className="p-6 grid grid-cols-3 gap-6">
+                                    {servicesCategories.map((service, index) => (
+                                       <div key={index} className={`${index < 2 ? "border-r border-gray-100 pr-6" : ""}`}>
+                                          <div className="flex items-center mb-4">
+                                             <div className="p-2 bg-hist-blue/10 rounded-md mr-3">{service.icon}</div>
+                                             <h3 className="font-semibold text-gray-800">{service.category}</h3>
+                                          </div>
+                                          <ul className="space-y-2">
+                                             {service.items.map((subItem) => (
+                                                <li key={subItem.name}>
+                                                   <a
+                                                      href={subItem.href}
+                                                      className={`block py-2 px-3 text-sm ${
+                                                         location.pathname === subItem.href
+                                                            ? "text-hist-blue" 
+                                                            : "text-gray-600 hover:text-hist-blue"
+                                                      }`}
+                                                      onClick={closeAllDropdowns}
+                                                   >
+                                                      {subItem.name}
+                                                   </a>
+                                                </li>
+                                             ))}
+                                          </ul>
                                        </div>
-                                       <ul className="space-y-2">
-                                          {service.items.map((subItem) => (
-                                             <li key={subItem.name}>
-                                                <a
-                                                   href={subItem.href}
-                                                   className={`block py-2 px-3 text-sm ${
-                                                      location.pathname === subItem.href
-                                                         ? "text-hist-blue" 
-                                                         : "text-gray-600 hover:text-hist-blue"
-                                                   }`}
-                                                   onClick={closeAllDropdowns}
-                                                >
-                                                   {subItem.name}
-                                                </a>
-                                             </li>
-                                          ))}
-                                       </ul>
+                                    ))}
+                                 </div>
+                                 <div className="border-t border-gray-100 bg-gray-50 px-6 py-4 rounded-b-lg">
+                                    <div className="flex justify-between items-center">
+                                       <p className="text-sm text-gray-600">Need custom solutions?</p>
+                                       <Button
+                                          size="sm"
+                                          className="bg-hist-blue hover:bg-hist-blue-dark text-white"
+                                          onClick={closeAllDropdowns}
+                                       >
+                                          Contact Us
+                                       </Button>
                                     </div>
-                                 ))}
-                              </div>
-                              <div className="border-t border-gray-100 bg-gray-50 px-6 py-4 rounded-b-lg">
-                                 <div className="flex justify-between items-center">
-                                    <p className="text-sm text-gray-600">Need custom solutions?</p>
-                                    <Button
-                                       size="sm"
-                                       className="bg-hist-blue hover:bg-hist-blue-dark text-white"
-                                       onClick={closeAllDropdowns}
-                                    >
-                                       Contact Us
-                                    </Button>
                                  </div>
                               </div>
-                           </div>
-                        )}
+                           )}
 
-                        {/* Regular Dropdown */}
-                        {item.dropdown && activeDropdown === item.name && (
-                           <div
-                              className="absolute left-0 top-full mt-1 w-48 bg-white rounded-lg shadow-md border border-gray-200 z-50 py-2"
-                              onMouseLeave={() => setActiveDropdown(null)}
-                           >
-                              {item.dropdown.map((subItem) => (
-                                 <a
-                                    key={subItem.name}
-                                    href={subItem.href}
-                                    className={`block px-4 py-2 text-sm ${
-                                       location.pathname === subItem.href
-                                          ? "text-hist-blue bg-gray-50" 
-                                          : "text-gray-700 hover:text-hist-blue hover:bg-gray-50"
-                                    }`}
-                                    onClick={closeAllDropdowns}
-                                 >
-                                    {subItem.name}
-                                 </a>
-                              ))}
-                           </div>
-                        )}
-                     </div>
-                  ))}
-               </nav>
+                           {/* Regular Dropdown */}
+                           {item.dropdown && activeDropdown === item.name && (
+                              <div
+                                 className="absolute left-0 top-full mt-1 w-48 bg-white rounded-lg shadow-md border border-gray-200 z-50 py-2"
+                                 onMouseLeave={() => setActiveDropdown(null)}
+                              >
+                                 {item.dropdown.map((subItem) => (
+                                    <a
+                                       key={subItem.name}
+                                       href={subItem.href}
+                                       className={`block px-4 py-2 text-sm ${
+                                          location.pathname === subItem.href
+                                             ? "text-hist-blue bg-gray-50" 
+                                             : "text-gray-700 hover:text-hist-blue hover:bg-gray-50"
+                                       }`}
+                                       onClick={closeAllDropdowns}
+                                    >
+                                       {subItem.name}
+                                    </a>
+                                 ))}
+                              </div>
+                           )}
+                        </div>
+                     ))}
+                  </nav>
+                  <div className="mx-4 w-px h-6 bg-gray-200"></div>
+                  <Search />
+               </div>
 
                {/* CTA Button & Mobile Menu Toggle */}
                <div className="flex items-center space-x-3">
