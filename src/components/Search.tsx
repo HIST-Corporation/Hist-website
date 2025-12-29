@@ -107,14 +107,11 @@ const Search = () => {
       <div className="relative">
         <Button
           variant="outline"
-          className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 hidden lg:flex"
+          className="relative w-full justify-start text-sm text-muted-foreground sm:pr-4 hidden lg:flex"
           onClick={() => setOpen(true)}
         >
           <SearchIcon className="mr-2 h-4 w-4" />
-          <span>Search HIST...</span>
-          <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-            <span className="text-xs">⌘</span>K
-          </kbd>
+          <span>Search</span>
         </Button>
         
         {/* Mobile search button */}
@@ -130,7 +127,7 @@ const Search = () => {
 
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput
-          placeholder="Search HIST services, industries, blog, and pages..."
+          placeholder="Search"
           value={query}
           onValueChange={setQuery}
           ref={inputRef}
