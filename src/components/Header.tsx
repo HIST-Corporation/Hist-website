@@ -257,12 +257,13 @@ const Header = () => {
                         </div>
                      ))}
                   </nav>
-                  <div className="mx-4 w-px h-6 bg-gray-200"></div>
-                  <Search />
+                  <div className="ml-3 w-px h-6 bg-gray-200"></div>
                </div>
 
-               {/* CTA Button & Mobile Menu Toggle */}
-               <div className="flex items-center space-x-3">
+               {/* Search, CTA Button & Mobile Menu Toggle */}
+               <div className="flex items-center gap-2 sm:gap-3">
+                  {/* Search stays right after the menu on desktop; on mobile it sits beside the menu toggle */}
+                  <Search />
                   {location.pathname !== "/contact" && (
                      <Button
                         size="sm"

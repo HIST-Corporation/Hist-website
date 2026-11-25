@@ -7,9 +7,8 @@ import {
   CommandGroup,
   CommandItem,
 } from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
-import { Search as SearchIcon, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Search as SearchIcon, Layers, Building2, FileText, Globe, Home, CornerDownLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { services } from "@/data/services";
 import { industries } from "@/data/industries";
 import { blogArticles } from "@/data/blog";
@@ -24,7 +23,21 @@ interface SearchItem {
 
 const Search = () => {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+  const isMac = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform);
+
+  const handleOpenChange = (next: boolean) => {
+    setOpen(next);
+    if (!next) setQuery("");
+  };
+
+  const goTo = (href: string) => {
+    handleOpenChange(false);
+    navigate(href);
+    window.scrollTo({ top: 0 });
+  };
 
   // Create search data from existing site content
   const searchItems: SearchItem[] = [
@@ -86,7 +99,6 @@ const Search = () => {
   }, []);
 
   // Filter search items based on query
-  const [query, setQuery] = useState("");
   const filteredItems = searchItems.filter(item => 
     item.title.toLowerCase().includes(query.toLowerCase()) ||
     item.description.toLowerCase().includes(query.toLowerCase()) ||
@@ -102,124 +114,85 @@ const Search = () => {
     pages: filteredItems.filter(item => item.type === "page"),
   };
 
+  const groups: { key: keyof typeof groupedItems; heading: string; icon: React.ElementType }[] = [
+    { key: "company", heading: "Company", icon: Home },
+    { key: "services", heading: "Services", icon: Layers },
+    { key: "industries", heading: "Industries", icon: Building2 },
+    { key: "blog", heading: "Blog", icon: FileText },
+    { key: "pages", heading: "Pages", icon: Globe },
+  ];
+
   return (
     <>
-      <div className="relative">
-        <Button
-          variant="outline"
-          className="relative w-full justify-start text-sm text-muted-foreground sm:pr-4 hidden lg:flex"
-          onClick={() => setOpen(true)}
-        >
-          <SearchIcon className="mr-2 h-4 w-4" />
-          <span>Search</span>
-        </Button>
-        
-        {/* Mobile search button */}
-        <Button
-          variant="outline"
-          size="icon"
-          className="lg:hidden"
-          onClick={() => setOpen(true)}
-        >
-          <SearchIcon className="h-4 w-4" />
-        </Button>
-      </div>
+      {/* Desktop: wide, eye-catching search pill */}
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label="Search the site"
+        className="group hidden lg:inline-flex items-center gap-3 h-10 pl-1.5 pr-2 rounded-full bg-hist-blue-50 border border-hist-blue-200 text-hist-blue-700 shadow-sm transition-all duration-200 hover:bg-white hover:border-hist-blue hover:shadow-md hover:shadow-hist-blue/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hist-blue focus-visible:ring-offset-2"
+      >
+        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-hist-blue text-white transition-transform duration-200 group-hover:scale-110">
+          <SearchIcon className="w-3.5 h-3.5" strokeWidth={2.5} />
+        </span>
+        <span className="text-sm font-medium pr-2 xl:pr-8">Search…</span>
+        <kbd className="hidden xl:inline-flex items-center gap-0.5 rounded-md border border-hist-blue-200 bg-white px-1.5 py-0.5 text-[11px] font-semibold text-hist-blue-600">
+          {isMac ? "⌘" : "Ctrl"} K
+        </kbd>
+      </button>
 
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      {/* Mobile & tablet: round icon button next to the menu toggle */}
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label="Search the site"
+        className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-hist-blue-50 border border-hist-blue-200 text-hist-blue transition-colors hover:bg-hist-blue hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hist-blue"
+      >
+        <SearchIcon className="w-[18px] h-[18px]" strokeWidth={2.5} />
+      </button>
+
+      <CommandDialog open={open} onOpenChange={handleOpenChange}>
         <CommandInput
-          placeholder="Search"
+          placeholder="Search services, industries, articles…"
           value={query}
           onValueChange={setQuery}
           ref={inputRef}
         />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          
-          {groupedItems.company.length > 0 && (
-            <CommandGroup heading="Company">
-              {groupedItems.company.slice(0, 5).map((item) => (
-                <Link key={item.id} to={item.href} onClick={() => setOpen(false)}>
-                  <CommandItem>
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground truncate max-w-xs">
-                        {item.description}
-                      </span>
+        <CommandList className="max-h-[60vh]">
+          <CommandEmpty>
+            <div className="py-6 text-center">
+              <p className="text-sm font-medium text-gray-900">No results for “{query}”</p>
+              <p className="text-xs text-muted-foreground mt-1">Try a service name like “Cloud” or “UI/UX”.</p>
+            </div>
+          </CommandEmpty>
+
+          {groups.map(({ key, heading, icon: Icon }) =>
+            groupedItems[key].length > 0 ? (
+              <CommandGroup key={key} heading={heading}>
+                {groupedItems[key].slice(0, 5).map((item) => (
+                  <CommandItem
+                    key={item.id}
+                    value={`${item.title} ${item.description} ${item.type}`}
+                    onSelect={() => goTo(item.href)}
+                    className="group cursor-pointer gap-3 rounded-lg data-[selected=true]:bg-hist-blue-50"
+                  >
+                    <span className="flex items-center justify-center w-9 h-9 shrink-0 rounded-lg bg-hist-blue-100 text-hist-blue">
+                      <Icon className="!w-4 !h-4" />
+                    </span>
+                    <div className="flex flex-col min-w-0 flex-1">
+                      <span className="font-medium text-gray-900 truncate">{item.title}</span>
+                      <span className="text-xs text-muted-foreground truncate">{item.description}</span>
                     </div>
+                    <CornerDownLeft className="!w-4 !h-4 text-hist-blue opacity-0 group-data-[selected=true]:opacity-100" />
                   </CommandItem>
-                </Link>
-              ))}
-            </CommandGroup>
-          )}
-          
-          {groupedItems.services.length > 0 && (
-            <CommandGroup heading="Services">
-              {groupedItems.services.slice(0, 5).map((item) => (
-                <Link key={item.id} to={item.href} onClick={() => setOpen(false)}>
-                  <CommandItem>
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground truncate max-w-xs">
-                        {item.description}
-                      </span>
-                    </div>
-                  </CommandItem>
-                </Link>
-              ))}
-            </CommandGroup>
-          )}
-          
-          {groupedItems.industries.length > 0 && (
-            <CommandGroup heading="Industries">
-              {groupedItems.industries.slice(0, 5).map((item) => (
-                <Link key={item.id} to={item.href} onClick={() => setOpen(false)}>
-                  <CommandItem>
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground truncate max-w-xs">
-                        {item.description}
-                      </span>
-                    </div>
-                  </CommandItem>
-                </Link>
-              ))}
-            </CommandGroup>
-          )}
-          
-          {groupedItems.blog.length > 0 && (
-            <CommandGroup heading="Blog">
-              {groupedItems.blog.slice(0, 5).map((item) => (
-                <Link key={item.id} to={item.href} onClick={() => setOpen(false)}>
-                  <CommandItem>
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground truncate max-w-xs">
-                        {item.description}
-                      </span>
-                    </div>
-                  </CommandItem>
-                </Link>
-              ))}
-            </CommandGroup>
-          )}
-          
-          {groupedItems.pages.length > 0 && (
-            <CommandGroup heading="Pages">
-              {groupedItems.pages.slice(0, 5).map((item) => (
-                <Link key={item.id} to={item.href} onClick={() => setOpen(false)}>
-                  <CommandItem>
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground truncate max-w-xs">
-                        {item.description}
-                      </span>
-                    </div>
-                  </CommandItem>
-                </Link>
-              ))}
-            </CommandGroup>
+                ))}
+              </CommandGroup>
+            ) : null
           )}
         </CommandList>
+        <div className="hidden sm:flex items-center justify-between border-t px-4 py-2 text-[11px] text-muted-foreground">
+          <span>↑ ↓ to navigate · Enter to open</span>
+          <span>Esc to close</span>
+        </div>
       </CommandDialog>
     </>
   );

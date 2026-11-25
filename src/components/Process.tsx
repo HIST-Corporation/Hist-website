@@ -1,146 +1,190 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Search, Image, Code, CheckCircle, Settings } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { Search, PenTool, Code, CheckCircle, Rocket, type LucideIcon } from "lucide-react";
+
+interface Step {
+   icon: LucideIcon;
+   title: string;
+   description: string;
+   duration: string;
+}
+
+const steps: Step[] = [
+   {
+      icon: Search,
+      title: "Discovery & Planning",
+      description:
+         "We analyze your requirements, understand your business goals, and create a detailed project roadmap.",
+      duration: "1-2 weeks",
+   },
+   {
+      icon: PenTool,
+      title: "Design & Prototype",
+      description: "Our designers create intuitive user interfaces and interactive prototypes for validation.",
+      duration: "2-3 weeks",
+   },
+   {
+      icon: Code,
+      title: "Development",
+      description: "Our expert developers build your solution using cutting-edge technologies and best practices.",
+      duration: "4-12 weeks",
+   },
+   {
+      icon: CheckCircle,
+      title: "Testing & QA",
+      description: "Rigorous testing ensures your solution is bug-free, secure, and performs optimally.",
+      duration: "1-2 weeks",
+   },
+   {
+      icon: Rocket,
+      title: "Deployment & Support",
+      description: "We deploy your solution and provide ongoing maintenance and support services.",
+      duration: "Ongoing",
+   },
+];
 
 const Process = () => {
-   const steps = [
-      {
-         icon: Search,
-         title: "Discovery & Planning",
-         description:
-            "We analyze your requirements, understand your business goals, and create a detailed project roadmap.",
-         duration: "1-2 weeks",
-      },
-      {
-         icon: Image,
-         title: "Design & Prototype",
-         description: "Our designers create intuitive user interfaces and interactive prototypes for validation.",
-         duration: "2-3 weeks",
-      },
-      {
-         icon: Code,
-         title: "Development",
-         description: "Our expert developers build your solution using cutting-edge technologies and best practices.",
-         duration: "4-12 weeks",
-      },
-      {
-         icon: CheckCircle,
-         title: "Testing & QA",
-         description: "Rigorous testing ensures your solution is bug-free, secure, and performs optimally.",
-         duration: "1-2 weeks",
-      },
-      {
-         icon: Settings,
-         title: "Deployment & Support",
-         description: "We deploy your solution and provide ongoing maintenance and support services.",
-         duration: "Ongoing",
-      },
-   ];
+   const timelineRef = useRef<HTMLDivElement>(null);
+   const reduceMotion = useReducedMotion();
+
+   // The centre line "draws" itself as the user scrolls through the timeline.
+   const { scrollYProgress } = useScroll({
+      target: timelineRef,
+      offset: ["start 80%", "end 60%"],
+   });
+   const lineProgress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
 
    return (
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-slate-50 to-white">
-         <div className="container mx-auto px-4">
+      <section id="process" className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
+         {/* Soft floating background shapes */}
+         <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 rounded-full bg-hist-blue-100 blur-3xl opacity-60"
+            animate={reduceMotion ? undefined : { y: [0, 30, 0] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+         />
+         <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 -right-20 w-72 h-72 rounded-full bg-hist-yellow-100 blur-3xl opacity-60"
+            animate={reduceMotion ? undefined : { y: [0, -30, 0] }}
+            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+         />
+
+         <div className="container mx-auto px-4 max-w-6xl relative">
             {/* Header */}
-            <div className="text-center mb-12 md:mb-20">
+            <motion.div
+               className="text-center mb-14 md:mb-20"
+               initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, amount: 0.5 }}
+               transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+               <span className="inline-flex items-center px-4 py-2 bg-hist-yellow rounded-full text-hist-blue-dark text-sm font-semibold mb-5">
+                  Our Process
+               </span>
                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                  How We <span className="text-blue-600">Deliver Excellence</span>
+                  How We <span className="text-hist-blue">Deliver Excellence</span>
                </h2>
                <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                   Our proven process ensures successful project delivery, from initial concept to ongoing support.
                </p>
-            </div>
+            </motion.div>
 
-            {/* Process Timeline */}
-            <div className="relative">
-               {/* Main vertical branch line in the center - removed gradient */}
-               <div className="hidden md:block absolute left-1/2 top-16 bottom-16 w-1 bg-blue-500 transform -translate-x-1/2 rounded-full shadow-lg"></div>
-
-               <div className="space-y-8 md:space-y-0">
-                  {steps.map((step, index) => (
-                     <div key={index} className="flex flex-col md:flex-row md:items-center">
-                        {/* Left content area */}
-                        <div className="hidden md:flex flex-col items-center w-1/2">
-                           <div className={`w-full ${index % 2 === 0 ? "pr-8" : "pr-0"}`}>
-                              {index % 2 === 0 && <StepCard step={step}  alignment="right" />}
-                           </div>
-                        </div>
-
-                        {/* Center branch line - removed gradient */}
-                        <div className="flex justify-center md:justify-center md:w-auto relative">
-                           {/* Horizontal branch line pointing to left cards - removed gradient */}
-                           {index % 2 === 0 && (
-                              <>
-                                <div className="hidden md:block absolute top-1/2 right-0 w-6 h-1 bg-blue-500 rounded-full transform -translate-y-1/2"></div>
-                                <div className="hidden md:block absolute top-1/2 right-0 w-0 h-0 border-t-4 border-b-4 border-l-6 border-t-transparent border-b-transparent border-l-blue-500 transform translate-x-1 -translate-y-1/2"></div>
-                                {/* Seamless connection point with vertical line */}
-                                <div className="hidden md:block absolute top-1/2 left-0 w-1 h-1 bg-blue-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                              </>
-                           )}
-                           {/* Horizontal branch line pointing to right cards - removed gradient */}
-                           {index % 2 === 1 && (
-                              <>
-                                <div className="hidden md:block absolute top-1/2 left-0 w-6 h-1 bg-blue-500 rounded-full transform -translate-y-1/2"></div>
-                                <div className="hidden md:block absolute top-1/2 left-0 w-0 h-0 border-t-4 border-b-4 border-r-6 border-t-transparent border-b-transparent border-r-blue-500 transform -translate-x-1 -translate-y-1/2"></div>
-                                {/* Seamless connection point with vertical line */}
-                                <div className="hidden md:block absolute top-1/2 right-0 w-1 h-1 bg-blue-500 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-                              </>
-                           )}
-                        </div>
-
-                        {/* Right content area */}
-                        <div className="hidden md:flex flex-col items-center w-1/2">
-                           <div className={`w-full ${index % 2 === 1 ? "pl-8" : "pl-0"}`}>
-                              {index % 2 === 1 && <StepCard step={step} alignment="left" />}
-                           </div>
-                        </div>
-
-                        {/* Mobile card (always visible) */}
-                        <div className="md:hidden mt-6 w-full">
-                           <StepCard step={step} alignment="center" />
-                        </div>
-                     </div>
-                  ))}
+            {/* Timeline */}
+            <div ref={timelineRef} className="relative">
+               {/* Centre line: light track + blue fill that grows on scroll */}
+               <div
+                  aria-hidden="true"
+                  className="absolute top-0 bottom-0 left-7 md:left-1/2 w-1 -translate-x-1/2 rounded-full bg-hist-blue-100"
+               >
+                  <motion.div
+                     className="absolute inset-0 rounded-full bg-hist-blue origin-top"
+                     style={{ scaleY: reduceMotion ? 1 : lineProgress }}
+                  />
                </div>
+
+               <ol className="relative space-y-8 md:space-y-10">
+                  {steps.map((step, index) => (
+                     <StepRow key={step.title} step={step} index={index} reduceMotion={!!reduceMotion} />
+                  ))}
+               </ol>
             </div>
          </div>
       </section>
    );
 };
 
-// Extracted card component for better reusability - unchanged
-const StepCard = ({ step, alignment }) => {
-   return (
-      <Card
-         className={`border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 ${
-            alignment === "right" ? "text-right" : alignment === "left" ? "text-left" : "text-center"
-         }`}
-      >
-         <CardContent className="p-5">
-            <div
-               className={`flex ${alignment === "right" ? "flex-row-reverse" : "flex-row"} ${
-                  alignment === "center" ? "flex-col items-center" : "items-start"
-               } gap-4`}
-            >
-               <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-blue-50 hover:bg-blue-100 transition-colors duration-300">
-                  <step.icon className="w-6 h-6 text-blue-600" />
-               </div>
+interface StepRowProps {
+   step: Step;
+   index: number;
+   reduceMotion: boolean;
+}
 
-               <div className={`${alignment === "center" ? "text-center" : "flex-1"}`}>
-                  <div
-                     className={`flex ${alignment === "right" ? "flex-row-reverse" : "flex-row"} ${
-                        alignment === "center" ? "flex-col" : "items-center justify-between"
-                     } gap-2 mb-2`}
-                  >
-                     <h3 className="text-lg md:text-xl font-semibold text-gray-900">{step.title}</h3>
-                     <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors duration-300">
+const StepRow = ({ step, index, reduceMotion }: StepRowProps) => {
+   const isLeft = index % 2 === 0;
+   const number = String(index + 1).padStart(2, "0");
+   const Icon = step.icon;
+
+   return (
+      <li className="grid grid-cols-[56px_minmax(0,1fr)] md:grid-cols-[minmax(0,1fr)_88px_minmax(0,1fr)] items-center gap-x-4 md:gap-x-0">
+         {/* Step number node on the line */}
+         <motion.div
+            className="relative col-start-1 row-start-1 md:col-start-2 justify-self-center z-10"
+            initial={reduceMotion ? false : { scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ type: "spring", stiffness: 260, damping: 18 }}
+         >
+            {!reduceMotion && (
+               <motion.span
+                  aria-hidden="true"
+                  className="absolute inset-0 rounded-full bg-hist-blue"
+                  animate={{ scale: [1, 1.6], opacity: [0.35, 0] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut", delay: index * 0.4 }}
+               />
+            )}
+            <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-white border-[3px] border-hist-blue text-hist-blue-dark font-bold shadow-md">
+               {number}
+            </span>
+         </motion.div>
+
+         {/* Card: rises in when scrolled into view, then keeps a gentle float */}
+         <motion.div
+            className={`col-start-2 row-start-1 ${isLeft ? "md:col-start-1 md:pr-2" : "md:col-start-3 md:pl-2"}`}
+            initial={reduceMotion ? false : { opacity: 0, y: 70, x: isLeft ? -24 : 24, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ type: "spring", stiffness: 70, damping: 16 }}
+         >
+            <motion.div
+               animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
+               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: index * 0.6 }}
+            >
+               <article className="relative bg-white border border-gray-200 rounded-2xl p-5 md:p-6 shadow-[0_18px_36px_-18px_rgba(80,105,177,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_44px_-16px_rgba(80,105,177,0.55)] hover:border-hist-blue-200">
+                  {/* Connector to the centre line (desktop) */}
+                  <span
+                     aria-hidden="true"
+                     className={`hidden md:block absolute top-1/2 w-8 h-0.5 bg-hist-blue-200 ${
+                        isLeft ? "-right-8" : "-left-8"
+                     }`}
+                  />
+                  <div className="flex flex-wrap items-center gap-4 mb-3">
+                     <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-hist-blue-50">
+                        <Icon className="w-6 h-6 text-hist-blue" />
+                     </div>
+                     <div className="flex-1 min-w-[140px]">
+                        <p className="text-xs font-bold tracking-[0.15em] text-hist-blue-600">STEP {number}</p>
+                        <h3 className="text-lg md:text-xl font-semibold text-gray-900">{step.title}</h3>
+                     </div>
+                     <span className="text-sm font-semibold text-hist-yellow-900 bg-hist-yellow-100 px-3 py-1 rounded-full">
                         {step.duration}
                      </span>
                   </div>
-                  <p className="text-gray-600 text-sm md:text-base">{step.description}</p>
-               </div>
-            </div>
-         </CardContent>
-      </Card>
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">{step.description}</p>
+               </article>
+            </motion.div>
+         </motion.div>
+      </li>
    );
 };
 

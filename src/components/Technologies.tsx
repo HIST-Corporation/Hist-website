@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const Technologies = () => {
    const technologies = [
@@ -105,8 +107,8 @@ const Technologies = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
          {/* Background elements */}
          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl"></div>
-            <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-purple-400 blur-3xl"></div>
+            <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-hist-blue-400 blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-hist-yellow-300 blur-3xl"></div>
          </div>
 
          <div className="container mx-auto px-4 max-w-6xl relative z-10">
@@ -114,7 +116,7 @@ const Technologies = () => {
             <div className="text-center mb-16">
                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   Cutting-Edge{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-hist-blue-600 to-hist-blue-400">
                      Technology Stack
                   </span>
                </h2>
@@ -131,7 +133,7 @@ const Technologies = () => {
                   onClick={() => setActiveCategory("All")}
                   className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
                      activeCategory === "All"
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                        ? "bg-hist-blue text-white shadow-lg shadow-hist-blue/30"
                         : "bg-white text-gray-700 shadow hover:shadow-md"
                   }`}
                >
@@ -144,7 +146,7 @@ const Technologies = () => {
                      onClick={() => setActiveCategory(category)}
                      className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
                         activeCategory === category
-                           ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                           ? "bg-hist-blue text-white shadow-lg shadow-hist-blue/30"
                            : "bg-white text-gray-700 shadow hover:shadow-md"
                      }`}
                   >
@@ -176,21 +178,37 @@ const Technologies = () => {
                ))}
             </div>
 
-            {/* Bottom CTA */}
+            {/* Bottom CTA — HIST brand colours */}
             <div className="text-center">
-               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8 max-w-4xl mx-auto relative overflow-hidden">
-                  <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white bg-opacity-10"></div>
-                  <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white bg-opacity-10"></div>
+               <div className="relative overflow-hidden bg-hist-blue text-white rounded-3xl px-6 py-12 md:px-12 md:py-14 max-w-4xl mx-auto shadow-[0_30px_60px_-24px_rgba(61,79,138,0.7)]">
+                  <div aria-hidden="true" className="absolute -top-24 -right-20 w-64 h-64 rounded-full bg-hist-blue-light"></div>
+                  <div aria-hidden="true" className="absolute -bottom-28 -left-20 w-64 h-64 rounded-full bg-hist-blue-dark"></div>
+                  <div aria-hidden="true" className="absolute top-8 left-10 w-4 h-4 rounded-full bg-hist-yellow"></div>
 
                   <div className="relative z-10">
+                     <span className="inline-block px-4 py-1.5 mb-5 rounded-full border border-hist-yellow/60 bg-hist-yellow/15 text-hist-yellow-200 text-sm font-semibold">
+                        Any stack. Any scale.
+                     </span>
                      <h3 className="text-2xl md:text-3xl font-bold mb-4">Need a Custom Technology Solution?</h3>
-                     <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+                     <p className="text-hist-blue-100 mb-8 max-w-2xl mx-auto">
                         Our expert team can adapt to any technology stack or recommend the best solution for your
                         specific needs.
                      </p>
-                     <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg">
-                        Discuss Your Project
-                     </button>
+                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <Link
+                           to="/contact"
+                           className="inline-flex items-center justify-center gap-2 bg-hist-yellow text-hist-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-hist-yellow-light transition-all transform hover:scale-105 shadow-lg"
+                        >
+                           Discuss Your Project
+                           <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <Link
+                           to="/services"
+                           className="inline-flex items-center justify-center border-2 border-white/70 text-white px-7 py-3 rounded-lg font-semibold hover:bg-white hover:text-hist-blue transition-all"
+                        >
+                           View Services
+                        </Link>
+                     </div>
                   </div>
                </div>
             </div>

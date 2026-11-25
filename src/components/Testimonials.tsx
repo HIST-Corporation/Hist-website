@@ -9,8 +9,6 @@ const Testimonials = () => {
          rating: 5,
          content:
             "House of Information Science and Technology is the best website design and development company in Nepal with highly qualified IT staff. The company offers follow-up services even after project completion.",
-         avatar:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       },
       {
          name: "Shreeram Dhakal",
@@ -18,8 +16,6 @@ const Testimonials = () => {
          rating: 5,
          content:
             "House of Information Science and Technology has been a game-changer for us. Their Social Media Marketing and Website Development services have transformed our online presence. We're incredibly grateful for their expertise.",
-         avatar:
-            "https://images.unsplash.com/photo-1494790108755-2616b25c2018?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       },
       {
          name: "Sulav Prasad Pudasaini",
@@ -27,8 +23,6 @@ const Testimonials = () => {
          rating: 5,
          content:
             "House of Information Science and Technology has a very unique team that works professionally and understands customer needs. It's very worthy to be their customer due to timely relevant services. Very thankful for their reliable support.",
-         avatar:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       },
       {
          name: "Ram Prasad K.C.",
@@ -36,8 +30,6 @@ const Testimonials = () => {
          rating: 5,
          content:
             "Working with House of Information Science and Technology was a transformative experience. Their technical expertise and commitment to quality exceeded our expectations. The team delivered our project on time.",
-         avatar:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       },
       {
          name: "Sunita Sharma",
@@ -45,8 +37,6 @@ const Testimonials = () => {
          rating: 5,
          content:
             "The team at House of Information Science and Technology demonstrated exceptional professionalism and technical knowledge. They understood our requirements perfectly and delivered a solution that improved our efficiency.",
-         avatar:
-            "https://images.unsplash.com/photo-1494790108755-2616b25c2018?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       },
       {
          name: "Krishna Bahadur Thapa",
@@ -54,8 +44,6 @@ const Testimonials = () => {
          rating: 5,
          content:
             "We've partnered with House of Information Science and Technology for multiple projects, and they consistently deliver outstanding results. Their innovative approach and attention to detail make them a trusted technology partner.",
-         avatar:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80",
       },
    ];
 
@@ -249,14 +237,7 @@ const Testimonials = () => {
                      key={index} 
                      className="card bg-white rounded-2xl p-7 border-2 border-blue-500 shadow-sm relative h-[450px] flex-shrink-0 w-[385px] flex flex-col"
                   >
-                     <div className="top flex gap-4 items-center mb-4 flex-shrink-0">
-                        <div className="avatar w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 border-2 border-white shadow-md">
-                           <img 
-                              src={testimonial.avatar} 
-                              alt={testimonial.name} 
-                              className="w-full h-full object-cover"
-                           />
-                        </div>
+                     <div className="top mb-4 flex-shrink-0">
                         <div className="meta flex-shrink-0 min-w-0">
                            <h3 className={`font-bold text-gray-800 m-0 ${isMobile ? 'text-lg' : 'text-xl'}`}>{testimonial.name}</h3>
                            <p className={`text-gray-500 mt-1 m-0 ${isMobile ? 'text-sm' : 'text-base'}`}>{testimonial.role}</p>
